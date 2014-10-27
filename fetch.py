@@ -362,6 +362,9 @@ def main(argv):
             packages = FetchPlistFromURL(plist_package_address);
             if args.package == None:
                 args.list = True;
+            if len(packages['projects'].keys()) == 0:
+                print 'Build \"'+packages['build']+'\" has no packages.';
+                sys.exit();
         else:
             args.list = True;
         
