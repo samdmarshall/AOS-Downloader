@@ -336,9 +336,14 @@ def main(argv):
     
     print 'Getting '+release_type+' Packages...';
     
+    packages = {};
+    
     if args.version == None and args.package == None:
         print 'No version specified, listing available versions...';
-        args.list = True;
+        list_items =  release_map.keys();
+        list_items = sorted(list_items, cmp=VersionCompare)
+        PrintSortedList(list_items);
+        sys.exit();
     elif args.version != None:
         if args.version in release_map.keys():
             print 'Found version!';
@@ -352,13 +357,11 @@ def main(argv):
             PrintSortedList(list_items);
             sys.exit();
         
-            packages = {};
-            if plist_package_address != '':
-                print 'Downloading packages list...';
-                packages = FetchPlistFromURL(plist_package_address);
-                if args.package == None:
-                    args.list = True;
-            
+        if plist_package_address != '':
+            print 'Downloading packages list...';
+            packages = FetchPlistFromURL(plist_package_address);
+            if args.package == None:
+                args.list = True;
         else:
             args.list = True;
         
