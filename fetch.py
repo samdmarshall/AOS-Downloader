@@ -276,9 +276,9 @@ def PackageListFetch(release_type, version):
             release_name = IOS_MAP_NEW_PREFIX+'-'+IOS_MAP[version];
         else:
             release_name = IOS_MAP_OLD_PREFIX+'-'+IOS_MAP[version];
-    elif args.type == 'OS X Server':
+    elif release_type == 'OS X Server':
         release_name = SERVER_MAP_PREFIX+'-'+SERVER_MAP[version];
-    elif args.type == 'Developer Tool':
+    elif release_type == 'Developer Tool':
         release_name = DEVELOPER_MAP_PREFIX+'-'+DEVELOPER_MAP[version];
     else:
         print 'Invalid version number, use -l or --list to print a list of available versions.';
