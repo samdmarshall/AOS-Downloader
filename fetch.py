@@ -304,6 +304,12 @@ def DownloadTarball(tarball_address, package_name):
     output = open(package_name,'wb');
     output.write(tarball.read());
     output.close();
+def DownloadPackage(package, build):
+    tarball_name = package+'-'+build+'.tar.gz';
+    print 'Downloading \"'+tarball_name+'\"...';
+    tarball_address = 'http://opensource.apple.com/tarballs/'+package+'/'+tarball_name;
+    DownloadTarball(tarball_address, tarball_name);
+    print 'Download Complete!';
 # Main
 def main(argv):
     parser = argparse.ArgumentParser();
@@ -312,6 +318,7 @@ def main(argv):
     parser.add_argument('-v', '--version', help='specify the version number from a release type', action='store');
     parser.add_argument('-p', '--package', help='specify the name of a package from a release', action='store');
     parser.add_argument('-b', '--build', help='specify the build number from a package', action='store');
+    parser.add_argument('-d', '--diff', help='specify the build number of a package to create diff against', action='store');
     args = parser.parse_args();
     
     release_type = '';
@@ -392,11 +399,14 @@ def main(argv):
         for build in found_builds:
             print build['build']+' - '+build['release'];
     else:
-        tarball_name = args.package+'-'+args.build+'.tar.gz';
-        print 'Downloading \"'+tarball_name+'\"...';
-        tarball_address = 'http://opensource.apple.com/tarballs/'+args.package+'/'+tarball_name;
-        DownloadTarball(tarball_address, tarball_name);
-        print 'Download Complete!';
+        DownloadPackage(args.package, args.build);
+        
+    if args.diff != None:
+        DownloadPackage(args.package, args.diff);
+        # decompress both
+        # delete archives
+        # perform diff
+        # delete source folders
 
 if __name__ == "__main__":
     main(sys.argv[1:]);
