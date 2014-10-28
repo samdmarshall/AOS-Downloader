@@ -3,6 +3,10 @@ import sys
 import argparse
 import plistlib
 import urllib2
+import gzip
+import tarfile
+import subprocess
+from subprocess import CalledProcessError
 # Version Map
 OSX_MAP = {
     '10.9.5': '1095',
@@ -305,11 +309,37 @@ def DownloadTarball(tarball_address, package_name):
     output.write(tarball.read());
     output.close();
 def DownloadPackage(package, build):
-    tarball_name = package+'-'+build+'.tar.gz';
+    package_name = package+'-'+build;
+    tarball_name = package_name+'.tar.gz';
     print 'Downloading \"'+tarball_name+'\"...';
     tarball_address = 'http://opensource.apple.com/tarballs/'+package+'/'+tarball_name;
     DownloadTarball(tarball_address, tarball_name);
     print 'Download Complete!';
+    print 'Decompressing '+tarball_name+' -> '+package_name;
+    gz_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), tarball_name);
+    gz_archive = gzip.open(gz_path, 'rb');
+    file_content = gz_archive.read();
+    tar_path = os.path.join(os.path.abspath(os.path.dirname(__file__)),package_name+'.tar');
+    open(tar_path, 'w').write(file_content);
+    gz_archive.close();
+    os.remove(gz_path);
+    tar_archive = tarfile.open(tar_path);
+    tar_archive.extractall();
+    tar_archive.close();
+    os.remove(tar_path);
+    print 'Decompression Complete!';
+def RunDiff(call_args, diff_path):
+    error = 0;
+    output = '';
+    try:
+        output = subprocess.check_output(call_args);
+        error = 0
+    except CalledProcessError as e:
+        output = e.output;
+        error = e.returncode;
+    diff_file = open(diff_path, 'w');
+    diff_file.write(output);
+    diff_file.close();
 # Main
 def main(argv):
     parser = argparse.ArgumentParser();
@@ -403,10 +433,10 @@ def main(argv):
         
     if args.diff != None:
         DownloadPackage(args.package, args.diff);
-        # decompress both
-        # delete archives
-        # perform diff
-        # delete source folders
+        first_package = os.path.join(os.path.abspath(os.path.dirname(__file__)), args.package+'-'+args.build);
+        second_package = os.path.join(os.path.abspath(os.path.dirname(__file__)), args.package+'-'+args.diff);
+        diff_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), args.package+'.diff');
+        diff_result = RunDiff(('diff', '-r', first_package, second_package), diff_path);
 
 if __name__ == "__main__":
     main(sys.argv[1:]);
