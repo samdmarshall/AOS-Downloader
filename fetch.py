@@ -436,6 +436,7 @@ def main(argv):
         first_package = os.path.join(os.path.abspath(os.path.dirname(__file__)), args.package+'-'+args.build);
         second_package = os.path.join(os.path.abspath(os.path.dirname(__file__)), args.package+'-'+args.diff);
         diff_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), args.package+'.diff');
+        print 'Creating source diff...';
         diff_result = RunDiff(('diff', '-r', first_package, second_package), diff_path);
 
 if __name__ == "__main__":

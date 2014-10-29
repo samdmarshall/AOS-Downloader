@@ -4,6 +4,10 @@ import sys
 import argparse
 import plistlib
 import urllib2
+import gzip
+import tarfile
+import subprocess
+from subprocess import CalledProcessError
 # Version Map
 OSX_MAP = {
     '10.9.5': '1095',
@@ -243,11 +247,26 @@ def DownloadTarball(tarball_address, package_name):
     output.write(tarball.read());
     output.close();
 def DownloadPackage(package, build):
-    tarball_name = package+'-'+build+'.tar.gz';
+    projects_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'projects');
+    package_name = package+'-'+build;
+    tarball_name = package_name+'.tar.gz';
     print 'Downloading \"'+tarball_name+'\"...';
     tarball_address = 'http://opensource.apple.com/tarballs/'+package+'/'+tarball_name;
-    DownloadTarball(tarball_address, os.path.join(os.path.join(os.getcwd(), 'projects'), tarball_name));
+    DownloadTarball(tarball_address, os.path.join(projects_path, tarball_name));
     print 'Download Complete!';
+    print 'Decompressing '+tarball_name+' -> '+package_name;
+    gz_path = os.path.join(projects_path, tarball_name);
+    gz_archive = gzip.open(gz_path, 'rb');
+    file_content = gz_archive.read();
+    tar_path = os.path.join(projects_path,package_name+'.tar');
+    open(tar_path, 'w').write(file_content);
+    gz_archive.close();
+    os.remove(gz_path);
+    tar_archive = tarfile.open(tar_path);
+    tar_archive.extractall(projects_path);
+    tar_archive.close();
+    os.remove(tar_path);
+    print 'Decompression Complete!';
 # Main
 def main(argv):
     parser = argparse.ArgumentParser();
