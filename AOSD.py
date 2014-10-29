@@ -99,6 +99,7 @@ def DownloadTarball(tarball_address, package_name):
     output.write(tarball.read());
     output.close();
 def DownloadPackage(package, build):
+    MakeProjectsDir();
     projects_path = GetProjectsDir();
     package_name = package+'-'+build;
     tarball_name = package_name+'.tar.gz';

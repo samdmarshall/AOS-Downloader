@@ -47,10 +47,8 @@ def main(argv):
             for package in package_names:
                 print 'Package: '+package+' - '+packages['projects'][package]['version'];
         elif args.package != None and args.build != None:
-            AOSD.MakeProjectsDir();
             AOSD.DownloadPackage(args.package, args.build);
         elif args.version != None and args.package != None:
-            AOSD.MakeProjectsDir();
             packages = AOSD_instance.GetPackageListForVersion([args.type, args.version]);
             version_build = packages['projects'][args.package]['version'];
             AOSD.DownloadPackage(args.package, version_build);

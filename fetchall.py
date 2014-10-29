@@ -16,7 +16,6 @@ def main(argv):
     else:
         packages = AOSD_instance.GetPackageListForVersion([args.type, args.version]);
         package_names = packages['projects'].keys();
-        AOSD.MakeProjectsDir();
         for package in packages['projects']:
             AOSD.DownloadPackage(package,packages['projects'][package]['version']);
 
