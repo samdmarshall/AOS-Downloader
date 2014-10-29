@@ -2,9 +2,11 @@
 
 This script allows for query and fetching of various open source releases from opensource.apple.com.
 
+To build off this script, use the AOSD.py file as a library.
+
 ##Usage:
 
-	$ python fetch.py [-h] -t TYPE [-l] [-v VERSION] [-p PACKAGE] [-b BUILD]
+	$ python fetch.py [-h] -t TYPE [-l] [-v VERSION] [-p PACKAGE] [-b BUILD] [-d DIFF]
 
 * TYPE
   * mac - Query OS X releases
@@ -21,6 +23,8 @@ This script allows for query and fetching of various open source releases from o
 * BUILD
   * the build number of the package to download
 
+* DIFF
+  * the version to take a diff to
 
 ##Examples:
 
@@ -74,3 +78,10 @@ This script allows for query and fetching of various open source releases from o
 	Decompressing CF-855.11.tar.gz -> CF-855.11
 	Decompression Complete!
 	Creating source diff...
+
+
+###Fetch all of 10.8.3
+
+	$ python fetchall.py -t mac -v 10.8.3
+
+
