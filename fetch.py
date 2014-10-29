@@ -1,38 +1,10 @@
 import os
 import sys
 import argparse
-import urllib2
-import gzip
-import tarfile
 import subprocess
 from subprocess import CalledProcessError
 import AOSD
 # Helper Functions
-def DownloadTarball(tarball_address, package_name):
-    tarball = urllib2.urlopen(tarball_address);
-    output = open(package_name,'wb');
-    output.write(tarball.read());
-    output.close();
-def DownloadPackage(package, build):
-    package_name = package+'-'+build;
-    tarball_name = package_name+'.tar.gz';
-    print 'Downloading \"'+tarball_name+'\"...';
-    tarball_address = 'http://opensource.apple.com/tarballs/'+package+'/'+tarball_name;
-    DownloadTarball(tarball_address, tarball_name);
-    print 'Download Complete!';
-    print 'Decompressing '+tarball_name+' -> '+package_name;
-    gz_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), tarball_name);
-    gz_archive = gzip.open(gz_path, 'rb');
-    file_content = gz_archive.read();
-    tar_path = os.path.join(os.path.abspath(os.path.dirname(__file__)),package_name+'.tar');
-    open(tar_path, 'w').write(file_content);
-    gz_archive.close();
-    os.remove(gz_path);
-    tar_archive = tarfile.open(tar_path);
-    tar_archive.extractall();
-    tar_archive.close();
-    os.remove(tar_path);
-    print 'Decompression Complete!';
 def RunDiff(call_args, diff_path):
     error = 0;
     output = '';
@@ -75,21 +47,22 @@ def main(argv):
             for package in package_names:
                 print 'Package: '+package+' - '+packages['projects'][package]['version'];
         elif args.package != None and args.build != None:
-            args.diff = None;
-            DownloadPackage(args.package, args.build);
+            AOSD.MakeProjectsDir();
+            AOSD.DownloadPackage(args.package, args.build);
         elif args.version != None and args.package != None:
+            AOSD.MakeProjectsDir();
             packages = AOSD_instance.GetPackageListForVersion([args.type, args.version]);
             version_build = packages['projects'][args.package]['version'];
-            DownloadPackage(args.package, version_build);
+            AOSD.DownloadPackage(args.package, version_build);
         else:
             args.diff = None;
             print 'Invalid arguments!';
             
         if args.diff != None:
-            DownloadPackage(args.package, args.diff);
-            first_package = os.path.join(os.path.abspath(os.path.dirname(__file__)), args.package+'-'+args.build);
-            second_package = os.path.join(os.path.abspath(os.path.dirname(__file__)), args.package+'-'+args.diff);
-            diff_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), args.package+'.diff');
+            AOSD.DownloadPackage(args.package, args.diff);
+            first_package = os.path.join(AOSD.GetProjectsDir(), args.package+'-'+args.build);
+            second_package = os.path.join(AOSD.GetProjectsDir(), args.package+'-'+args.diff);
+            diff_path = os.path.join(AOSD.GetProjectsDir(), args.package+'.diff');
             print 'Creating source diff...';
             diff_result = RunDiff(('diff', '-r', first_package, second_package), diff_path);
             print args.package+'.diff was created!';

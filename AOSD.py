@@ -1,12 +1,20 @@
 import os
 import plistlib
 import urllib2
+import gzip
+import tarfile
 from distutils.version import LooseVersion
 
 OSX_MAP_NEW_PREFIX_KEYS = ['10.9.5', '10.9.4', '10.9.3', '10.9.2', '10.9.1', '10.9'];
 IOS_MAP_NEW_PREFIX_KEYS = ['6.1.3', '6.1', '6.0.1', '6.0', '5.1.1', '5.1', '5.0', '4.3.3', '4.3.2', '4.3.1', '4.3', '4.2', '4.1', '4.0'];
 
 # Helper Functions
+def GetProjectsDir():
+    return os.path.join(os.path.abspath(os.path.dirname(__file__)),'projects');
+def MakeProjectsDir():
+    path = GetProjectsDir();
+    if os.path.exists(path) == False:
+        os.mkdir(path);
 def ListVersionCompare(obj1, obj2):
     # This code is for sorting by release version
     #version1 = obj1['release'];
@@ -85,6 +93,32 @@ def CheckAndAppendBuildInfo(elements, build_number):
         if should_append == False:
             break;
     return should_append;
+def DownloadTarball(tarball_address, package_name):
+    tarball = urllib2.urlopen(tarball_address);
+    output = open(package_name,'wb');
+    output.write(tarball.read());
+    output.close();
+def DownloadPackage(package, build):
+    projects_path = GetProjectsDir();
+    package_name = package+'-'+build;
+    tarball_name = package_name+'.tar.gz';
+    print 'Downloading \"'+tarball_name+'\"...';
+    tarball_address = 'http://opensource.apple.com/tarballs/'+package+'/'+tarball_name;
+    DownloadTarball(tarball_address, os.path.join(projects_path, tarball_name));
+    print 'Download Complete!';
+    print 'Decompressing '+tarball_name+' -> '+package_name;
+    gz_path = os.path.join(projects_path, tarball_name);
+    gz_archive = gzip.open(gz_path, 'rb');
+    file_content = gz_archive.read();
+    tar_path = os.path.join(projects_path,package_name+'.tar');
+    open(tar_path, 'w').write(file_content);
+    gz_archive.close();
+    os.remove(gz_path);
+    tar_archive = tarfile.open(tar_path);
+    tar_archive.extractall(projects_path);
+    tar_archive.close();
+    os.remove(tar_path);
+    print 'Decompression Complete!';
 # AOSD Class
 class AOSD():
     def MapType(self):
