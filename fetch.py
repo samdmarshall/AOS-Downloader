@@ -7,6 +7,7 @@ import gzip
 import tarfile
 import subprocess
 from subprocess import CalledProcessError
+from distutils.version import LooseVersion
 # Version Map
 OSX_MAP = {
     '10.9.5': '1095',
@@ -219,6 +220,22 @@ SERVER_MAP = {
 SERVER_MAP_PREFIX = 'os-x-server';
 
 # Helper Functions
+def ListVersionCompare(obj1, obj2):
+    # This code is for sorting by release version
+    #version1 = obj1['release'];
+    #version2 = obj2['release'];
+    #return VersionCompare(version1, version2);
+    # This code is for sorting by build version
+    version1 = obj1['build'];
+    version2 = obj2['build'];
+    versions = [ version1, version2 ];
+    versions.sort(key=LooseVersion);
+    if versions[0] == version1:
+        return -1;
+    elif versions[0] == version2:
+        return 1;
+    else:
+        return 0;
 def VersionCompareParseTypeResolve(elements, index):
     if index <= 2:
         return int(elements[index]);
@@ -390,7 +407,7 @@ def main(argv):
         
         if args.list == True and args.version == None:
             list_items =  release_map.keys();
-            list_items = sorted(list_items, cmp=VersionCompare)
+            list_items = sorted(list_items, cmp=VersionCompare);
             PrintSortedList(list_items);
             sys.exit();
         
@@ -426,6 +443,7 @@ def main(argv):
                         'build': build_number
                     };
                     found_builds.append(build_info);
+        found_builds = sorted(found_builds, cmp=ListVersionCompare)
         for build in found_builds:
             print build['build']+' - '+build['release'];
     else:
@@ -438,6 +456,7 @@ def main(argv):
         diff_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), args.package+'.diff');
         print 'Creating source diff...';
         diff_result = RunDiff(('diff', '-r', first_package, second_package), diff_path);
+        print args.package+'.diff was created!';
 
 if __name__ == "__main__":
     main(sys.argv[1:]);
