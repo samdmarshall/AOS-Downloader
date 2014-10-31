@@ -5,7 +5,7 @@ import gzip
 import tarfile
 from distutils.version import LooseVersion
 
-OSX_MAP_NEW_PREFIX_KEYS = ['10.9.5', '10.9.4', '10.9.3', '10.9.2', '10.9.1', '10.9'];
+OSX_MAP_NEW_PREFIX_KEYS = ['10.10', '10.9.5', '10.9.4', '10.9.3', '10.9.2', '10.9.1', '10.9'];
 IOS_MAP_NEW_PREFIX_KEYS = ['6.1.3', '6.1', '6.0.1', '6.0', '5.1.1', '5.1', '5.0', '4.3.3', '4.3.2', '4.3.1', '4.3', '4.2', '4.1', '4.0'];
 
 # Helper Functions
