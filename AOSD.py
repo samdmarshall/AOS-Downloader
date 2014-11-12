@@ -9,12 +9,17 @@ OSX_MAP_NEW_PREFIX_KEYS = ['10.10', '10.9.5', '10.9.4', '10.9.3', '10.9.2', '10.
 IOS_MAP_NEW_PREFIX_KEYS = ['6.1.3', '6.1', '6.0.1', '6.0', '5.1.1', '5.1', '5.0', '4.3.3', '4.3.2', '4.3.1', '4.3', '4.2', '4.1', '4.0'];
 
 # Helper Functions
+def GetCacheDir():
+    return os.path.join(os.path.abspath(os.path.dirname(__file__)),'cache');
 def GetProjectsDir():
     return os.path.join(os.path.abspath(os.path.dirname(__file__)),'projects');
-def MakeProjectsDir():
-    path = GetProjectsDir();
+def CheckMakeDir(path):
     if os.path.exists(path) == False:
         os.mkdir(path);
+def MakeProjectsDir():
+    CheckMakeDir(GetProjectsDir());
+def MakeCacheDir():
+    CheckMakeDir(GetCacheDir());
 def ListVersionCompare(obj1, obj2):
     # This code is for sorting by release version
     #version1 = obj1['release'];
@@ -82,9 +87,20 @@ def VersionCompare(obj1, obj2):
         return VersionCompareParse(version1_elements, version1, version2_elements, version2, index);
 
 def GetPlistFromURL(url):
-    request = urllib2.Request(url);
-    response = urllib2.urlopen(request);
-    return plistlib.readPlistFromString(response.read());
+    head, tail = os.path.split(url);
+    cached_path = os.path.join(GetCacheDir(),tail);
+    MakeCacheDir();
+    if os.path.exists(cached_path) == False:
+        request = urllib2.Request(url);
+        response = urllib2.urlopen(request);
+        output = open(cached_path, 'wb');
+        output.write(response.read());
+        output.close();
+    
+    if os.path.exists(cached_path) == True:
+        return plistlib.readPlist(cached_path);
+    else:
+        sys.exit();
 def CheckAndAppendBuildInfo(elements, build_number):
     should_append = True;
     for item in elements:
