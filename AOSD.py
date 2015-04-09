@@ -5,7 +5,7 @@ import gzip
 import tarfile
 from distutils.version import LooseVersion
 
-OSX_MAP_NEW_PREFIX_KEYS = ['10.10', '10.9.5', '10.9.4', '10.9.3', '10.9.2', '10.9.1', '10.9'];
+OSX_MAP_NEW_PREFIX_KEYS = ['10.10.1', '10.10', '10.9.5', '10.9.4', '10.9.3', '10.9.2', '10.9.1', '10.9'];
 IOS_MAP_NEW_PREFIX_KEYS = ['6.1.3', '6.1', '6.0.1', '6.0', '5.1.1', '5.1', '5.0', '4.3.3', '4.3.2', '4.3.1', '4.3', '4.2', '4.1', '4.0'];
 
 # Helper Functions
@@ -120,7 +120,7 @@ def DownloadPackage(package, build):
     package_name = package+'-'+build;
     tarball_name = package_name+'.tar.gz';
     print 'Downloading \"'+tarball_name+'\"...';
-    tarball_address = 'http://opensource.apple.com/tarballs/'+package+'/'+tarball_name;
+    tarball_address = 'https://opensource.apple.com/tarballs/'+package+'/'+tarball_name;
     try:
         DownloadTarball(tarball_address, os.path.join(projects_path, tarball_name));
         print 'Download Complete!';
@@ -157,6 +157,7 @@ class AOSD():
         };
     def OSX_MAP(self):
         return {
+            '10.10.1': '10101'
             '10.10': '1010',
             '10.9.5': '1095',
             '10.9.4': '1094',
@@ -400,7 +401,7 @@ class AOSD():
             return 'invalid';
     def CreatePackagePlistAddress(self, args):
         mapping_string = self.ResolveMapping(args);
-        return 'http://opensource.apple.com/plist/'+mapping_string+'.plist';
+        return 'https://opensource.apple.com/plist/'+mapping_string+'.plist';
     def GetPackageListForVersion(self, args):
         package_address = self.CreatePackagePlistAddress(args);
         search_packages = GetPlistFromURL(package_address);
