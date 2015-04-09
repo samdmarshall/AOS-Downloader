@@ -1,4 +1,5 @@
 import os
+import sys
 import plistlib
 import urllib2
 import gzip
@@ -92,15 +93,30 @@ def GetPlistFromURL(url):
     MakeCacheDir();
     if os.path.exists(cached_path) == False:
         request = urllib2.Request(url);
-        response = urllib2.urlopen(request);
-        output = open(cached_path, 'wb');
-        output.write(response.read());
-        output.close();
+        response = None;
+        try: 
+            response = urllib2.urlopen(request);
+        except urllib2.HTTPError, e:
+            print 'HTTPError = ' + str(e.code) + ' on ' + url;
+            response = None;
+        except urllib2.URLError, e:
+            print 'URLError = ' + str(e.reason) + ' on ' + url;
+            response = None;
+        except httplib.HTTPException, e:
+            print 'HTTPException' + ' on ' + url;
+            response = None;
+        except Exception:
+            print 'Exception :( on ' + url;
+            response = None;
+        if response != None:
+            output = open(cached_path, 'wb');
+            output.write(response.read());
+            output.close();
     
     if os.path.exists(cached_path) == True:
         return plistlib.readPlist(cached_path);
     else:
-        sys.exit();
+        return {};
 def CheckAndAppendBuildInfo(elements, build_number):
     should_append = True;
     for item in elements:
@@ -412,13 +428,14 @@ class AOSD():
         found_builds = [];
         for version in self.MapType()[arg_items[0]]().keys():
             search_packages = self.GetPackageListForVersion([arg_items[0], version])
-            if arg_items[1] in search_packages['projects']: 
-                build_number = search_packages['projects'][arg_items[1]]['version'];
-                if CheckAndAppendBuildInfo(found_builds, build_number) == True:
-                    build_info = {
-                        'release': version,
-                        'build': build_number
-                    };
-                    found_builds.append(build_info);
+            if 'projects' in search_packages.keys():
+                if arg_items[1] in search_packages['projects']: 
+                    build_number = search_packages['projects'][arg_items[1]]['version'];
+                    if CheckAndAppendBuildInfo(found_builds, build_number) == True:
+                        build_info = {
+                            'release': version,
+                            'build': build_number
+                        };
+                        found_builds.append(build_info);
         found_builds = sorted(found_builds, cmp=ListVersionCompare)
         return found_builds;
