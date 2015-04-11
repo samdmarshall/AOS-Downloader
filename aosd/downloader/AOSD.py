@@ -168,7 +168,7 @@ class AOSD():
         return {
             'mac': 'OS X',
             'ios': 'iOS',
-            'dev': 'Developer Tool',
+            'dev': 'Developer Tools',
             'server': 'OS X Server'
         };
     def OSX_MAP(self):
