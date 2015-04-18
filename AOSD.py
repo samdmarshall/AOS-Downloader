@@ -126,10 +126,25 @@ def CheckAndAppendBuildInfo(elements, build_number):
             break;
     return should_append;
 def DownloadTarball(tarball_address, package_name):
-    tarball = urllib2.urlopen(tarball_address);
-    output = open(package_name,'wb');
-    output.write(tarball.read());
-    output.close();
+    tarball = None;
+    try: 
+        tarball = urllib2.urlopen(tarball_address);
+    except urllib2.HTTPError, e:
+        print 'HTTPError = ' + str(e.code) + ' on ' + url;
+        tarball = None;
+    except urllib2.URLError, e:
+        print 'URLError = ' + str(e.reason) + ' on ' + url;
+        tarball = None;
+    except httplib.HTTPException, e:
+        print 'HTTPException' + ' on ' + url;
+        tarball = None;
+    except Exception:
+        print 'Exception :( on ' + url;
+        tarball = None;
+    if tarball != None:
+        output = open(package_name, 'wb');
+        output.write(tarball.read());
+        output.close();
 def DownloadPackage(package, build):
     MakeProjectsDir();
     projects_path = GetProjectsDir();
