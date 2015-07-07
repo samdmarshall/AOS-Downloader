@@ -290,6 +290,8 @@ class AOSD():
 
     def DEVELOPER_MAP(self):
         return {
+            '6.3': '63',
+            '6.2': '62',
             '6.1': '61',
             '6.0': '60',
             
