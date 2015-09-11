@@ -8,8 +8,10 @@
 		<key>first_run</key>
 		<true/>
 		
+		<!-- this is a future feature -->
 		<key>requests_via_https</key>
 		<true/>
+		
 		
 	</dict>
 </plist>

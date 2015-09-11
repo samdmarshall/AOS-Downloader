@@ -1,3 +1,5 @@
+from ..logging_helper import *
+
 from ..downloader.cacher import *
 
 class cmd_cache(object):
@@ -30,11 +32,12 @@ class cmd_cache(object):
         release_type = None;
         if 'type' in args.keys():
             release_type = args['type'];
-        
-        if cache_action == 'download_type':
-            cacher.fetch(release_type, None);
-        if cache_action == 'download_all':
-            cacher.fetch(None, None);
+        if cache_action == 'download_type' or cache_action == 'download_all':
+            if cache_action == 'download_type':
+                cacher.fetch(release_type, None);
+            if cache_action == 'download_all':
+                cacher.fetch(None, None);
+            logging_helper.getLogger().info(': Download complete, please run the "cache rebuild" command to update the index');
         if cache_action == 'clear_type':
             cacher.flush(release_type, None);
         if cache_action == 'clear_all':

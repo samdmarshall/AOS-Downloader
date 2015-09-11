@@ -1,4 +1,5 @@
 from ..downloader.versions import *
+from ..downloader.cacher import *
 
 class cmd_version(object):
     
@@ -25,4 +26,4 @@ class cmd_version(object):
     
     @classmethod
     def action(cls, args):
-        return;
+        cacher.fetch(args['type'], args['version']);

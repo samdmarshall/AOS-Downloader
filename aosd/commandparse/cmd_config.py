@@ -30,7 +30,7 @@ class cmd_config(object):
     def action(cls, args):
         if args[0] == 'display':
             settings = config.read();
-            print '\nCurrent Configuration:';
+            logging_helper.getLogger().info(': Current Configuration');
             for key in settings:
                 print '"'+key+'": "'+str(settings[key])+'"';
         if args[0] == 'set':
@@ -43,3 +43,4 @@ class cmd_config(object):
                     logging_helper.getLogger().error(': Attempting to set unrecognized key "'+args[1]+'".')
         if args[0] == 'defaults':
             config.defaults();
+            logging_helper.getLogger().info(': Default configuration has been restored.');

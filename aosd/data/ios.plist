@@ -5,13 +5,462 @@
 		
 		<dict>
 			<key>name</key>
-			<string></string>
-			<key>version</key>
-			<string></string>
+			<string>8.4.1</string>
 			<key>prefix</key>
-			<string></string>
+			<string>ios</string>
+			<key>version</key>
+			<string>841</string>
 		</dict>
 		
+		<dict>
+			<key>name</key>
+			<string>8.4</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>84</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>8.3</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>83</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>8.2</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>82</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>8.1.3</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>813</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>8.1.1</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>811</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>8.1</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>81</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>8.0.1</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>801</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>8.0</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>80</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>7.1.2</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>712</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>7.1.1</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>711</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>7.1</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>71</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>7.0.3</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>703</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>7.0</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>70</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>6.1.3</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>613</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>6.1</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>61</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>6.0.1</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>601</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>6.0</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>60</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>5.1.1</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>511</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>5.1</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>51</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>5.0</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>50</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>4.3.3</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>433</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>4.3.2</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>432</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>4.3.1</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>431</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>4.3</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>43</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>4.2</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>42</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>4.1</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>41</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>4.0</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>40</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.2</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>32</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.1.3</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>313</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.1.2</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>312</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.1.1</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>311</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.1</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>31</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.0</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>30</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>2.2.1</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>221</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>2.2</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>22</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>2.1</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>21</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>2.0</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>20</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>SDKb8</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>sdkb8</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>SDKb7</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>sdkb7</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>SDKb6</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>sdkb6</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>SDKb5</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>sdkb5</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>SDKb4</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>sdkb4</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>SDKb3</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>sdkb3</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>SDKb2</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>sdkb2</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>1.1.4</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>114</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>1.1.3</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>113</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>1.1.2</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>112</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>1.1.1</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>111</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>1.0.1</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>101</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>1.0</string>
+			<key>prefix</key>
+			<string>iphone</string>
+			<key>version</key>
+			<string>10</string>
+		</dict>
 		
 	</array>
 </plist>

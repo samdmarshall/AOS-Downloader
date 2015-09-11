@@ -22,8 +22,7 @@ class cmd_package(object):
             input = args[0];
             build_number = None;
             if version != None:
-                release_info = releases.getInfo(release_type, version);
-                build_number = builds.resolveNumberFromVersion(release_type, release_info['version'], input);
+                build_number = builds.resolveNumberFromVersion(release_type, version, input);
             return (input in cls.validValues(release_type, version), [input, build_number]);
         else:
             return (False, None);

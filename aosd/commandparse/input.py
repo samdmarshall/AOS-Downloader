@@ -144,7 +144,7 @@ class input(cmd.Cmd):
                 if 'build' in self.display_info.keys():
                     del self.display_info['build'];
                 if 'package' in self.display_info.keys():
-                    package_result = cmd_package.query(release_type, release_version, self.display_info['package']);
+                    package_result = cmd_package.query(release_type, result[1], self.display_info['package']);
                     if package_result[0] == True:
                         self.display_info['build'] = package_result[1][1];
                 cmd_version.action(self.display_info);
@@ -217,6 +217,7 @@ class input(cmd.Cmd):
             release_type = self.display_info['type'];
             package_name = self.display_info['package'];
             build_numbers = cmd_build.validValues(release_type, package_name);
+            print 'testing autocomplete';
             if not text:
                 completions = build_numbers[:];
             else:

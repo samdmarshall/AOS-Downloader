@@ -25,7 +25,7 @@ def main():
     parser.add_argument(
         '-t', 
         '--type', 
-        help='specify the release type "mac", "ios", "server", "dev"', 
+        help='specify the release type', 
         required=False,
         action='store'
     );
@@ -90,7 +90,7 @@ def main():
     args_dict = vars(parser.parse_args());
     
     if config.getFirstRun() == True:
-        logging_helper.getLogger().info(': This appears to be the first time this has been run, it is highly recommended that you run the "cache setup" command or pass "--build-cache" on the command line.');
+        logging_helper.getLogger().info(': This appears to be the first time this has been run, it is highly recommended that you run the "cache setup" command or pass "--build-cache" on the command line. This software can be used without this command being run but some of the autocomplete will not work.');
     
     if CheckPassedArgCount(args_dict) == 0:
         if 'libedit' in readline.__doc__:

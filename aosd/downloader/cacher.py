@@ -55,12 +55,16 @@ class cacher(object):
                 type_versions = versions.get(release_type);
                 for version in type_versions:
                     release_version_info = releases.getInfo(release_type, version);
-                    files.append(cls.get(release_type, release_version_info['name']));
+                    path = cls.get(release_type, release_version_info['name']);
+                    if path != None:
+                        files.append(path);
         else:
             files = {};
             types = releases.get();
             for type_name in types:
-                files[type_name] = cls.get(type_name, None);
+                packages = cls.get(type_name, None);
+                if len(packages) > 0:
+                    files[type_name] = packages;
         return files;
     
     @classmethod
@@ -91,7 +95,7 @@ class cacher(object):
                 release_info_dict = releases.getInfo(release_type, release_version);
                 release_plist_name = cls.CreateCacheFileName(release_info_dict['prefix'], release_info_dict['version']);
                 cached_file_path = cls.GetCacheFile(release_plist_name);
-
+                
                 if os.path.exists(cached_file_path) == True:
                     logging_helper.getLogger().info(': Removing version manifest ('+release_plist_name+')...');
                     manager.RemovePackageManifest(cached_file_path);
@@ -99,11 +103,11 @@ class cacher(object):
                 type_versions = versions.get(release_type);
                 for version in type_versions:
                     release_version_info = releases.getInfo(release_type, version);
-                    cls.fetch(release_type, release_version_info['name']);
+                    cls.flush(release_type, release_version_info['name']);
         else:
             types = releases.get();
             for type_name in types:
-                cls.fetch(type_name, None);
+                cls.flush(type_name, None);
     
     @classmethod
     def rebuild(cls):
