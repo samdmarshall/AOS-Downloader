@@ -105,7 +105,7 @@ class config(object):
     @classmethod
     def defaults(cls):
         default_values = {
-            'core_url': 'https://raw.githubusercontent.com/samdmarshall/AOS-Downloader/refactor/aosd/data/',
+            'core_url': 'https://raw.githubusercontent.com/samdmarshall/AOS-Downloader/master/aosd/data/',
             'first_run': True,
             'requests_via_https': True,
             'download_directory': '~/Downloads',
