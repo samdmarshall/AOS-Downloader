@@ -27,4 +27,4 @@ class cmd_version(object):
     @classmethod
     def action(cls, args):
         cacher.fetch(args['type'], args['version']);
-        print '====================';
+        print('====================');

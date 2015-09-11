@@ -34,7 +34,6 @@ class cacher(object):
                 for key in version_manifest_dict['projects']:
                     packages.append(key);
         else:
-            print '\n';
             logging_helper.getLogger().error(': Must supply a release type, set this using the "type" command.');
         return (found_manifest, packages);
     

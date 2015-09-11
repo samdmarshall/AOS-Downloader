@@ -32,7 +32,7 @@ class cmd_config(object):
             settings = config.read();
             logging_helper.getLogger().info(': Current Configuration:');
             for key in settings:
-                print '"'+key+'": "'+str(settings[key])+'"';
+                print('"'+key+'": "'+str(settings[key])+'"');
         if args[0] == 'set':
             if len(args) == 3:
                 if args[1] == 'core_url':
@@ -50,4 +50,4 @@ class cmd_config(object):
         if args[0] == 'defaults':
             config.defaults();
             logging_helper.getLogger().info(': Default configuration has been restored.');
-        print '====================';
+        print('====================');

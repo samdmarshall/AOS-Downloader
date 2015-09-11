@@ -48,4 +48,4 @@ class cmd_cache(object):
             cacher.flush(None, None);
             cacher.fetch(None, None);
             cacher.rebuild();
-        print '====================';
+        print('====================');

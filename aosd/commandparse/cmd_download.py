@@ -34,8 +34,7 @@ class cmd_download(object):
             build_number = args['build'];
         
         if has_build == False and has_version == True:
-            print 'resolve the build number from the version!';
-            has_build = True;
+            logging_helper.getLogger().error(': Could not resolve the build number from the version!');
         
         if has_type == True and has_package == True and has_build == True:
             release_type = args['type'];
@@ -50,4 +49,4 @@ class cmd_download(object):
             
             if has_build == False:
                 logging_helper.getLogger().error(': Cannot download package without a version set. Use the "version" command or the "build" command.');
-        print '====================';
+        print('====================');

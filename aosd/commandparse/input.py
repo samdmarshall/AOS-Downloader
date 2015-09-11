@@ -42,8 +42,8 @@ class input(cmd.Cmd):
         return arg_words;
     
     def DisplayUsage(self, cmd_usage):
-        print 'Command: ';
-        print '%10s %s\n%10s %s\n' % (cmd_usage['name'], cmd_usage['args'], '-', cmd_usage['desc']);
+        print('Command: ');
+        print('%10s %s\n%10s %s\n' % (cmd_usage['name'], cmd_usage['args'], '-', cmd_usage['desc']));
     
     def GenerateInfo(self):
         info = [];
@@ -60,7 +60,7 @@ class input(cmd.Cmd):
     def postcmd(self, stop, line):
         info_string = self.GenerateInfo();
         if len(info_string) > 0:
-            print '\n'+info_string;
+            print('\n'+info_string);
         return stop;
     
     # Quit

@@ -20,5 +20,5 @@ class cmd_quit(object):
     
     @classmethod
     def action(cls, args):
-        print 'Quitting!';
+        print('Quitting!');
         sys.exit();

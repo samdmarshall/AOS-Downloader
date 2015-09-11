@@ -21,4 +21,4 @@ class cmd_update(object):
     @classmethod
     def action(cls, args):
         update.fetch();
-        print '====================';
+        print('====================');
