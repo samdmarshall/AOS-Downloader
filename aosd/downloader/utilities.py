@@ -8,8 +8,8 @@ class utilities(object):
 
     @classmethod
     def GetReleasePlistPath(cls):
-        return utilities.GetLookupPlistPath('releases');
+        return cls.GetLookupPlistPath('releases');
     
     @classmethod
     def GetConfigurationPlistPath(cls):
-        return utilities.GetLookupPlistPath('aosd');
+        return cls.GetLookupPlistPath('aosd');

@@ -11,6 +11,10 @@ class cmd_quit(object):
         };
     
     @classmethod
+    def validValues(cls):
+        return [];
+    
+    @classmethod
     def query(cls, args):
         return (True, None);
     

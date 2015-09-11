@@ -1,4 +1,3 @@
-from .AOSD import *
 from .cacher import *
 from .releases import *
 from .update import *
@@ -7,3 +6,4 @@ from .builds import *
 from .packages import *
 from .versions import *
 from .utilities import *
+from .config import *
