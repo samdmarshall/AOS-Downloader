@@ -100,7 +100,7 @@ def main():
         aosd_shell = input();
         aosd_shell.cmdloop();
     else:
-        print 'pass args';
+        logging_helper.getLogger().info(': Command line flags are not currently implemented, please run using the command console.');
     
 
 if __name__ == "__main__":
