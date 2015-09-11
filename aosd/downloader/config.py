@@ -41,7 +41,7 @@ class config(object):
     @classmethod
     def getDownloadDir(cls):
         settings = cls.read();
-        return settings['download_directory'];
+        return os.expanduser(settings['download_directory']);
     
     @classmethod
     def setDownloadDir(cls, download_dir):
