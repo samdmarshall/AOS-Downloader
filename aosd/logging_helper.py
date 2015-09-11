@@ -19,7 +19,7 @@ class logging_helper(object):
     @staticmethod
     def getLogger():
         if logging_helper._internal_logger == None:
-            logging_helper._internal_logger = logging.getLogger('com.samdmarshall.py.logging_helper');
+            logging_helper._internal_logger = logging.getLogger('com.pewpewthespells.py.logging_helper');
             logging_helper._internal_logger.setLevel(logging.INFO);
             
             ch = logging.StreamHandler()

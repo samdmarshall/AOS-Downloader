@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<array>
+		<dict>
+			<key>name</key>
+			<string>6.3</string>
+			<key>version</key>
+			<string>63</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>6.2</string>
+			<key>version</key>
+			<string>62</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>6.1</string>
+			<key>version</key>
+			<string>61</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>6.0</string>
+			<key>version</key>
+			<string>60</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>5.1</string>
+			<key>version</key>
+			<string>51</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>5.0</string>
+			<key>version</key>
+			<string>50</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>4.6</string>
+			<key>version</key>
+			<string>46</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>4.5</string>
+			<key>version</key>
+			<string>45</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>4.4</string>
+			<key>version</key>
+			<string>44</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>4.3</string>
+			<key>version</key>
+			<string>43</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>4.2</string>
+			<key>version</key>
+			<string>42</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>4.1</string>
+			<key>version</key>
+			<string>41</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>4.0</string>
+			<key>version</key>
+			<string>40</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.2.6</string>
+			<key>version</key>
+			<string>326</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.2.5</string>
+			<key>version</key>
+			<string>325</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.2.4</string>
+			<key>version</key>
+			<string>324</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.2.3</string>
+			<key>version</key>
+			<string>323</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.2.2</string>
+			<key>version</key>
+			<string>322</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.2.1</string>
+			<key>version</key>
+			<string>321</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.2</string>
+			<key>version</key>
+			<string>32</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.1.4</string>
+			<key>version</key>
+			<string>314</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.1.3</string>
+			<key>version</key>
+			<string>313</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.1.2</string>
+			<key>version</key>
+			<string>312</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.1.1</string>
+			<key>version</key>
+			<string>311</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.1</string>
+			<key>version</key>
+			<string>31</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.1b</string>
+			<key>version</key>
+			<string>31b</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>3.0</string>
+			<key>version</key>
+			<string>30</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>2.5</string>
+			<key>version</key>
+			<string>25</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>2.4.1</string>
+			<key>version</key>
+			<string>241</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>2.4</string>
+			<key>version</key>
+			<string>24</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>2.3</string>
+			<key>version</key>
+			<string>23</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>2.2</string>
+			<key>version</key>
+			<string>22</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>2.1</string>
+			<key>version</key>
+			<string>21</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>WWDC2004DP</string>
+			<key>version</key>
+			<string>wwdc2004dp</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>WWDC2003DP</string>
+			<key>version</key>
+			<string>wwdc2003dp</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>Nov2004</string>
+			<key>version</key>
+			<string>nov2004</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>1.5</string>
+			<key>version</key>
+			<string>15</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>1.2</string>
+			<key>version</key>
+			<string>12</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>Jun2003</string>
+			<key>version</key>
+			<string>jun2003</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>Dec2002</string>
+			<key>version</key>
+			<string>dec2002</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>May2002</string>
+			<key>version</key>
+			<string>may2002</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
+			<string>Dec2001</string>
+			<key>version</key>
+			<string>dec2001</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+	</array>
+</plist>

@@ -1,13 +1,13 @@
-import sys
+from ..downloader.update import *
 
-class cmd_quit(object):
+class cmd_update(object):
     
     @classmethod
     def usage(cls):
         return {
-            'name': 'quit',
+            'name': 'update',
             'args': '',
-            'desc': 'Quits aosd'
+            'desc': 'updates the current open source manifests'
         };
     
     @classmethod
@@ -16,5 +16,5 @@ class cmd_quit(object):
     
     @classmethod
     def action(cls, args):
-        print 'Quitting!';
-        sys.exit();
+        update.fetch();
+        print '====================';

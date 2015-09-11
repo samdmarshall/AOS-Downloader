@@ -1,3 +1,6 @@
+from ..downloader.packages import *
+from ..downloader.builds import *
+
 class cmd_package(object):
     
     @classmethod
@@ -9,14 +12,21 @@ class cmd_package(object):
         };
     
     @classmethod
-    def validValues(cls, release_type=None, version=None):
-        return [];
+    def validValues(cls, release_type, release_version):
+        return packages.get(release_type, release_version);
     
     @classmethod
-    def action(cls, args):
+    def query(cls, release_type, version, args):
         # only use the first value;
         if len(args) > 0:
             input = args[0];
-            return (input in cls.validValues(), input);
+            build_number = None;
+            if version != None:
+                build_number = builds.resolveNumberFromVersion(release_type, version, input);
+            return (input in cls.validValues(release_type, version), [input, build_number]);
         else:
             return (False, None);
+    
+    @classmethod
+    def action(cls, args):
+        return;

@@ -1,3 +1,6 @@
+from ..downloader.versions import *
+from ..downloader.cacher import *
+
 class cmd_version(object):
     
     @classmethod
@@ -9,14 +12,19 @@ class cmd_version(object):
         };
     
     @classmethod
-    def validValues(cls, aosd_instance):
-        return [];
+    def validValues(cls, release_type):
+        return versions.get(release_type);
     
     @classmethod
-    def action(cls, args):
+    def query(cls, release_type, args):
         # only use the first value;
         if len(args) > 0:
             input = args[0];
-            return (input in cls.validValues(), input);
+            return (input in cls.validValues(release_type), input);
         else:
             return (False, None);
+    
+    @classmethod
+    def action(cls, args):
+        cacher.fetch(args['type'], args['version']);
+        print '====================';
