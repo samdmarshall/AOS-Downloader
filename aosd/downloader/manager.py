@@ -64,7 +64,8 @@ class manager(object):
                 logging_helper.getLogger().info(': Decompressing "'+output_file+'" -> "'+package_file_name+'"...');
             gz_archive = gzip.open(output_file, 'rb');
             file_content = gz_archive.read();
-            tar_path = os.path.join(output_directory, os.path.splitext(package_file_name)[0]);
+            tar_name = os.path.splitext(package_file_name)[0];
+            tar_path = os.path.join(output_directory, tar_name);
             open(tar_path, 'w').write(file_content);
             gz_archive.close();
             os.remove(output_file);
@@ -74,6 +75,8 @@ class manager(object):
             if config.getVerboseLogging() == True:
                 logging_helper.getLogger().info(': Decompression Complete!');
             os.remove(tar_path);
+            file_name = os.path.splitext(tar_name)[0];
+            logging_helper.getLogger().info(': The package "'+file_name+'" has been downloaded to "'+output_directory+'".');
         except:
             logging_helper.getLogger().error(': Could not find tarball!');
     
