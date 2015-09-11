@@ -8,7 +8,7 @@ from .utilities import *
 class releases(object):
     
     @classmethod
-    def GetReleases(cls):
+    def get(cls):
         releases = [];
         releases_dict_path = utilities.GetReleasePlistPath();
         if os.path.exists(releases_dict_path) == True:
@@ -23,7 +23,7 @@ class releases(object):
         return releases;
     
     @classmethod
-    def GetReleaseDisplayName(cls, release_type):
+    def getDisplayName(cls, release_type):
         release_display_name = '';
         releases_dict_path = utilities.GetReleasePlistPath();
         if os.path.exists(releases_dict_path) == True:
@@ -38,7 +38,7 @@ class releases(object):
         return release_display_name;
     
     @classmethod
-    def GetReleaseInfo(cls, release_type, version):
+    def getInfo(cls, release_type, version):
         info_dict = {};
         if release_type != None:
             if version != None:
@@ -53,5 +53,5 @@ class releases(object):
                 else:
                     logging_helper.getLogger().error(': Could not find a versions manifest for release type "'+release_type+'". If you think this is an error, run the "update" command.');
             else:
-                print;
+                logging_helper.getLogger().error(': Must supply a version number!');
         return info_dict;

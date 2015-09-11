@@ -6,13 +6,13 @@ class cmd_cache(object):
     def usage(cls):
         return {
             'name': 'cache',
-            'args': '[download_type|download_all|clear_type|clear_all|rebuild]',
+            'args': '[download_type|download_all|clear_type|clear_all|rebuild|setup]',
             'desc': 'performs an action on the cache of a particular release type'
         };
     
     @classmethod
     def validValues(cls, release_type=None, version=None):
-        return ['download_type', 'download_all', 'clear_type', 'clear_all', 'rebuild'];
+        return ['download_type', 'download_all', 'clear_type', 'clear_all', 'rebuild', 'setup'];
     
     @classmethod
     def query(cls, args):
@@ -32,13 +32,16 @@ class cmd_cache(object):
             release_type = args['type'];
         
         if cache_action == 'download_type':
-            cacher.fetch_cache(release_type, None);
+            cacher.fetch(release_type, None);
         if cache_action == 'download_all':
-            cacher.fetch_cache(None, None);
+            cacher.fetch(None, None);
         if cache_action == 'clear_type':
-            cacher.flush_cache(release_type, None);
+            cacher.flush(release_type, None);
         if cache_action == 'clear_all':
-            cacher.flush_cache(None, None);
+            cacher.flush(None, None);
         if cache_action == 'rebuild':
+            cacher.rebuild();
+        if cache_action == 'setup':
+            cacher.fetch(None, None);
             cacher.rebuild();
         

@@ -1,7 +1,7 @@
 from ..downloader.releases import *
 
 def FormatForArgumentDisplay():
-    return '['+'|'.join(releases.GetReleases())+']';
+    return '['+'|'.join(releases.get())+']';
 
 class cmd_type(object):
     
@@ -15,7 +15,7 @@ class cmd_type(object):
     
     @classmethod
     def validValues(cls):
-        return releases.GetReleases();
+        return releases.get();
     
     @classmethod
     def query(cls, args):

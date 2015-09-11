@@ -8,10 +8,10 @@ class cmd_build(object):
             'args': '<build version>',
             'desc': 'selects a build version for the currently selected package'
         };
-
+    
     @classmethod
     def validValues(cls, release_type, package_name):
-        return builds.GetBuilds(release_type, package_name);
+        return builds.get(release_type, package_name);
 
     @classmethod
     def query(cls, release_type, package_name, args):

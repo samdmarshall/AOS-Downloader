@@ -8,7 +8,7 @@ setup(
     author='Samantha Marshall',
     author_email='hello@pewpewthespells.com',
     license='BSD 3-Clause',
-    package_data = { 'aosd/data': ['*.plist', 'aosd.config'], 'aosd/data/cache': ['cache.config', '*.plist'] },
+    package_data = { 'aosd/data': ['*.plist'], 'aosd/data/cache': ['package_cache.plist'] },
     packages=['aosd', 'aosd/commandparse', 'aosd/downloader', 'aosd/data', 'aosd/data/cache'],
     entry_points = {
         'console_scripts': ['aosd = aosd:main'],

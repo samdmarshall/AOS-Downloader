@@ -4,6 +4,7 @@ from ..logging_helper import *
 from ..downloader.manager import *
 
 class cmd_download(object):
+    
     @classmethod
     def usage(cls):
         return {

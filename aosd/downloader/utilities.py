@@ -9,3 +9,7 @@ class utilities(object):
     @classmethod
     def GetReleasePlistPath(cls):
         return utilities.GetLookupPlistPath('releases');
+    
+    @classmethod
+    def GetConfigurationPlistPath(cls):
+        return utilities.GetLookupPlistPath('aosd');

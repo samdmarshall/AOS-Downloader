@@ -7,6 +7,7 @@ import plistlib
 from .manager import *
 from .versions import *
 from .releases import *
+from .config import *
 
 class cacher(object):
     
@@ -19,13 +20,13 @@ class cacher(object):
         return prefix+'-'+version+'.plist';
     
     @classmethod
-    def access_cache(cls, release_type, release_info_dict):
+    def access(cls, release_type, release_info_dict):
         found_manifest = False;
         packages = [];
         if release_type != None and release_info_dict != None:
-            cacher.fetch_cache(release_type, release_info_dict['name']);
-            release_plist_name = cacher.CreateCacheFileName(release_info_dict['prefix'], release_info_dict['version']);
-            cached_file_path = cacher.GetCacheFile(release_plist_name);
+            cls.fetch(release_type, release_info_dict['name']);
+            release_plist_name = cls.CreateCacheFileName(release_info_dict['prefix'], release_info_dict['version']);
+            cached_file_path = cls.GetCacheFile(release_plist_name);
             
             if os.path.exists(cached_file_path) == True:
                 found_manifest = True;
@@ -38,48 +39,89 @@ class cacher(object):
         return (found_manifest, packages);
     
     @classmethod
-    def fetch_cache(cls, release_type, release_version):
+    def get(cls, release_type, release_version):
+        files = None;
         if release_type != None:
             if release_version != None:
-                release_info_dict = releases.GetReleaseInfo(release_type, release_version);
-                release_plist_name = cacher.CreateCacheFileName(release_info_dict['prefix'], release_info_dict['version']);
-                cached_file_path = cacher.GetCacheFile(release_plist_name);
+                release_info_dict = releases.getInfo(release_type, release_version);
+                release_plist_name = cls.CreateCacheFileName(release_info_dict['prefix'], release_info_dict['version']);
+                cached_file_path = cls.GetCacheFile(release_plist_name);
+                
+                if os.path.exists(cached_file_path) == True:
+                    return cached_file_path;
+                
+            else:
+                files = [];
+                type_versions = versions.get(release_type);
+                for version in type_versions:
+                    release_version_info = releases.getInfo(release_type, version);
+                    files.append(cls.get(release_type, release_version_info['name']));
+        else:
+            files = {};
+            types = releases.get();
+            for type_name in types:
+                files[type_name] = cls.get(type_name, None);
+        return files;
+    
+    @classmethod
+    def fetch(cls, release_type, release_version):
+        if release_type != None:
+            if release_version != None:
+                release_info_dict = releases.getInfo(release_type, release_version);
+                release_plist_name = cls.CreateCacheFileName(release_info_dict['prefix'], release_info_dict['version']);
+                cached_file_path = cls.GetCacheFile(release_plist_name);
 
                 if os.path.exists(cached_file_path) == False:
                     logging_helper.getLogger().info(': Downloading version manifest ('+release_plist_name+')...');
                     manager.DownloadPackageManifest(cached_file_path);
             else:
-                type_versions = versions.GetVersions(release_type);
+                type_versions = versions.get(release_type);
                 for version in type_versions:
-                    release_version_info = releases.GetReleaseInfo(release_type, version);
-                    cacher.fetch_cache(release_type, release_version_info['name']);
+                    release_version_info = releases.getInfo(release_type, version);
+                    cls.fetch(release_type, release_version_info['name']);
         else:
-            types = releases.GetReleases();
+            types = releases.get();
             for type_name in types:
-                cacher.fetch_cache(type_name, None);
+                cls.fetch(type_name, None);
     
     @classmethod
-    def flush_cache(cls, release_type, release_version):
+    def flush(cls, release_type, release_version):
         if release_type != None:
             if release_version != None:
-                release_info_dict = releases.GetReleaseInfo(release_type, release_version);
-                release_plist_name = cacher.CreateCacheFileName(release_info_dict['prefix'], release_info_dict['version']);
-                cached_file_path = cacher.GetCacheFile(release_plist_name);
+                release_info_dict = releases.getInfo(release_type, release_version);
+                release_plist_name = cls.CreateCacheFileName(release_info_dict['prefix'], release_info_dict['version']);
+                cached_file_path = cls.GetCacheFile(release_plist_name);
 
                 if os.path.exists(cached_file_path) == True:
-                    print '\n';
                     logging_helper.getLogger().info(': Removing version manifest ('+release_plist_name+')...');
                     manager.RemovePackageManifest(cached_file_path);
             else:
-                type_versions = versions.GetVersions(release_type);
+                type_versions = versions.get(release_type);
                 for version in type_versions:
-                    release_version_info = releases.GetReleaseInfo(release_type, version);
-                    cacher.fetch_cache(release_type, release_version_info['name']);
+                    release_version_info = releases.getInfo(release_type, version);
+                    cls.fetch(release_type, release_version_info['name']);
         else:
-            types = releases.GetReleases();
+            types = releases.get();
             for type_name in types:
-                cacher.fetch_cache(type_name, None);
+                cls.fetch(type_name, None);
     
     @classmethod
     def rebuild(cls):
-        return;
+        config.toggleFirstRun();
+        package_cache = {};
+        available_package_manifests = cls.get(None, None);
+        for release_type in available_package_manifests:
+            release_packages = {};
+            for manifest_path in available_package_manifests[release_type]:
+                manifest = plistlib.readPlist(manifest_path);
+                for package_name in manifest['projects']:
+                    package_name = str(package_name);
+                    version_number = str(manifest['projects'][package_name]['version']);
+                    if package_name in release_packages.keys():
+                        if version_number not in release_packages[package_name]:
+                            release_packages[package_name].append(version_number);
+                    else:
+                        release_packages[package_name] = [version_number];
+            package_cache[str(release_type)] = release_packages;
+        package_cache_path = cls.GetCacheFile('package_cache.plist');
+        plistlib.writePlist(package_cache, package_cache_path);

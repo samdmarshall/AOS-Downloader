@@ -10,6 +10,7 @@ from .cmd_cache import *
 from .cmd_update import *
 from .cmd_download import *
 from .cmd_build import *
+from .cmd_config import *
 
 class input(cmd.Cmd):
     prompt = ':> ';
@@ -47,7 +48,7 @@ class input(cmd.Cmd):
     def GenerateInfo(self):
         info = [];
         if 'type' in self.display_info.keys():
-            info.append('Type: %s' % releases.GetReleaseDisplayName(self.display_info['type']));
+            info.append('Type: %s' % releases.getDisplayName(self.display_info['type']));
         if 'version' in self.display_info.keys():
             info.append('Version: %s' % self.display_info['version']);
         if 'package' in self.display_info.keys():
@@ -87,6 +88,7 @@ class input(cmd.Cmd):
             logging_helper.getLogger().error(': Invalid release type!');
     
     def complete_type(self, text, line, begidx, endidx):
+        completions = [];
         release_types = cmd_type.validValues();
         if not text:
             completions = release_types[:];
@@ -106,7 +108,9 @@ class input(cmd.Cmd):
                 release_version = self.display_info['version'];
             result = cmd_package.query(release_type, release_version, self.GetArguments(line));
             if result[0] == True:
-                self.display_info['package'] = result[1];
+                self.display_info['package'] = result[1][0];
+                if 'version' in self.display_info.keys():
+                    self.display_info['build'] = result[1][1];
                 cmd_package.action(self.display_info);
             else:
                 logging_helper.getLogger().error(': Invalid package name!');
@@ -139,6 +143,10 @@ class input(cmd.Cmd):
                 self.display_info['version'] = result[1];
                 if 'build' in self.display_info.keys():
                     del self.display_info['build'];
+                if 'package' in self.display_info.keys():
+                    package_result = cmd_package.query(release_type, release_version, self.display_info['package']);
+                    if package_result[0] == True:
+                        self.display_info['build'] = package_result[1][1];
                 cmd_version.action(self.display_info);
             else:
                 logging_helper.getLogger().error(': Invalid version name!');
@@ -154,8 +162,6 @@ class input(cmd.Cmd):
                 completions = release_versions[:];
             else:
                 completions = [ item for item in release_versions if item.startswith(text) ];
-        else:
-            logging_helper.getLogger().info(': Please select a release type before using the "version" command.');
         return completions;
     
     # Cache Control
@@ -171,6 +177,7 @@ class input(cmd.Cmd):
             logging_helper.getLogger().error(': Invalid cache command!');
     
     def complete_cache(self, text, line, begidx, endidx):
+        completions = [];
         cache_completions = cmd_cache.validValues();
         if not text:
             completions = cache_completions[:];
@@ -214,8 +221,6 @@ class input(cmd.Cmd):
                 completions = build_numbers[:];
             else:
                 completions = [ item for item in build_numbers if item.startswith(text) ];
-        else:
-            logging_helper.getLogger().info(': Please select a release type and package before using the "build" command.');
         return completions;
     
     def do_build(self, line):
@@ -232,3 +237,23 @@ class input(cmd.Cmd):
                 logging_helper.getLogger().error(': Invalid build number!');
         else:
             logging_helper.getLogger().info(': Please select a release type and package before using the "build" command.');
+    
+    # Config
+    def help_config(self):
+        self.DisplayUsage(cmd_config.usage());
+    
+    def complete_config(self, text, line, begidx, endidx):
+        completions = [];
+        config_completions = cmd_config.validValues();
+        if not text:
+            completions = config_completions[:];
+        else:
+            completions = [ item for item in config_completions if item.startswith(text) ];
+        return completions;
+    
+    def do_config(self, line):
+        result = cmd_config.query(self.GetArguments(line));
+        if result[0] == True:
+            cmd_config.action(result[1]);
+        else:
+            logging_helper.getLogger().error(': Invalid config command argument!');

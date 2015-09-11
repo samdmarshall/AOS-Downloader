@@ -7,7 +7,7 @@ import plistlib
 class versions(object):
     
     @classmethod
-    def GetVersions(cls, release_type):
+    def get(cls, release_type):
         versions = [];
         type_plist_path = utilities.GetLookupPlistPath(release_type);
         if os.path.exists(type_plist_path) == True:
@@ -20,3 +20,4 @@ class versions(object):
         else:
             logging_helper.getLogger().error(': Could not find a versions manifest for release type "'+release_type+'". If you think this is an error, run the "update" command.');
         return versions;
+        

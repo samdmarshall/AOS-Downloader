@@ -12,7 +12,7 @@ class cmd_version(object):
     
     @classmethod
     def validValues(cls, release_type):
-        return versions.GetVersions(release_type);
+        return versions.get(release_type);
     
     @classmethod
     def query(cls, release_type, args):

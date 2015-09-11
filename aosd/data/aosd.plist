@@ -3,8 +3,13 @@
 <plist version="1.0">
 	<dict>
 		<key>core_url</key>
-		<string>https://raw.githubusercontent.com/samdmarshall/AOS-Downloader/master/aosd/data/</string>
+		<string>https://raw.githubusercontent.com/samdmarshall/AOS-Downloader/refactor/aosd/data/</string>
 		
+		<key>first_run</key>
+		<true/>
+		
+		<key>requests_via_https</key>
+		<true/>
 		
 	</dict>
 </plist>
