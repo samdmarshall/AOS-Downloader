@@ -1,3 +1,5 @@
+from ..downloader.packages import *
+
 class cmd_package(object):
     
     @classmethod
@@ -9,14 +11,18 @@ class cmd_package(object):
         };
     
     @classmethod
-    def validValues(cls, release_type=None, version=None):
-        return [];
+    def validValues(cls, release_type, release_version):
+        return packages.GetPackages(release_type, release_version);
     
     @classmethod
-    def action(cls, args):
+    def query(cls, release_type, version, args):
         # only use the first value;
         if len(args) > 0:
             input = args[0];
-            return (input in cls.validValues(), input);
+            return (input in cls.validValues(release_type, version), input);
         else:
             return (False, None);
+    
+    @classmethod
+    def action(cls, args):
+        print 'package action';
