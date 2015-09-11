@@ -41,11 +41,11 @@ class config(object):
     @classmethod
     def getDownloadDir(cls):
         settings = cls.read();
-        return os.expanduser(settings['download_directory']);
+        return os.path.expanduser(settings['download_directory']);
     
     @classmethod
     def setDownloadDir(cls, download_dir):
-        download_dir = os.expanduser(download_dir);
+        download_dir = os.path.expanduser(download_dir);
         settings = cls.read();
         if os.path.exists(download_dir) == True:
             settings['download_directory'] = download_dir;
