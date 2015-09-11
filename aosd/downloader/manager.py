@@ -5,20 +5,31 @@ import urllib2
 import gzip
 import tarfile
 
+from .config import *
+
 class manager(object):
     
     @classmethod
     def CreateTarballURL(cls, release_type, package_name, build_number):
-        return 'https://opensource.apple.com/tarballs/'+package_name+'/'+package_name+'-'+build_number+'.tar.gz';
+        default_url = 'https://opensource.apple.com/tarballs/'+package_name+'/'+package_name+'-'+build_number+'.tar.gz';
+        parsed_url = urlparse.urlparse(default_url);
+        if config.getUseHTTPS() == False:
+            parsed_url.scheme = 'http';
+        return parsed_url.geturl();
     
     @classmethod
     def CreatePlistURL(cls, plist_name):
-        return 'https://opensource.apple.com/plist/'+plist_name;
+        default_url = 'https://opensource.apple.com/plist/'+plist_name;
+        parsed_url = urlparse.urlparse(default_url);
+        if config.getUseHTTPS() == False:
+            parsed_url.scheme = 'http';
+        return parsed_url.geturl();
     
     @classmethod
     def DownloadFileFromURLToPath(cls, url_address, file_path):
         request = urllib2.Request(url_address);
-        logging_helper.getLogger().info(': Starting download from  "'+url_address+'" -> "'+file_path+'"...');
+        if config.getVerboseLogging() == True:
+            logging_helper.getLogger().info(': Starting download from  "'+url_address+'" -> "'+file_path+'"...');
         response = None;
         try: 
             response = urllib2.urlopen(request);
@@ -38,7 +49,8 @@ class manager(object):
             output = open(file_path, 'wb');
             output.write(response.read());
             output.close();
-            logging_helper.getLogger().info(': Download Complete!');
+            if config.getVerboseLogging() == True:
+                logging_helper.getLogger().info(': Download Complete!');
         
     @classmethod
     def DownloadPackageTarball(cls, release_type, package_name, build_number):
@@ -48,7 +60,8 @@ class manager(object):
         output_file = os.path.join(output_directory, package_file_name)
         try:
             cls.DownloadFileFromURLToPath(tarball_address, output_file);
-            logging_helper.getLogger().info(': Decompressing "'+output_file+'" -> "'+package_file_name+'"...');
+            if config.getVerboseLogging() == True:
+                logging_helper.getLogger().info(': Decompressing "'+output_file+'" -> "'+package_file_name+'"...');
             gz_archive = gzip.open(output_file, 'rb');
             file_content = gz_archive.read();
             tar_path = os.path.join(output_directory, os.path.splitext(package_file_name)[0]);
@@ -58,8 +71,9 @@ class manager(object):
             tar_archive = tarfile.open(tar_path);
             tar_archive.extractall(output_directory);
             tar_archive.close();
+            if config.getVerboseLogging() == True:
+                logging_helper.getLogger().info(': Decompression Complete!');
             os.remove(tar_path);
-            logging_helper.getLogger().info(': Decompression Complete!');
         except:
             logging_helper.getLogger().error(': Could not find tarball!');
     

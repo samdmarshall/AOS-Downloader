@@ -30,7 +30,7 @@ class cmd_config(object):
     def action(cls, args):
         if args[0] == 'display':
             settings = config.read();
-            logging_helper.getLogger().info(': Current Configuration');
+            logging_helper.getLogger().info(': Current Configuration:');
             for key in settings:
                 print '"'+key+'": "'+str(settings[key])+'"';
         if args[0] == 'set':
@@ -39,6 +39,10 @@ class cmd_config(object):
                     config.setUpdateURL(args[2]);
                 elif args[1] == 'download_directory':
                     config.setDownloadDir(args[2]);
+                elif args[1] == 'verbose_logging':
+                    config.setVerboseLogging(args[2]);
+                elif args[1] == 'requests_via_https':
+                    config.setUseHTTPS(args[2]);
                 elif args[1] == 'first_run':
                     logging_helper.getLogger().info(': If you want to reset to original state, please use the "config defaults" command.');
                 else:
@@ -46,3 +50,4 @@ class cmd_config(object):
         if args[0] == 'defaults':
             config.defaults();
             logging_helper.getLogger().info(': Default configuration has been restored.');
+        print '====================';

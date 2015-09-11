@@ -50,3 +50,4 @@ class cmd_download(object):
             
             if has_build == False:
                 logging_helper.getLogger().error(': Cannot download package without a version set. Use the "version" command or the "build" command.');
+        print '====================';

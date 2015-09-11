@@ -45,6 +45,7 @@ class cmd_cache(object):
         if cache_action == 'rebuild':
             cacher.rebuild();
         if cache_action == 'setup':
+            cacher.flush(None, None);
             cacher.fetch(None, None);
             cacher.rebuild();
-        
+        print '====================';

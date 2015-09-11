@@ -54,6 +54,42 @@ class config(object):
             logging_helper.getLogger().error(': the directory specified "'+download_dir+'" does not exist, please create it first.');
     
     @classmethod
+    def getVerboseLogging(cls):
+        settings = cls.read();
+        return settings['verbose_logging'];
+    
+    @classmethod
+    def setVerboseLogging(cls, enable):
+        settings = cls.read();
+        is_enabled = settings['verbose_logging'];
+        if enable in ['True', 'TRUE', 'true']:
+            is_enabled = True;
+        elif enable in ['False', 'FALSE', 'false']:
+            is_enabled = False;
+        else:
+            logging_helper.getLogger().error(': the value passed "'+enable+'" must be "True" or "False".');
+        settings['verbose_logging'] = is_enabled;
+        cls.write(settings);
+        
+    @classmethod
+    def getUseHTTPS(cls):
+        settings = cls.read();
+        return settings['requests_via_https'];
+    
+    @classmethod
+    def setUseHTTPS(cls, enable):
+        settings = cls.read();
+        is_enabled = settings['requests_via_https'];
+        if enable in ['True', 'TRUE', 'true']:
+            is_enabled = True;
+        elif enable in ['False', 'FALSE', 'false']:
+            is_enabled = False;
+        else:
+            logging_helper.getLogger().error(': the value passed "'+enable+'" must be "True" or "False".');
+        settings['requests_via_https'] = is_enabled;
+        cls.write(settings);
+    
+    @classmethod
     def toggleFirstRun(cls):
         settings = cls.read();
         value = settings['first_run'];
@@ -73,5 +109,6 @@ class config(object):
             'first_run': True,
             'requests_via_https': True,
             'download_directory': '~/Downloads',
+            'verbose_logging': False,
         };
         cls.write(default_values);

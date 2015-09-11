@@ -8,11 +8,14 @@
 		<key>first_run</key>
 		<true/>
 		
-		<!-- this is a future feature -->
 		<key>requests_via_https</key>
 		<true/>
 		
 		<key>download_directory</key>
 		<string>~/Downloads</string>
+		
+		<key>verbose_logging</key>
+		<false/>
+		
 	</dict>
 </plist>
