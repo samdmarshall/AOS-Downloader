@@ -12,7 +12,6 @@
 		<key>requests_via_https</key>
 		<true/>
 		
-		<!-- this is a future feature -->
 		<key>download_directory</key>
 		<string>~/Downloads</string>
 	</dict>

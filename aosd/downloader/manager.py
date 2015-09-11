@@ -44,7 +44,7 @@ class manager(object):
     def DownloadPackageTarball(cls, release_type, package_name, build_number):
         tarball_address = manager.CreateTarballURL(release_type, package_name, build_number);
         package_file_name = os.path.basename(tarball_address);
-        output_directory = os.path.expanduser('~/Downloads');
+        output_directory = os.path.expanduser(config.getDownloadDir());
         output_file = os.path.join(output_directory, package_file_name)
         try:
             cls.DownloadFileFromURLToPath(tarball_address, output_file);

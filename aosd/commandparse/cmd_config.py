@@ -37,6 +37,8 @@ class cmd_config(object):
             if len(args) == 3:
                 if args[1] == 'core_url':
                     config.setUpdateURL(args[2]);
+                elif args[1] == 'download_directory':
+                    config.setDownloadDir(args[2]);
                 elif args[1] == 'first_run':
                     logging_helper.getLogger().info(': If you want to reset to original state, please use the "config defaults" command.');
                 else:

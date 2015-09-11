@@ -2,6 +2,7 @@ from ..logging_helper import *
 
 import plistlib
 import urlparse
+import os
 
 from .utilities import *
 
@@ -36,7 +37,22 @@ class config(object):
             cls.write(settings);
         else:
             logging_helper.getLogger().error(': The supplied URL is not valid (lacks a scheme).');
-        
+    
+    @classmethod
+    def getDownloadDir(cls):
+        settings = cls.read();
+        return settings['download_directory'];
+    
+    @classmethod
+    def setDownloadDir(cls, download_dir):
+        download_dir = os.expanduser(download_dir);
+        settings = cls.read();
+        if os.path.exists(download_dir) == True:
+            settings['download_directory'] = download_dir;
+            cls.write(settings);
+        else:
+            logging_helper.getLogger().error(': the directory specified "'+download_dir+'" does not exist, please create it first.');
+    
     @classmethod
     def toggleFirstRun(cls):
         settings = cls.read();
@@ -56,5 +72,6 @@ class config(object):
             'core_url': 'https://raw.githubusercontent.com/samdmarshall/AOS-Downloader/refactor/aosd/data/',
             'first_run': True,
             'requests_via_https': True,
+            'download_directory': '~/Downloads',
         };
         cls.write(default_values);
