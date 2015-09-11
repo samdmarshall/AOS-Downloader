@@ -217,7 +217,6 @@ class input(cmd.Cmd):
             release_type = self.display_info['type'];
             package_name = self.display_info['package'];
             build_numbers = cmd_build.validValues(release_type, package_name);
-            print 'testing autocomplete';
             if not text:
                 completions = build_numbers[:];
             else:
