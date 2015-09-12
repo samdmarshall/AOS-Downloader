@@ -81,16 +81,27 @@ class manager(object):
             if config.getVerboseLogging() == True:
                 logging_helper.getLogger().info(': Dumping tar file...');
             dump_tar.write(file_content);
+            if config.getVerboseLogging() == True:
+                logging_helper.getLogger().info(': Closing files...');
             dump_tar.close();
-            
             gz_archive.close();
+            if config.getVerboseLogging() == True:
+                logging_helper.getLogger().info(': Removing archive...');
             os.remove(output_file);
+            if config.getVerboseLogging() == True:
+                logging_helper.getLogger().info(': Opening tar file...');
             tar_archive = tarfile.open(tar_path);
+            if config.getVerboseLogging() == True:
+                logging_helper.getLogger().info(': Decompressing tar file...');
             tar_archive.extractall(output_directory);
+            if config.getVerboseLogging() == True:
+                logging_helper.getLogger().info(': Closing tar file...');
             tar_archive.close();
             if config.getVerboseLogging() == True:
-                logging_helper.getLogger().info(': Decompression Complete!');
+                logging_helper.getLogger().info(': Removing tar file...');
             os.remove(tar_path);
+            if config.getVerboseLogging() == True:
+                logging_helper.getLogger().info(': Decompression Complete!');
             file_name = os.path.splitext(tar_name)[0];
             logging_helper.getLogger().info(': The package "'+file_name+'" has been downloaded to "'+output_directory+'".');
         except:
