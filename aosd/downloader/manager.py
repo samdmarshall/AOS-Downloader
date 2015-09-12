@@ -73,11 +73,16 @@ class manager(object):
             if config.getVerboseLogging() == True:
                 logging_helper.getLogger().info(': Decompressing "'+output_file+'" -> "'+tar_name+'"...');
             gz_archive = gzip.open(output_file, 'rb');
+            if config.getVerboseLogging() == True:
+                logging_helper.getLogger().info(': Reading file contents...');
             file_content = gz_archive.read();
             tar_path = os.path.join(output_directory, tar_name);
-            dump_tar = open(tar_path, 'w');
+            dump_tar = open(tar_path, 'wb');
+            if config.getVerboseLogging() == True:
+                logging_helper.getLogger().info(': Dumping tar file...');
             dump_tar.write(file_content);
             dump_tar.close();
+            
             gz_archive.close();
             os.remove(output_file);
             tar_archive = tarfile.open(tar_path);
