@@ -1,7 +1,11 @@
 from ..logging_helper import *
 
+try:
+    import urllib.parse as comp_urlparse # For Python 3.0 and later
+except ImportError:
+    import urlparse as comp_urlparse # Fall back to Python 2's urllib2
+
 import plistlib
-import urlparse
 import os
 
 from .utilities import *
@@ -31,7 +35,7 @@ class config(object):
     @classmethod
     def setUpdateURL(cls, url):
         settings = cls.read();
-        new_url = urlparse.urlparse(url);
+        new_url = comp_urlparse.urlparse(url);
         if bool(new_url.scheme) == True:
             settings['core_url'] = url;
             cls.write(settings);
