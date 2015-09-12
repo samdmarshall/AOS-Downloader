@@ -1,7 +1,6 @@
 from ..logging_helper import *
 
 import os
-import urllib2
 
 from .utilities import *
 from .releases import *
