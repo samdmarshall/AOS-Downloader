@@ -18,7 +18,7 @@ def CheckPassedArgCount(args):
         'build_cache': False,
     };
     # returns the number of arguments that got passed that are not set to default values
-    return len(filter(lambda key: kDefaultValues[key] != args[key], args.keys()));
+    return len(list((item for item in args.keys() if kDefaultValues[item] != args[item])));
 
 def main():
     parser = argparse.ArgumentParser(description='Apple Open Source Package Downloader');
