@@ -27,7 +27,7 @@ class packages(object):
         package_cache_path = cacher.GetCacheFile('package_cache.plist');
         if os.path.exists(package_cache_path) == True:
             package_cache = plistlib.readPlist(package_cache_path);
-            release_packages = package_cache[str(release_type)];
+            release_packages = package_cache.get(str(release_type), None);
             if release_packages != None:
                 for package_name in release_packages:
                     packages.append(str(package_name));
