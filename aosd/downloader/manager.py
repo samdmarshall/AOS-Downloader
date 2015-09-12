@@ -69,13 +69,15 @@ class manager(object):
         output_file = os.path.join(output_directory, package_file_name)
         try:
             cls.DownloadFileFromURLToPath(tarball_address, output_file);
+            tar_name = os.path.splitext(package_file_name)[0];
             if config.getVerboseLogging() == True:
-                logging_helper.getLogger().info(': Decompressing "'+output_file+'" -> "'+package_file_name+'"...');
+                logging_helper.getLogger().info(': Decompressing "'+output_file+'" -> "'+tar_name+'"...');
             gz_archive = gzip.open(output_file, 'rb');
             file_content = gz_archive.read();
-            tar_name = os.path.splitext(package_file_name)[0];
             tar_path = os.path.join(output_directory, tar_name);
-            open(tar_path, 'w').write(file_content);
+            dump_tar = open(tar_path, 'w');
+            dump_tar.write(file_content);
+            dump_tar.close();
             gz_archive.close();
             os.remove(output_file);
             tar_archive = tarfile.open(tar_path);
