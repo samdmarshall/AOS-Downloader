@@ -13,7 +13,7 @@ class releases(object):
         releases_dict_path = utilities.GetReleasePlistPath();
         if os.path.exists(releases_dict_path) == True:
             releases_dict = plistlib.readPlist(releases_dict_path);
-            releases_results = map(lambda release: release['package_name'], releases_dict);
+            releases_results = list(map(lambda release: release['package_name'], releases_dict));
             if len(releases_results) > 0:
                 releases = releases_results;
             else:
@@ -28,7 +28,7 @@ class releases(object):
         releases_dict_path = utilities.GetReleasePlistPath();
         if os.path.exists(releases_dict_path) == True:
             releases_dict = plistlib.readPlist(releases_dict_path);
-            type_results = filter(lambda release: release['package_name'] == release_type, releases_dict);
+            type_results = list((item for item in releases_dict if item['package_name'] == release_type));
             if len(type_results) > 0:
                 release_display_name = type_results[0]['display_name'];
             else:
@@ -45,7 +45,7 @@ class releases(object):
                 type_plist_path = utilities.GetLookupPlistPath(release_type);
                 if os.path.exists(type_plist_path) == True:
                     versions_dict = plistlib.readPlist(type_plist_path);
-                    version_results = filter(lambda release: release['name'] == version, versions_dict);
+                    version_results = list((item for item in versions_dict if item['name'] == version));
                     if len(version_results) > 0:
                         info_dict = version_results[0];
                     else:

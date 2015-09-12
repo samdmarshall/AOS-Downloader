@@ -12,7 +12,7 @@ class versions(object):
         type_plist_path = utilities.GetLookupPlistPath(release_type);
         if os.path.exists(type_plist_path) == True:
             versions_dict = plistlib.readPlist(type_plist_path);
-            version_results = map(lambda version: version['name'], versions_dict);
+            version_results = list(map(lambda version: version['name'], versions_dict));
             if len(version_results) > 0:
                 versions = version_results;
             else:
