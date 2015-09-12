@@ -13,6 +13,7 @@ This utility makes it easy to find and download various versions of the open sou
 	* os
 	* plistlib
 	* urllib2
+	* httplib
 	* urlparse
 	* readline
 	* rlcompleter
@@ -20,8 +21,23 @@ This utility makes it easy to find and download various versions of the open sou
 	* gzip
 	* tarfile
 	* logging
-	
-*Note: I don't know about Python 3 support yet, sorry.*
+
+
+
+* Python 3.4
+* Libraries used:
+	* argparse
+	* sys
+	* os
+	* plistlib
+	* urllib
+	* http
+	* readline
+	* rlcompleter
+	* cmd
+	* gzip
+	* tarfile
+	* logging
 
 ---
 
