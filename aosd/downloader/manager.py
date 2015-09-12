@@ -1,15 +1,16 @@
 from ..logging_helper import *
 
-import os
 try:
     import urllib.request as comp_urlreq # For Python 3.0 and later
     import urllib.error as compat_urlerr
     import http.client as compat_http
+    import urllib.parse as comp_urlparse
 except ImportError:
     import urllib2 as comp_urlreq # Fall back to Python 2's urllib2
     import urllib2 as comp_urlerr
     import httplib as compat_http
-    
+    import urlparse as comp_urlparse
+import os 
 import gzip
 import tarfile
 
@@ -20,7 +21,7 @@ class manager(object):
     @classmethod
     def CreateTarballURL(cls, release_type, package_name, build_number):
         default_url = 'https://opensource.apple.com/tarballs/'+package_name+'/'+package_name+'-'+build_number+'.tar.gz';
-        parsed_url = urlparse.urlparse(default_url);
+        parsed_url = comp_urlparse.urlparse(default_url);
         if config.getUseHTTPS() == False:
             parsed_url.scheme = 'http';
         return parsed_url.geturl();
@@ -28,7 +29,7 @@ class manager(object):
     @classmethod
     def CreatePlistURL(cls, plist_name):
         default_url = 'https://opensource.apple.com/plist/'+plist_name;
-        parsed_url = urlparse.urlparse(default_url);
+        parsed_url = comp_urlparse.urlparse(default_url);
         if config.getUseHTTPS() == False:
             parsed_url.scheme = 'http';
         return parsed_url.geturl();
