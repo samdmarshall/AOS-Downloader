@@ -33,13 +33,13 @@ class manager(object):
         response = None;
         try: 
             response = urllib2.urlopen(request);
-        except urllib2.HTTPError, e:
+        except urllib2.HTTPError as e:
             logging_helper.getLogger().error(': HTTPError = '+str(e.code)+' on '+url_address);
             response = None;
-        except urllib2.URLError, e:
+        except urllib2.URLError as e:
             logging_helper.getLogger().error(': URLError = '+ str(e.reason)+' on '+url_address);
             response = None;
-        except httplib.HTTPException, e:
+        except httplib.HTTPException as e:
             logging_helper.getLogger().error(': HTTPException on '+url_address);
             response = None;
         except Exception:
