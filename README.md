@@ -6,7 +6,7 @@ This utility makes it easy to find and download various versions of the open sou
 
 ## Requirements
 
-* Python 2.7
+####Python 2.7
 * Libraries used:
 	* argparse
 	* sys
@@ -24,7 +24,7 @@ This utility makes it easy to find and download various versions of the open sou
 
 
 
-* Python 3.4
+####Python 3.4
 * Libraries used:
 	* argparse
 	* sys
