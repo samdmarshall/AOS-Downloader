@@ -1,7 +1,15 @@
 from ..logging_helper import *
 
 import os
-import urllib2
+try:
+    import urllib.request as comp_urlreq # For Python 3.0 and later
+    import urllib.error as compat_urlerr
+    import http.client as compat_http
+except ImportError:
+    import urllib2 as comp_urlreq # Fall back to Python 2's urllib2
+    import urllib2 as comp_urlerr
+    import httplib as compat_http
+    
 import gzip
 import tarfile
 
@@ -27,19 +35,19 @@ class manager(object):
     
     @classmethod
     def DownloadFileFromURLToPath(cls, url_address, file_path):
-        request = urllib2.Request(url_address);
+        request = comp_urlreq.Request(url_address);
         if config.getVerboseLogging() == True:
             logging_helper.getLogger().info(': Starting download from  "'+url_address+'" -> "'+file_path+'"...');
         response = None;
         try: 
-            response = urllib2.urlopen(request);
-        except urllib2.HTTPError as e:
+            response = comp_urlreq.urlopen(request);
+        except comp_urlerr.HTTPError as e:
             logging_helper.getLogger().error(': HTTPError = '+str(e.code)+' on '+url_address);
             response = None;
-        except urllib2.URLError as e:
+        except comp_urlerr.URLError as e:
             logging_helper.getLogger().error(': URLError = '+ str(e.reason)+' on '+url_address);
             response = None;
-        except httplib.HTTPException as e:
+        except compat_http.HTTPException as e:
             logging_helper.getLogger().error(': HTTPException on '+url_address);
             response = None;
         except Exception:
