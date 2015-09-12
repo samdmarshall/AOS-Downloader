@@ -51,7 +51,10 @@ Checkout this repo then run `python setup.py install` and optionally pass the `-
 
 ### Homebrew
 
-Coming Soon.
+	$ brew tap samdmarshall/formulae
+	$ brew install samdmarshall/formulae/aosd --HEAD
+
+*Note: This is using the HEAD of the develop branch of this repo.*
 
 ---
 
