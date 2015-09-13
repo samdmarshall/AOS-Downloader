@@ -1,23 +1,24 @@
-from ..logging_helper import *
+from ..logging_helper import logging_helper
 
-from .utilities import *
+from .utilities import utilities
 
+import os
 import plistlib
 
 class versions(object):
     
     @classmethod
     def get(cls, release_type):
-        versions = [];
-        type_plist_path = utilities.GetLookupPlistPath(release_type);
+        versions = []
+        type_plist_path = utilities.GetLookupPlistPath(release_type)
         if os.path.exists(type_plist_path) == True:
-            versions_dict = plistlib.readPlist(type_plist_path);
-            version_results = list(map(lambda version: version['name'], versions_dict));
+            versions_dict = plistlib.readPlist(type_plist_path)
+            version_results = list(map(lambda version: version['name'], versions_dict))
             if len(version_results) > 0:
-                versions = version_results;
+                versions = version_results
             else:
-                logging_helper.getLogger().error(': Could not find any versions for release type "'+release_type+'".');
+                logging_helper.getLogger().error(': Could not find any versions for release type "'+release_type+'".')
         else:
-            logging_helper.getLogger().error(': Could not find a versions manifest for release type "'+release_type+'". If you think this is an error, run the "update" command.');
-        return versions;
+            logging_helper.getLogger().error(': Could not find a versions manifest for release type "'+release_type+'". If you think this is an error, run the "update" command.')
+        return versions
         

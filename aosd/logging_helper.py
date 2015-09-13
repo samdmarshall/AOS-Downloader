@@ -10,8 +10,8 @@ class Singleton(type):
 
 
 class logging_helper(object):
-    __metaclass__ = Singleton;
-    _internal_logger = None;
+    __metaclass__ = Singleton
+    _internal_logger = None
     
     def __init__(self, *args, **kwargs):
         pass
@@ -19,8 +19,8 @@ class logging_helper(object):
     @staticmethod
     def getLogger():
         if logging_helper._internal_logger == None:
-            logging_helper._internal_logger = logging.getLogger('com.pewpewthespells.py.logging_helper');
-            logging_helper._internal_logger.setLevel(logging.INFO);
+            logging_helper._internal_logger = logging.getLogger('com.pewpewthespells.py.logging_helper')
+            logging_helper._internal_logger.setLevel(logging.INFO)
             
             ch = logging.StreamHandler()
             ch.setLevel(logging.INFO)
@@ -33,4 +33,4 @@ class logging_helper(object):
             
             # add ch to logger
             logging_helper._internal_logger.addHandler(ch)
-        return logging_helper._internal_logger;
+        return logging_helper._internal_logger

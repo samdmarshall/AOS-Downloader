@@ -1,9 +1,9 @@
-from ..downloader.releases import *
+from ..downloader.releases import releases
 
 def FormatForArgumentDisplay():
-    return '['+'|'.join(releases.get())+']';
+    return '['+'|'.join(releases.get())+']'
 
-class cmd_type(object):
+class CmdType(object):
     
     @classmethod
     def usage(cls):
@@ -11,21 +11,21 @@ class cmd_type(object):
             'name': 'type',
             'args': FormatForArgumentDisplay(),
             'desc': 'selects the current release type'
-        };
+        }
     
     @classmethod
-    def validValues(cls):
-        return releases.get();
+    def valid_values(cls):
+        return releases.get()
     
     @classmethod
     def query(cls, args):
-        # only use the first value;
+        # only use the first value
         if len(args) > 0:
-            input = args[0];
-            return (input in cls.validValues(), input);
+            input = args[0]
+            return (input in cls.valid_values(), input)
         else:
-            return (False, None);
+            return (False, None)
     
     @classmethod
     def action(cls, args):
-        return;
+        return

@@ -1,10 +1,4 @@
-from .input import *
-from .cmd_quit import *
-from .cmd_type import *
-from .cmd_package import *
-from .cmd_version import *
-from .cmd_cache import *
-from .cmd_update import *
-from .cmd_download import *
-from .cmd_build import *
-from .cmd_config import *
+"""
+commands for the interactive console
+"""
+from .interactive_input import *

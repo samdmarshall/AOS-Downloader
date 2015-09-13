@@ -1,6 +1,6 @@
 import sys
 
-class cmd_quit(object):
+class CmdQuit(object):
     
     @classmethod
     def usage(cls):
@@ -8,17 +8,17 @@ class cmd_quit(object):
             'name': 'quit',
             'args': '',
             'desc': 'Quits aosd'
-        };
+        }
     
     @classmethod
-    def validValues(cls):
-        return [];
+    def valid_values(cls):
+        return []
     
     @classmethod
     def query(cls, args):
-        return (True, None);
+        return (True, None)
     
     @classmethod
     def action(cls, args):
-        print('Quitting!');
-        sys.exit();
+        print('Quitting!')
+        sys.exit()
