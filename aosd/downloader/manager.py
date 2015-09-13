@@ -20,18 +20,20 @@ class manager(object):
     
     @classmethod
     def CreateTarballURL(cls, release_type, package_name, build_number):
-        default_url = 'https://opensource.apple.com/tarballs/'+package_name+'/'+package_name+'-'+build_number+'.tar.gz';
-        parsed_url = comp_urlparse.urlparse(default_url);
+        default_scheme = 'https';
         if config.getUseHTTPS() == False:
-            parsed_url.scheme = 'http';
+            default_scheme = 'http';
+        default_url = default_scheme+'://opensource.apple.com/tarballs/'+package_name+'/'+package_name+'-'+build_number+'.tar.gz';
+        parsed_url = comp_urlparse.urlparse(default_url);
         return parsed_url.geturl();
     
     @classmethod
     def CreatePlistURL(cls, plist_name):
-        default_url = 'https://opensource.apple.com/plist/'+plist_name;
-        parsed_url = comp_urlparse.urlparse(default_url);
+        default_scheme = 'https';
         if config.getUseHTTPS() == False:
-            parsed_url.scheme = 'http';
+            default_scheme = 'http';
+        default_url = default_scheme+'://opensource.apple.com/plist/'+plist_name;
+        parsed_url = comp_urlparse.urlparse(default_url);
         return parsed_url.geturl();
     
     @classmethod
@@ -63,6 +65,7 @@ class manager(object):
         
     @classmethod
     def DownloadPackageTarball(cls, release_type, package_name, build_number):
+        downloaded_directory_path = '';
         tarball_address = manager.CreateTarballURL(release_type, package_name, build_number);
         package_file_name = os.path.basename(tarball_address);
         output_directory = os.path.expanduser(config.getDownloadDir());
@@ -104,8 +107,10 @@ class manager(object):
                 logging_helper.getLogger().info(': Decompression Complete!');
             file_name = os.path.splitext(tar_name)[0];
             logging_helper.getLogger().info(': The package "'+file_name+'" has been downloaded to "'+output_directory+'".');
+            downloaded_directory_path = os.path.join(output_directory, file_name);
         except:
             logging_helper.getLogger().error(': Could not find tarball!');
+        return downloaded_directory_path;
     
     @classmethod
     def DownloadPackageManifest(cls, cached_plist_file_path):

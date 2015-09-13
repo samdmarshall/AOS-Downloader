@@ -128,3 +128,9 @@ class cacher(object):
             package_cache[str(release_type)] = release_packages;
         package_cache_path = cls.GetCacheFile('package_cache.plist');
         plistlib.writePlist(package_cache, package_cache_path);
+    
+    @classmethod
+    def clean(cls):
+        cls.flush(None, None);
+        cls.fetch(None, None);
+        cls.rebuild();

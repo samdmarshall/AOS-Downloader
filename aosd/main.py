@@ -6,6 +6,8 @@ import rlcompleter
 from .commandparse import *
 from .downloader import *
 
+from .flags import *
+
 def CheckPassedArgCount(args):
     kDefaultValues = {
         'build': None,
@@ -14,7 +16,6 @@ def CheckPassedArgCount(args):
         'package': None,
         'reset_cache': False,
         'type': None,
-        'version': None,
         'build_cache': False,
     };
     # returns the number of arguments that got passed that are not set to default values
@@ -36,14 +37,6 @@ def main():
         help='list versions of a package to check out, if no package is specified it lists available packages', 
         required=False,
         action='store_true'
-    );
-    
-    parser.add_argument(
-        '-v', 
-        '--version', 
-        help='specify the version number from a release type', 
-        required=False,
-        action='store'
     );
     
     parser.add_argument(
@@ -100,8 +93,8 @@ def main():
         aosd_shell = input();
         aosd_shell.cmdloop();
     else:
-        logging_helper.getLogger().info(': Command line flags are not currently implemented, please run using the command console.');
-    
+        ParseFlags(args_dict);
+    sys.exit();
 
 if __name__ == "__main__":
     main();

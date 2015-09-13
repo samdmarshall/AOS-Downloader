@@ -11,7 +11,7 @@ class packages(object):
     def get(cls, release_type, version):
         packages = [];
         if version == None:
-            packages = cls.package_list(release_type);
+            packages = cls.list(release_type);
         else:
             release_info = releases.getInfo(release_type, version);
             cache_result = cacher.access(release_type, release_info);
@@ -22,7 +22,7 @@ class packages(object):
         return packages;
     
     @classmethod
-    def package_list(cls, release_type):
+    def list(cls, release_type):
         packages = [];
         package_cache_path = cacher.GetCacheFile('package_cache.plist');
         if os.path.exists(package_cache_path) == True:
