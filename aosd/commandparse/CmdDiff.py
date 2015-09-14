@@ -4,7 +4,7 @@ imports
 from .RootCmd import RootCmd
 from ..logging_helper import logging_helper
 from ..downloader.diff import diff
-from ..downloader.Builds import Builds
+from ..downloader.builds import Builds
 
 class CmdDiff(RootCmd):
     """

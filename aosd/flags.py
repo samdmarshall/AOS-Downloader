@@ -4,7 +4,7 @@ from .downloader.diff import diff
 from .downloader import releases
 from .downloader import config
 from .downloader.cacher import cacher
-from .downloader.Builds import Builds
+from .downloader.builds import Builds
 from .logging_helper import logging_helper
 
 def ParseFlags(args_dict):
