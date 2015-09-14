@@ -4,7 +4,7 @@ import subprocess
 from subprocess import CalledProcessError
 
 class subprocess_helper(object):
-    
+
     @classmethod
     def make_call(cls, call_args):
         error = 0
@@ -16,5 +16,5 @@ class subprocess_helper(object):
             output = e.output
             error = e.returncode
         if error != 0:
-            logging_helper.getLogger().error(': There was an error in creating the diff, the error will be logged to the diff file...')
+            logging_helper.getLogger().error('There was an error in creating the diff, the error will be logged to the diff file...')
         return output

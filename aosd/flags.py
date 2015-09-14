@@ -1,12 +1,10 @@
-import sys
-
-from .downloader import packages
+from .downloader import Packages
 from .downloader.manager import manager
 from .downloader.diff import diff
 from .downloader import releases
 from .downloader import config
 from .downloader.cacher import cacher
-from .downloader.builds import builds
+from .downloader.Builds import Builds
 from .logging_helper import logging_helper
 
 def ParseFlags(args_dict):
@@ -40,7 +38,7 @@ def ParseFlags(args_dict):
         cacher.clean()
 
     if config.getFirstRun() == True:
-        logging_helper.getLogger().info(': You cannot use the command line interface without first building an index. Please run with only the "--build_cache" flag first.')
+        logging_helper.getLogger().info('You cannot use the command line interface without first building an index. Please run with only the "--build_cache" flag first.')
 
     if has_type == True and has_other_flags == True:
         # ok, check the type
@@ -51,20 +49,20 @@ def ParseFlags(args_dict):
                 # list is a terminal action
                 if has_package == True:
                     # list the builds
-                    has_valid_package = package_name in packages.list(release_type)
+                    has_valid_package = package_name in Packages.list(release_type)
                     if has_valid_package == True:
                         print('Builds for package '+package_name+':')
-                        print(builds.get(release_type, package_name))
+                        print(Builds.get(release_type, package_name))
                     else:
-                        logging_helper.getLogger().error(': Invalid package name! Please use the "--list" flag to see available packages.')
+                        logging_helper.getLogger().error('Invalid package name! Please use the "--list" flag to see available packages.')
                 else:
                     # list the packages
                     print('Packages for '+release_type+':')
-                    print(packages.list(release_type))
+                    print(Packages.list(release_type))
             else:
                 # check other actions
                 if has_package == True:
-                    has_valid_package = package_name in packages.list(release_type)
+                    has_valid_package = package_name in Packages.list(release_type)
                     if has_valid_package == True:
                         # now check the build number
                         if has_build == True:
@@ -77,15 +75,15 @@ def ParseFlags(args_dict):
                                     # have both numbers
                                     diff.perform(release_type, package_name, diff_numbers)
                                 else:
-                                    logging_helper.getLogger().error(': Please supply TWO build numbers to perform a diff.')
+                                    logging_helper.getLogger().error('Please supply TWO build numbers to perform a diff.')
                             else:
-                                logging_helper.getLogger().info(': Missing additional arguments!')
+                                logging_helper.getLogger().info('Missing additional arguments!')
                     else:
-                        logging_helper.getLogger().error(': Invalid package name! Please use the "--list" flag to see available packages.')
+                        logging_helper.getLogger().error('Invalid package name! Please use the "--list" flag to see available packages.')
                 else:
-                    logging_helper.getLogger().error(': No package was specified!')
+                    logging_helper.getLogger().error('No package was specified!')
         else:
-            logging_helper.getLogger().error(': The type "'+release_type+'" was not found in the valid types: %s', type_list)
+            logging_helper.getLogger().error('The type "'+release_type+'" was not found in the valid types: %s', type_list)
     else:
         if has_other_flags == True: # has_type is implicitly "False"
-            logging_helper.getLogger().error(': The "type" argument must be supplied to use any of the other flags!')
+            logging_helper.getLogger().error('The "type" argument must be supplied to use any of the other flags!')

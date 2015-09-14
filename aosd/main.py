@@ -3,7 +3,7 @@ import argparse
 import readline
 import rlcompleter
 
-from .commandparse import *
+from .commandparse import InteractiveInput
 from .downloader.config import config
 
 from .flags import *
@@ -24,54 +24,54 @@ def CheckPassedArgCount(args):
 def main():
     parser = argparse.ArgumentParser(description='Apple Open Source Package Downloader')
     parser.add_argument(
-        '-t', 
-        '--type', 
-        help='specify the release type', 
+        '-t',
+        '--type',
+        help='specify the release type',
         required=False,
         action='store'
     )
-    
+
     parser.add_argument(
-        '-l', 
-        '--list', 
-        help='list versions of a package to check out, if no package is specified it lists available packages', 
+        '-l',
+        '--list',
+        help='list versions of a package to check out, if no package is specified it lists available packages',
         required=False,
         action='store_true'
     )
-    
+
     parser.add_argument(
-        '-p', 
-        '--package', 
-        help='specify the name of a package from a release', 
+        '-p',
+        '--package',
+        help='specify the name of a package from a release',
         required=False,
-        action='store', 
+        action='store',
     )
-    
+
     parser.add_argument(
-        '-b', 
-        '--build', 
-        help='specify the build number from a package', 
+        '-b',
+        '--build',
+        help='specify the build number from a package',
         required=False,
         action='store'
     )
-    
+
     parser.add_argument(
-        '-d', 
-        '--diff', 
-        help='specify the build number of a package to create diff against', 
+        '-d',
+        '--diff',
+        help='specify the build number of a package to create diff against',
         required=False,
-        action='store', 
+        action='store',
         nargs=2
     )
-    
+
     parser.add_argument(
-        '-r', 
-        '--reset-cache', 
-        help='removes currently cached package plist files', 
+        '-r',
+        '--reset-cache',
+        help='removes currently cached package plist files',
         required=False,
         action='store_true'
     )
-    
+
     parser.add_argument(
         '-c',
         '--build-cache',
@@ -79,18 +79,18 @@ def main():
         required=False,
         action='store_true'
     )
-    
+
     args_dict = vars(parser.parse_args())
-    
+
     if config.getFirstRun() == True:
-        logging_helper.getLogger().info(': This appears to be the first time this has been run, it is highly recommended that you run the "cache setup" command or pass "--build-cache" on the command line. This software can be used without this command being run but some of the autocomplete will not work.')
-    
+        logging_helper.getLogger().info('This appears to be the first time this has been run, it is highly recommended that you run the "cache setup" command or pass "--build-cache" on the command line. This software can be used without this command being run but some of the autocomplete will not work.')
+
     if CheckPassedArgCount(args_dict) == 0:
         if 'libedit' in readline.__doc__:
             readline.parse_and_bind("bind ^I rl_complete")
         else:
             readline.parse_and_bind("tab: complete")
-        aosd_shell = interactive_input()
+        aosd_shell = InteractiveInput()
         aosd_shell.cmdloop()
     else:
         ParseFlags(args_dict)

@@ -1,14 +1,15 @@
 """
 imports
 """
+from .RootCmd import RootCmd
 from ..logging_helper import logging_helper
 from ..downloader.cacher import cacher
 
-class CmdCache(object):
+class CmdCache(RootCmd):
     """
     command to operate on the manifest cache files
     """
-    
+
     @classmethod
     def usage(cls):
         """
@@ -19,14 +20,14 @@ class CmdCache(object):
             'args': '[download_type|download_all|clear_type|clear_all|rebuild|setup]',
             'desc': 'performs an action on the cache of a particular release type'
         }
-    
+
     @classmethod
     def valid_values(cls, release_type=None, version=None):
         """
         arguments that this command takes
         """
         return ['download_type', 'download_all', 'clear_type', 'clear_all', 'rebuild', 'setup']
-    
+
     @classmethod
     def query(cls, args):
         """
@@ -37,14 +38,14 @@ class CmdCache(object):
             return (args[0] in cls.valid_values(), args[0])
         else:
             return (False, None)
-    
+
     @classmethod
     def action(cls, args):
         """
         performs the selected cache operation
         """
         cache_action = args['cache']
-        
+
         release_type = None
         if 'type' in args.keys():
             release_type = args['type']
@@ -53,7 +54,7 @@ class CmdCache(object):
                 cacher.fetch(release_type, None)
             if cache_action == 'download_all':
                 cacher.fetch(None, None)
-            logging_helper.getLogger().info(': Download complete, please run the "cache rebuild" command to update the index')
+            logging_helper.getLogger().info('Download complete, please run the "cache rebuild" command to update the index')
         if cache_action == 'clear_type':
             cacher.flush(release_type, None)
         if cache_action == 'clear_all':

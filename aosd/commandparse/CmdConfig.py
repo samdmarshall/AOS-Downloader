@@ -1,11 +1,11 @@
 """
 imports
 """
+from .RootCmd import RootCmd
 from ..logging_helper import logging_helper
-
 from ..downloader.config import config
 
-class CmdConfig(object):
+class CmdConfig(RootCmd):
     """
     command to modify the configuration of the `aosd` utility
     """
@@ -46,7 +46,7 @@ class CmdConfig(object):
         """
         if args[0] == 'display':
             settings = config.read()
-            logging_helper.getLogger().info(': Current Configuration:')
+            logging_helper.getLogger().info('Current Configuration:')
             for key in settings:
                 print('"'+key+'": "'+str(settings[key])+'"')
         if args[0] == 'set':
@@ -60,10 +60,10 @@ class CmdConfig(object):
                 elif args[1] == 'requests_via_https':
                     config.setUseHTTPS(args[2])
                 elif args[1] == 'first_run':
-                    logging_helper.getLogger().info(': If you want to reset to original state, please use the "config defaults" command.')
+                    logging_helper.getLogger().info('If you want to reset to original state, please use the "config defaults" command.')
                 else:
-                    logging_helper.getLogger().error(': Attempting to set unrecognized key "'+args[1]+'".')
+                    logging_helper.getLogger().error('Attempting to set unrecognized key "'+args[1]+'".')
         if args[0] == 'defaults':
             config.defaults()
-            logging_helper.getLogger().info(': Default configuration has been restored.')
+            logging_helper.getLogger().info('Default configuration has been restored.')
         print('====================')

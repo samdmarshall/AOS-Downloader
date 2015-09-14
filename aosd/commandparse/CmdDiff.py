@@ -1,12 +1,12 @@
 """
 imports
 """
+from .RootCmd import RootCmd
 from ..logging_helper import logging_helper
-
 from ..downloader.diff import diff
-from ..downloader.builds import builds
+from ..downloader.Builds import Builds
 
-class CmdDiff(object):
+class CmdDiff(RootCmd):
     """
     command to create a diff of a package given two build numbers
     """
@@ -27,7 +27,7 @@ class CmdDiff(object):
         """
         TODO: look into auto-complete for both arguments
         """
-        return builds.get(release_type, package_name)
+        return Builds.get(release_type, package_name)
 
     @classmethod
     def query(cls, release_type, package_name, args):
@@ -59,8 +59,8 @@ class CmdDiff(object):
             diff.perform(release_type, package_name, build_numbers)
         else:
             if has_type == False:
-                logging_helper.getLogger().error(': Cannot download package without a release type set. Use the "type" command.')
+                logging_helper.getLogger().error('Cannot download package without a release type set. Use the "type" command.')
 
             if has_package == False:
-                logging_helper.getLogger().error(': Cannot download package without a package set. Use the "package" command.')
+                logging_helper.getLogger().error('Cannot download package without a package set. Use the "package" command.')
         print('====================')

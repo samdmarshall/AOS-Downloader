@@ -9,8 +9,8 @@ from .cacher import cacher
 import os
 import plistlib
 
-class packages(object):
-    
+class Packages(object):
+
     @classmethod
     def get(cls, release_type, version):
         packages = []
@@ -22,13 +22,13 @@ class packages(object):
             if cache_result[0] == True:
                 packages = cache_result[1]
             else:
-                logging_helper.getLogger().error(': Could not find any packages. If you think this is an error, please run the "cache rebuild" command.')
+                logging_helper.getLogger().error('Could not find any packages. If you think this is an error, please run the "cache rebuild" command.')
         return packages
-    
+
     @classmethod
     def list(cls, release_type):
         packages = []
-        package_cache_path = utilities.GetCacheFile('package_cache.plist')
+        package_cache_path = utilities.getcachefile('package_cache.plist')
         if os.path.exists(package_cache_path) == True:
             package_cache = plistlib.readPlist(package_cache_path)
             release_packages = package_cache.get(str(release_type), None)
@@ -36,7 +36,7 @@ class packages(object):
                 for package_name in release_packages:
                     packages.append(str(package_name))
         return packages
-    
+
     @classmethod
     def resolveNumberFromVersion(cls, release_type, version, package_name):
         build_number = ''

@@ -1,9 +1,10 @@
 """
 imports
 """
-from ..downloader.builds import builds
+from .RootCmd import RootCmd
+from ..downloader.Builds import Builds
 
-class CmdBuild(object):
+class CmdBuild(RootCmd):
     """
     command to select a build number of a package
     """
@@ -24,7 +25,7 @@ class CmdBuild(object):
         """
         fetches the builds for a specific package
         """
-        return builds.get(release_type, package_name)
+        return Builds.get(release_type, package_name)
 
     @classmethod
     def query(cls, release_type, package_name, args):
@@ -36,10 +37,3 @@ class CmdBuild(object):
             return (args[0] in cls.valid_values(release_type, package_name), args[0])
         else:
             return (False, None)
-
-    @classmethod
-    def action(cls, args):
-        """
-        empty
-        """
-        return

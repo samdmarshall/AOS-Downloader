@@ -1,7 +1,11 @@
+"""
+imports
+"""
+from .RootCmd import RootCmd
 import sys
 
-class CmdQuit(object):
-    
+class CmdQuit(RootCmd):
+
     @classmethod
     def usage(cls):
         return {
@@ -9,15 +13,7 @@ class CmdQuit(object):
             'args': '',
             'desc': 'Quits aosd'
         }
-    
-    @classmethod
-    def valid_values(cls):
-        return []
-    
-    @classmethod
-    def query(cls, args):
-        return (True, None)
-    
+
     @classmethod
     def action(cls, args):
         print('Quitting!')

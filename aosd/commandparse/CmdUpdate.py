@@ -1,9 +1,10 @@
 """
 imports
 """
+from .RootCmd import RootCmd
 from ..downloader.update import update
 
-class CmdUpdate(object):
+class CmdUpdate(RootCmd):
     """
     command for fetching updates to the releases plist
     """
@@ -18,20 +19,6 @@ class CmdUpdate(object):
             'args': '',
             'desc': 'updates the current open source manifests'
         }
-
-    @classmethod
-    def valid_values(cls):
-        """
-        empty
-        """
-        return []
-
-    @classmethod
-    def query(cls, args):
-        """
-        always true
-        """
-        return (True, None)
 
     @classmethod
     def action(cls, args):

@@ -7,12 +7,12 @@ from ..logging_helper import logging_helper
 import plistlib
 import os
 
-class builds(object):
-    
+class Builds(object):
+
     @classmethod
     def get(cls, release_type, package_name):
         builds_list = []
-        package_cache_path = utilities.GetCacheFile('package_cache.plist')
+        package_cache_path = utilities.getcachefile('package_cache.plist')
         if os.path.exists(package_cache_path) == True:
             package_cache = plistlib.readPlist(package_cache_path)
             release_packages = package_cache[str(release_type)]

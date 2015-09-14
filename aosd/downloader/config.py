@@ -11,27 +11,27 @@ import os
 from .utilities import utilities
 
 class config(object):
-    
+
     @classmethod
     def read(cls):
         config_contents = {}
-        config_plist_path = utilities.GetConfigurationPlistPath()
+        config_plist_path = utilities.getconfigurationplistpath()
         if os.path.exists(config_plist_path) == False:
-            logging_helper.getLogger().error(': Fatal error, cannot locate the configuration plist. Use the "config defaults" command to restore defaults.')
+            logging_helper.getLogger().error('Fatal error, cannot locate the configuration plist. Use the "config defaults" command to restore defaults.')
         else:
             config_contents = plistlib.readPlist(config_plist_path)
         return config_contents
-    
+
     @classmethod
     def write(cls, new_settings):
-        config_plist_path = utilities.GetConfigurationPlistPath()
+        config_plist_path = utilities.getconfigurationplistpath()
         plistlib.writePlist(new_settings, config_plist_path)
-    
+
     @classmethod
     def getUpdateURL(cls):
         settings = cls.read()
         return settings['core_url']
-    
+
     @classmethod
     def setUpdateURL(cls, url):
         settings = cls.read()
@@ -40,13 +40,13 @@ class config(object):
             settings['core_url'] = url
             cls.write(settings)
         else:
-            logging_helper.getLogger().error(': The supplied URL is not valid (lacks a scheme).')
-    
+            logging_helper.getLogger().error('The supplied URL is not valid (lacks a scheme).')
+
     @classmethod
     def getDownloadDir(cls):
         settings = cls.read()
         return os.path.expanduser(settings['download_directory'])
-    
+
     @classmethod
     def setDownloadDir(cls, download_dir):
         download_dir = os.path.expanduser(download_dir)
@@ -55,13 +55,13 @@ class config(object):
             settings['download_directory'] = download_dir
             cls.write(settings)
         else:
-            logging_helper.getLogger().error(': the directory specified "'+download_dir+'" does not exist, please create it first.')
-    
+            logging_helper.getLogger().error('the directory specified "'+download_dir+'" does not exist, please create it first.')
+
     @classmethod
     def getVerboseLogging(cls):
         settings = cls.read()
         return settings['verbose_logging']
-    
+
     @classmethod
     def setVerboseLogging(cls, enable):
         settings = cls.read()
@@ -71,15 +71,15 @@ class config(object):
         elif enable in ['False', 'FALSE', 'false']:
             is_enabled = False
         else:
-            logging_helper.getLogger().error(': the value passed "'+enable+'" must be "True" or "False".')
+            logging_helper.getLogger().error('the value passed "'+enable+'" must be "True" or "False".')
         settings['verbose_logging'] = is_enabled
         cls.write(settings)
-        
+
     @classmethod
     def getUseHTTPS(cls):
         settings = cls.read()
         return settings['requests_via_https']
-    
+
     @classmethod
     def setUseHTTPS(cls, enable):
         settings = cls.read()
@@ -89,10 +89,10 @@ class config(object):
         elif enable in ['False', 'FALSE', 'false']:
             is_enabled = False
         else:
-            logging_helper.getLogger().error(': the value passed "'+enable+'" must be "True" or "False".')
+            logging_helper.getLogger().error('the value passed "'+enable+'" must be "True" or "False".')
         settings['requests_via_https'] = is_enabled
         cls.write(settings)
-    
+
     @classmethod
     def toggleFirstRun(cls):
         settings = cls.read()
@@ -100,12 +100,12 @@ class config(object):
         if value == True:
             settings['first_run'] = False
             cls.write(settings)
-    
+
     @classmethod
     def getFirstRun(cls):
         settings = cls.read()
         return settings['first_run']
-    
+
     @classmethod
     def defaults(cls):
         default_values = {

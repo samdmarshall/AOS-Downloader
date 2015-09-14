@@ -18,13 +18,13 @@ class diff(object):
             if os.path.exists(ancestor_build) == True and os.path.exists(child_build) == True:
                 # download was successful
                 diff_path = os.path.join(config.getDownloadDir(), package_name+'.diff')
-                logging_helper.getLogger().info(': Creating source diff...')
-                diff_result = cls.make(ancestor_build, child_build, diff_path)
-                logging_helper.getLogger().info(': Package diff successfuly create at "'+diff_path+'"!')
+                logging_helper.getLogger().info('Creating source diff...')
+                cls.make(ancestor_build, child_build, diff_path)
+                logging_helper.getLogger().info('Package diff written to "'+diff_path+'"!')
             else:
-                logging_helper.getLogger().error(': There was an error with finding the downloaded packages!')
+                logging_helper.getLogger().error('There was an error with finding the downloaded packages!')
         else:
-            logging_helper.getLogger().error(': One or more of the build numbers supplied was not valid. Please use the "--list" command to see available build numebrs.')
+            logging_helper.getLogger().error('One or more of the build numbers supplied was not valid. Please use the "--list" command to see available build numebrs.')
 
     @classmethod
     def make(cls, ancestor_build, child_build, diff_path):

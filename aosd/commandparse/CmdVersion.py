@@ -1,10 +1,11 @@
 """
 imports
 """
+from .RootCmd import RootCmd
 from ..downloader.versions import versions
 from ..downloader.cacher import cacher
 
-class CmdVersion(object):
+class CmdVersion(RootCmd):
     """
     command to assign a release version
     """
