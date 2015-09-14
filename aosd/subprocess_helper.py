@@ -15,6 +15,4 @@ class subprocess_helper(object):
         except CalledProcessError as e:
             output = e.output
             error = e.returncode
-        if error != 0:
-            logging_helper.getLogger().error('There was an error in creating the diff, the error will be logged to the diff file...')
         return output
