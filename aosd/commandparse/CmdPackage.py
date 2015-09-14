@@ -2,7 +2,7 @@
 imports
 """
 from .RootCmd import RootCmd
-from ..downloader.packages import Packages
+from ..downloader.Packages import Packages
 
 class CmdPackage(RootCmd):
 

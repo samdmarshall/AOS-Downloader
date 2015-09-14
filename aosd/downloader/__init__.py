@@ -1,3 +1,3 @@
 from .config import config
 from .releases import releases
-from .packages import Packages
+from .Packages import Packages

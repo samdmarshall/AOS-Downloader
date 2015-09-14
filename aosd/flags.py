@@ -4,7 +4,7 @@ from .downloader.diff import diff
 from .downloader import releases
 from .downloader import config
 from .downloader.cacher import cacher
-from .downloader.builds import Builds
+from .downloader.Builds import Builds
 from .logging_helper import logging_helper
 
 def ParseFlags(args_dict):
@@ -52,13 +52,15 @@ def ParseFlags(args_dict):
                     has_valid_package = package_name in Packages.list(release_type)
                     if has_valid_package == True:
                         print('Builds for package '+package_name+':')
-                        print(Builds.get(release_type, package_name))
+                        for build_number in Builds.get(release_type, package_name):
+                            print(build_number)
                     else:
                         logging_helper.getLogger().error('Invalid package name! Please use the "--list" flag to see available packages.')
                 else:
                     # list the packages
                     print('Packages for '+release_type+':')
-                    print(Packages.list(release_type))
+                    for package_name in Packages.list(release_type):
+                        print(package_name)
             else:
                 # check other actions
                 if has_package == True:

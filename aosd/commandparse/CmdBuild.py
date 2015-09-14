@@ -2,7 +2,7 @@
 imports
 """
 from .RootCmd import RootCmd
-from ..downloader.builds import Builds
+from ..downloader.Builds import Builds
 
 class CmdBuild(RootCmd):
     """
