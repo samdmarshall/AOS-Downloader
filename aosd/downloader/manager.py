@@ -17,7 +17,7 @@ import gzip
 import tarfile
 
 from .config import config
-from .Builds import Builds
+from .builds import Builds
 
 class manager(object):
 
