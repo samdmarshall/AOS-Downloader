@@ -11,14 +11,14 @@ class RootCmd(object):
         return {}
 
     @classmethod
-    def valid_values(cls, release_type, package_name):
+    def valid_values(cls):
         """
         valid values for the command
         """
         return []
 
     @classmethod
-    def query(cls, release_type, package_name, args):
+    def query(cls, args):
         """
         validate the value passed to the command
         """

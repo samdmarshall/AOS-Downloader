@@ -26,7 +26,7 @@ class logging_helper(object):
             ch.setLevel(logging.INFO)
 
             # create formatter
-            formatter = logging.Formatter('[%(levelname)s]%(message)s: ')
+            formatter = logging.Formatter('[%(levelname)s]: %(message)s')
 
             # add formatter to ch
             ch.setFormatter(formatter)
