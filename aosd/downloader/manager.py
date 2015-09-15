@@ -74,9 +74,16 @@ class manager(object):
         hashes_manifest_path = utilities.getlookupplistpath('hashes')
         hashes_manifest = plistlib.readPlist(hashes_manifest_path)
         recorded_hash = hashes_manifest[release_type][package_name][build_number]['sha256']
-        output = subprocess_helper.make_call(('shasum', '-a', '256', output_file))
-        file_hash = output.split()[0]
-        return (recorded_hash == file_hash, file_hash, recorded_hash)
+        file_hash = ''
+        matching_hash = False
+        if recorded_hash != ''
+            output = subprocess_helper.make_call(('shasum', '-a', '256', output_file))
+            file_hash = output.split()[0]
+            matching_hash = recorded_hash == file_hash
+        else:
+            logging_helper.getLogger().error('There is no hash on record for "'+package_name+'-'+build_number+'". If you were able to download a tarball, then please submit a pull request to update "https://github.com/samdmarshall/AOS-Downloader/blob/master/aosd/data/hashes.plist" to reflect the correct hash.')
+        return (matching_hash, file_hash, recorded_hash)
+            
 
     @classmethod
     def DownloadPackageTarball(cls, release_type, package_name, build_number):
