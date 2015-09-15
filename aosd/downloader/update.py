@@ -12,6 +12,11 @@ class update(object):
     @classmethod
     def fetch(cls):
         logging_helper.getLogger().info('Updating package data...')
+
+        hashes_plist_url = os.path.join(config.getUpdateURL(), 'hashes.plist')
+        hashes_plist_path = utilities.getlookupplistpath('hashes')
+        manager.DownloadFileFromURLToPath(hashes_plist_url, hashes_plist_path)
+
         release_plist_url = os.path.join(config.getUpdateURL(), 'releases.plist')
         release_plist_path = utilities.getreleaseplistpath()
         manager.DownloadFileFromURLToPath(release_plist_url, release_plist_path)

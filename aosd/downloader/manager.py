@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 
 from ..logging_helper import logging_helper
+from ..subprocess_helper import subprocess_helper
 
 try:
     import urllib.request as comp_urlreq # For Python 3.0 and later
@@ -15,9 +16,11 @@ except ImportError:
 import os
 import gzip
 import tarfile
+import plistlib
 
 from .config import config
 from .Builds import Builds
+from .utilities import utilities
 
 class manager(object):
 
@@ -67,15 +70,28 @@ class manager(object):
                 logging_helper.getLogger().info('Download Complete!')
 
     @classmethod
+    def ValidateDownloadedFileByHash(cls, output_file, release_type, package_name, build_number):
+        hashes_manifest_path = utilities.getlookupplistpath('hashes')
+        hashes_manifest = plistlib.readPlist(hashes_manifest_path)
+        recorded_hash = hashes_manifest[release_type][package_name][build_number]['sha256']
+        output = subprocess_helper.make_call(('shasum', '-a', '256', output_file))
+        file_hash = output.split()[0]
+        return (recorded_hash == file_hash, file_hash, recorded_hash)
+
+    @classmethod
     def DownloadPackageTarball(cls, release_type, package_name, build_number):
         downloaded_directory_path = ''
         tarball_address = cls.CreateTarballURL(release_type, package_name, build_number)
         package_file_name = os.path.basename(tarball_address)
         output_directory = os.path.expanduser(config.getDownloadDir())
         output_file = os.path.join(output_directory, package_file_name)
-        try:
-            cls.DownloadFileFromURLToPath(tarball_address, output_file)
-            tar_name = os.path.splitext(package_file_name)[0]
+        cls.DownloadFileFromURLToPath(tarball_address, output_file)
+        tar_name = os.path.splitext(package_file_name)[0]
+        file_name = os.path.splitext(tar_name)[0]
+        logging_helper.getLogger().info('Downloaded "'+file_name+'" to "'+output_file+'"')
+        # check the downloaded file against the stored hash
+        hash_result = cls.ValidateDownloadedFileByHash(output_file, release_type, package_name, build_number)
+        if hash_result[0] == True:
             if config.getVerboseLogging() == True:
                 logging_helper.getLogger().info('Decompressing "'+output_file+'" -> "'+tar_name+'"...')
             gz_archive = gzip.open(output_file, 'rb')
@@ -108,11 +124,10 @@ class manager(object):
             os.remove(tar_path)
             if config.getVerboseLogging() == True:
                 logging_helper.getLogger().info('Decompression Complete!')
-            file_name = os.path.splitext(tar_name)[0]
             logging_helper.getLogger().info('The package "'+file_name+'" has been downloaded to "'+output_directory+'".')
             downloaded_directory_path = os.path.join(output_directory, file_name)
-        except:
-            logging_helper.getLogger().error('Could not find tarball!')
+        else:
+            logging_helper.getLogger().info('The package "'+file_name+'" has hash of "'+hash_result[1]+'" which doesn\'t match the hash on record ('+hash_result[2]+')')
         return downloaded_directory_path
 
     @classmethod
