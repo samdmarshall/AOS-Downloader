@@ -68,7 +68,15 @@ The application's command console will give you full access to all of the featur
 
 ### Flags
 
-Currently not implemented.
+	-h, --help                         show help message and exit
+	-t TYPE, --type TYPE               specify the release type
+	-l, --list                         list versions of a package to check out, if no package is specified it lists available packages
+	-p PACKAGE, --package PACKAGE      specify the name of a package from a release
+	-b BUILD, --build BUILD            specify the build number from a package
+	-d DIFF DIFF, --diff DIFF DIFF     specify the build number of a package to create diff against
+	-r, --reset-cache                  removes currently cached package plist files
+	-c, --build-cache                  caches the package manifests and builds an index
+
 
 ---
 
@@ -120,6 +128,7 @@ In this case:
 * `name`=`6.3`
 
 
+When you are submitting a release update, please also update the [hashes.plist](asod/data/hashes.plist) file to include the sha256 (`shasum -a 256 <file>`) of the `.tar.gz` file.
 ### Code Updates
 
 Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines of how to make pull requests and submit changes to the code. 
