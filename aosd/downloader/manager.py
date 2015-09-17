@@ -21,6 +21,7 @@ import plistlib
 from .config import config
 from .Builds import Builds
 from .utilities import utilities
+from .Hashes import Hashes
 
 class manager(object):
 
@@ -68,33 +69,10 @@ class manager(object):
             output.close()
             if config.getVerboseLogging() == True:
                 logging_helper.getLogger().info('Download Complete!')
+        
 
     @classmethod
-    def ValidateDownloadedFileByHash(cls, output_file, release_type, package_name, build_number):
-        # get the file hash of what we downloaded
-        output = subprocess_helper.make_call(('shasum', '-a', '256', output_file))
-        file_hash = output.split()[0]
-        # look up any existing hash
-        hashes_manifest_path = utilities.getlookupplistpath('hashes')
-        hashes_manifest = plistlib.readPlist(hashes_manifest_path)
-        recorded_hash = ''
-        check_release = hashes_manifest.get(release_type, None)
-        if check_release != None:
-            check_package = check_release.get(package_name, None)
-            if check_package != None:
-                check_build = check_package.get(build_number, None)
-                if check_build != None:
-                    recorded_hash = check_build.get('sha256', '')
-        matching_hash = False
-        if recorded_hash != '':
-            matching_hash = recorded_hash == file_hash
-        else:
-            logging_helper.getLogger().error('There is no hash on record for "'+package_name+'-'+build_number+'". If you were able to download a tarball, then please submit a pull request to update "https://github.com/samdmarshall/AOS-Downloader/blob/master/aosd/data/hashes.plist" to reflect the correct hash.')
-        return (matching_hash, file_hash, recorded_hash)
-            
-
-    @classmethod
-    def DownloadPackageTarball(cls, release_type, package_name, build_number):
+    def DownloadPackageTarball(cls, release_type, package_name, build_number, check_hash=True):
         downloaded_directory_path = ''
         tarball_address = cls.CreateTarballURL(release_type, package_name, build_number)
         package_file_name = os.path.basename(tarball_address)
@@ -103,46 +81,49 @@ class manager(object):
         cls.DownloadFileFromURLToPath(tarball_address, output_file)
         tar_name = os.path.splitext(package_file_name)[0]
         file_name = os.path.splitext(tar_name)[0]
-        logging_helper.getLogger().info('Downloaded "'+file_name+'" to "'+output_file+'"')
-        # check the downloaded file against the stored hash
-        hash_result = cls.ValidateDownloadedFileByHash(output_file, release_type, package_name, build_number)
-        if hash_result[0] == True:
-            if config.getVerboseLogging() == True:
-                logging_helper.getLogger().info('Decompressing "'+output_file+'" -> "'+tar_name+'"...')
-            gz_archive = gzip.open(output_file, 'rb')
-            if config.getVerboseLogging() == True:
-                logging_helper.getLogger().info('Reading file contents...')
-            file_content = gz_archive.read()
-            tar_path = os.path.join(output_directory, tar_name)
-            dump_tar = open(tar_path, 'wb')
-            if config.getVerboseLogging() == True:
-                logging_helper.getLogger().info('Dumping tar file...')
-            dump_tar.write(file_content)
-            if config.getVerboseLogging() == True:
-                logging_helper.getLogger().info('Closing files...')
-            dump_tar.close()
-            gz_archive.close()
-            if config.getVerboseLogging() == True:
-                logging_helper.getLogger().info('Removing archive...')
-            os.remove(output_file)
-            if config.getVerboseLogging() == True:
-                logging_helper.getLogger().info('Opening tar file...')
-            tar_archive = tarfile.open(tar_path)
-            if config.getVerboseLogging() == True:
-                logging_helper.getLogger().info('Decompressing tar file...')
-            tar_archive.extractall(output_directory)
-            if config.getVerboseLogging() == True:
-                logging_helper.getLogger().info('Closing tar file...')
-            tar_archive.close()
-            if config.getVerboseLogging() == True:
-                logging_helper.getLogger().info('Removing tar file...')
-            os.remove(tar_path)
-            if config.getVerboseLogging() == True:
-                logging_helper.getLogger().info('Decompression Complete!')
-            logging_helper.getLogger().info('The package "'+file_name+'" has been downloaded to "'+output_directory+'".')
-            downloaded_directory_path = os.path.join(output_directory, file_name)
+        if check_hash == True:
+            logging_helper.getLogger().info('Downloaded "'+file_name+'" to "'+output_file+'"')
+            # check the downloaded file against the stored hash
+            hash_result = Hashes.ValidateDownloadedFileByHash(output_file, release_type, package_name, build_number)
+            if hash_result[0] == True:
+                if config.getVerboseLogging() == True:
+                    logging_helper.getLogger().info('Decompressing "'+output_file+'" -> "'+tar_name+'"...')
+                gz_archive = gzip.open(output_file, 'rb')
+                if config.getVerboseLogging() == True:
+                    logging_helper.getLogger().info('Reading file contents...')
+                file_content = gz_archive.read()
+                tar_path = os.path.join(output_directory, tar_name)
+                dump_tar = open(tar_path, 'wb')
+                if config.getVerboseLogging() == True:
+                    logging_helper.getLogger().info('Dumping tar file...')
+                dump_tar.write(file_content)
+                if config.getVerboseLogging() == True:
+                    logging_helper.getLogger().info('Closing files...')
+                dump_tar.close()
+                gz_archive.close()
+                if config.getVerboseLogging() == True:
+                    logging_helper.getLogger().info('Removing archive...')
+                os.remove(output_file)
+                if config.getVerboseLogging() == True:
+                    logging_helper.getLogger().info('Opening tar file...')
+                tar_archive = tarfile.open(tar_path)
+                if config.getVerboseLogging() == True:
+                    logging_helper.getLogger().info('Decompressing tar file...')
+                tar_archive.extractall(output_directory)
+                if config.getVerboseLogging() == True:
+                    logging_helper.getLogger().info('Closing tar file...')
+                tar_archive.close()
+                if config.getVerboseLogging() == True:
+                    logging_helper.getLogger().info('Removing tar file...')
+                os.remove(tar_path)
+                if config.getVerboseLogging() == True:
+                    logging_helper.getLogger().info('Decompression Complete!')
+                logging_helper.getLogger().info('The package "'+file_name+'" has been downloaded to "'+output_directory+'".')
+                downloaded_directory_path = os.path.join(output_directory, file_name)
+            else:
+                logging_helper.getLogger().info('The package "'+file_name+'" has hash of "'+hash_result[1]+'" which doesn\'t match the hash on record ('+hash_result[2]+')')
         else:
-            logging_helper.getLogger().info('The package "'+file_name+'" has hash of "'+hash_result[1]+'" which doesn\'t match the hash on record ('+hash_result[2]+')')
+            downloaded_directory_path = output_file
         return downloaded_directory_path
 
     @classmethod

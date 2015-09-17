@@ -12,6 +12,7 @@ from .CmdDownload import CmdDownload
 from .CmdBuild import CmdBuild
 from .CmdConfig import CmdConfig
 from .CmdDiff import CmdDiff
+from .CmdHash import CmdHash
 
 from ..downloader.releases import releases
 
@@ -275,5 +276,19 @@ class InteractiveInput(cmd.Cmd):
                 CmdDiff.action(self.display_info)
             else:
                 logging_helper.getLogger().error('Invalid build numbers!')
+        else:
+            logging_helper.getLogger().info('Please select a release type and package before using the "diff" command.')
+        
+    # hashes
+    def help_hash(self):
+        self.DisplayUsage(CmdHash.usage())
+    
+    def do_hash(self, line):
+        if 'type' in self.display_info.keys() and 'version' in self.display_info.keys():
+            result = CmdHash.query(self.get_arguments(line))
+            if result[0] == True:
+                CmdHash.action(self.display_info)
+            else:
+                logging_helper.getLogger().error('Fatal error, cannot process hashes!')
         else:
             logging_helper.getLogger().info('Please select a release type and package before using the "diff" command.')
