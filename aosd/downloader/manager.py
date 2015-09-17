@@ -71,14 +71,22 @@ class manager(object):
 
     @classmethod
     def ValidateDownloadedFileByHash(cls, output_file, release_type, package_name, build_number):
+        # get the file hash of what we downloaded
+        output = subprocess_helper.make_call(('shasum', '-a', '256', output_file))
+        file_hash = output.split()[0]
+        # look up any existing hash
         hashes_manifest_path = utilities.getlookupplistpath('hashes')
         hashes_manifest = plistlib.readPlist(hashes_manifest_path)
-        recorded_hash = hashes_manifest[release_type][package_name][build_number]['sha256']
-        file_hash = ''
+        recorded_hash = ''
+        check_release = hashes_manifest.get(release_type, None)
+        if check_release != None:
+            check_package = check_release.get(package_name, None)
+            if check_package != None:
+                check_build = check_package.get(build_number, None)
+                if check_build != None:
+                    recorded_hash = check_build.get('sha256', '')
         matching_hash = False
-        if recorded_hash != ''
-            output = subprocess_helper.make_call(('shasum', '-a', '256', output_file))
-            file_hash = output.split()[0]
+        if recorded_hash != '':
             matching_hash = recorded_hash == file_hash
         else:
             logging_helper.getLogger().error('There is no hash on record for "'+package_name+'-'+build_number+'". If you were able to download a tarball, then please submit a pull request to update "https://github.com/samdmarshall/AOS-Downloader/blob/master/aosd/data/hashes.plist" to reflect the correct hash.')
