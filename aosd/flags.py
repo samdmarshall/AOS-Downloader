@@ -73,7 +73,7 @@ def ParseFlags(args_dict):
                         if has_build == True:
                             # check to see if the build number is valid
                             if has_hash == True:
-                                print Hashes.get(release_type, package_name, build_number)
+                                print(Hashes.get(release_type, package_name, build_number))
                             else:
                                 manager.ValidateAndDownload(release_type, package_name, build_number)
                         else:

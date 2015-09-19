@@ -51,10 +51,9 @@ Checkout this repo then run `python setup.py install` and optionally pass the `-
 
 ### Homebrew
 
+	$ brew update
 	$ brew tap samdmarshall/formulae
-	$ brew install samdmarshall/formulae/aosd --HEAD
-
-*Note: This is using the HEAD of the develop branch of this repo.*
+	$ brew install samdmarshall/formulae/aosd # you can optionally supply --HEAD here, though be aware that it can be unstable
 
 ---
 
@@ -74,8 +73,9 @@ The application's command console will give you full access to all of the featur
 	-p PACKAGE, --package PACKAGE      specify the name of a package from a release
 	-b BUILD, --build BUILD            specify the build number from a package
 	-d DIFF DIFF, --diff DIFF DIFF     specify the build number of a package to create diff against
-	-r, --reset-cache                  removes currently cached package plist files
-	-c, --build-cache                  caches the package manifests and builds an index
+	-r, --resetcache                   removes currently cached package plist files
+	-c, --buildcache                   caches the package manifests and builds an index
+	-f, --findhash					   this will display the sha256 for the specified build of a package
 
 
 ---
