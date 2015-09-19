@@ -14,9 +14,10 @@ def CheckPassedArgCount(args):
         'diff': None,
         'list': False,
         'package': None,
-        'reset_cache': False,
+        'resetcache': False,
         'type': None,
-        'build_cache': False,
+        'buildcache': False,
+        'findhash': False,
     }
     # returns the number of arguments that got passed that are not set to default values
     return len(list((item for item in args.keys() if kDefaultValues[item] != args[item])))
@@ -66,7 +67,7 @@ def main():
 
     parser.add_argument(
         '-r',
-        '--reset-cache',
+        '--resetcache',
         help='removes currently cached package plist files',
         required=False,
         action='store_true'
@@ -74,18 +75,25 @@ def main():
 
     parser.add_argument(
         '-c',
-        '--build-cache',
+        '--buildcache',
         help='caches the package manifests and builds an index',
+        required=False,
+        action='store_true'
+    )
+    
+    parser.add_argument(
+        '-f',
+        '--findhash',
+        help='gets the hash for the specified build number of a package of a release type',
         required=False,
         action='store_true'
     )
 
     args_dict = vars(parser.parse_args())
 
-    if config.getFirstRun() == True:
-        logging_helper.getLogger().info('This appears to be the first time this has been run, it is highly recommended that you run the "cache setup" command or pass "--build-cache" on the command line. This software can be used without this command being run but some of the autocomplete will not work.')
-
     if CheckPassedArgCount(args_dict) == 0:
+        if config.getFirstRun() == True:
+            logging_helper.getLogger().info('This appears to be the first time this has been run, it is highly recommended that you run the "cache setup" command or pass "--buildcache" on the command line. This software can be used without this command being run but some of the autocomplete will not work.')
         if 'libedit' in readline.__doc__:
             readline.parse_and_bind("bind ^I rl_complete")
         else:

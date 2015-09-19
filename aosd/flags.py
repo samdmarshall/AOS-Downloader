@@ -5,6 +5,7 @@ from .downloader import releases
 from .downloader import config
 from .downloader.cacher import cacher
 from .downloader.Builds import Builds
+from .downloader.Hashes import Hashes
 from .logging_helper import logging_helper
 
 def ParseFlags(args_dict):
@@ -27,9 +28,11 @@ def ParseFlags(args_dict):
 
     has_other_flags = has_list or has_package or has_build or has_diff
 
-    has_reset_cache = args_dict.get('reset_cache', False)
+    has_reset_cache = args_dict.get('resetcache', False)
 
-    has_build_cache = args_dict.get('build_cache', False)
+    has_build_cache = args_dict.get('buildcache', False)
+    
+    has_hash = args_dict.get('findhash', False)
 
     if has_reset_cache == True:
         cacher.flush(None, None)
@@ -38,7 +41,7 @@ def ParseFlags(args_dict):
         cacher.clean()
 
     if config.getFirstRun() == True:
-        logging_helper.getLogger().info('You cannot use the command line interface without first building an index. Please run with only the "--build_cache" flag first.')
+        logging_helper.getLogger().info('You cannot use the command line interface without first building an index. Please run with only the "--buildcache" flag first.')
 
     if has_type == True and has_other_flags == True:
         # ok, check the type
@@ -69,7 +72,10 @@ def ParseFlags(args_dict):
                         # now check the build number
                         if has_build == True:
                             # check to see if the build number is valid
-                            manager.ValidateAndDownload(release_type, package_name, build_number)
+                            if has_hash == True:
+                                print Hashes.get(release_type, package_name, build_number)
+                            else:
+                                manager.ValidateAndDownload(release_type, package_name, build_number)
                         else:
                             # if we don't supply a build number we will then check to see if we should diff
                             if has_diff == True:
