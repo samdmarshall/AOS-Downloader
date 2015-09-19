@@ -42,16 +42,17 @@ class Hashes(object):
         return recorded_hash
     
     @classmethod
-    def calculate(cls, output_file):
+    def calculate(cls, output_file, remove_after=True):
         output = subprocess_helper.make_call(('shasum', '-a', '256', output_file))
         file_hash = output.split()[0]
-        os.remove(output_file)
+        if remove_after == True:
+            os.remove(output_file)
         return file_hash
     
     @classmethod
-    def ValidateDownloadedFileByHash(cls, output_file, release_type, package_name, build_number):
+    def ValidateDownloadedFileByHash(cls, output_file, release_type, package_name, build_number, remove_after=True):
         # get the file hash of what we downloaded
-        file_hash = cls.calculate(output_file)
+        file_hash = cls.calculate(output_file, remove_after)
         # look up any existing hash
         recorded_hash = cls.get(release_type, package_name, build_number)
         matching_hash = False

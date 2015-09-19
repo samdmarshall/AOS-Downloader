@@ -84,7 +84,7 @@ class manager(object):
         if check_hash == True:
             logging_helper.getLogger().info('Downloaded "'+file_name+'" to "'+output_file+'"')
             # check the downloaded file against the stored hash
-            hash_result = Hashes.ValidateDownloadedFileByHash(output_file, release_type, package_name, build_number)
+            hash_result = Hashes.ValidateDownloadedFileByHash(output_file, release_type, package_name, build_number, False)
             if hash_result[0] == True:
                 if config.getVerboseLogging() == True:
                     logging_helper.getLogger().info('Decompressing "'+output_file+'" -> "'+tar_name+'"...')
