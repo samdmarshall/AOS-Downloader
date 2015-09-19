@@ -291,4 +291,4 @@ class InteractiveInput(cmd.Cmd):
             else:
                 logging_helper.getLogger().error('Fatal error, cannot process hashes!')
         else:
-            logging_helper.getLogger().info('Please select a release type and package before using the "diff" command.')
+            logging_helper.getLogger().info('Please select a release type and package before using the "hash" command.')
