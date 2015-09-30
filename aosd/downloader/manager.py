@@ -69,6 +69,9 @@ class manager(object):
             output.close()
             if config.getVerboseLogging() == True:
                 logging_helper.getLogger().info('Download Complete!')
+            return True
+        else:
+            return False
         
 
     @classmethod
@@ -78,7 +81,7 @@ class manager(object):
         package_file_name = os.path.basename(tarball_address)
         output_directory = os.path.expanduser(config.getDownloadDir())
         output_file = os.path.join(output_directory, package_file_name)
-        cls.DownloadFileFromURLToPath(tarball_address, output_file)
+        download_successful = cls.DownloadFileFromURLToPath(tarball_address, output_file)
         tar_name = os.path.splitext(package_file_name)[0]
         file_name = os.path.splitext(tar_name)[0]
         if check_hash == True:
@@ -123,7 +126,8 @@ class manager(object):
             else:
                 logging_helper.getLogger().info('The package "'+file_name+'" has hash of "'+hash_result[1]+'" which doesn\'t match the hash on record ('+hash_result[2]+')')
         else:
-            downloaded_directory_path = output_file
+            if download_successful == True:
+                downloaded_directory_path = output_file
         return downloaded_directory_path
 
     @classmethod

@@ -29,6 +29,9 @@ class CmdHash(RootCmd):
             recorded_hash = Hashes.get(release_type, package_name, build_number)
             if recorded_hash == '':
                 output_file = manager.DownloadPackageTarball(release_type, package_name, build_number, False)
-                new_hash = Hashes.calculate(output_file)
-                Hashes.add(release_type, package_name, build_number, new_hash)
+                if output_file != '':
+                    new_hash = Hashes.calculate(output_file)
+                    Hashes.add(release_type, package_name, build_number, new_hash)
+                else:
+                    print('Missing package! If there was an error before this please check to see if the url exists and file a radar on the missing tarball!')
         print('====================')

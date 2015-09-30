@@ -5,6 +5,15 @@
 		
 		<dict>
 			<key>name</key>
+			<string>9.0</string>
+			<key>prefix</key>
+			<string>ios</string>
+			<key>version</key>
+			<string>90</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
 			<string>8.4.1</string>
 			<key>prefix</key>
 			<string>ios</string>

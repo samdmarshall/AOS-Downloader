@@ -2141,6 +2141,11 @@
 				<key>sha256</key>
 				<string>220a119208e216e2a9f7cd77306065c77a350fbc0c30f90c2179b7b8abdc1977</string>
 			</dict>
+			<key>7601.1.46.3</key>
+			<dict>
+				<key>sha256</key>
+				<string>5fd598af3280f3371f96edaafe5507676b59ca3e7fe67d9abcbce2ea265a8963</string>
+			</dict>
 			<key>903</key>
 			<dict>
 				<key>sha256</key>
@@ -2178,6 +2183,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>8d610b938256c028defb6aa4381bbb3c736bcb016e9389969ec9306bb26f7e60</string>
+			</dict>
+			<key>7601.1.46.3</key>
+			<dict>
+				<key>sha256</key>
+				<string>94cd4655db512c6af873f60c6be24373e27d73ffdc3e23971384ab42a4c67679</string>
 			</dict>
 		</dict>
 		<key>WTFEmbedded</key>
@@ -2380,6 +2390,11 @@
 				<key>sha256</key>
 				<string>1e7ac1a0c45dfc28a06071103d8c904af0c934e8972aca8fe8b137a211a77fde</string>
 			</dict>
+			<key>7601.1.46.10</key>
+			<dict>
+				<key>sha256</key>
+				<string>3b2b12574bca3bb320519171fa29a8779cb1b7a21e2f59b4b271d1c66c2f5ac3</string>
+			</dict>
 			<key>777.1</key>
 			<dict>
 				<key>sha256</key>
@@ -2448,6 +2463,11 @@
 				<key>sha256</key>
 				<string>3c6e08eb0f50b4f8527e48ef9a026ff62900ea5828d25bb4e9f21228a53c7aa8</string>
 			</dict>
+			<key>7601.1.46.9</key>
+			<dict>
+				<key>sha256</key>
+				<string>4e5b6bfcb3e80109cef8b13365a378961771b8cc00edcf2efdb16948584b7157</string>
+			</dict>
 		</dict>
 		<key>WebKit2</key>
 		<dict>
@@ -2495,6 +2515,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>ac4fefe776d5b113bf455373cb3d2e71b215539832ec326057b4a2ca0eb170c2</string>
+			</dict>
+			<key>7601.1.46.9</key>
+			<dict>
+				<key>sha256</key>
+				<string>3df648d9306faff517931e9cc7b57ac92fc3a2a6efafdff3572c41cfb6c2f162</string>
 			</dict>
 		</dict>
 		<key>cctools</key>
@@ -2834,6 +2859,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>dfed923a233c0a7b23ffea87e0b631fe82a83324b71a653f558397f1558d8a27</string>
+			</dict>
+			<key>44</key>
+			<dict>
+				<key>sha256</key>
+				<string>012540176d1a2ae22920dd635d0d45ff7ccf34c2c2e8d8222731372f95a30686</string>
 			</dict>
 		</dict>
 		<key>libstdcxx</key>
