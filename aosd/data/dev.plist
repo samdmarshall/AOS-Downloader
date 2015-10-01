@@ -4,6 +4,15 @@
 	<array>
 		<dict>
 			<key>name</key>
+			<string>6.4</string>
+			<key>version</key>
+			<string>64</string>
+			<key>prefix</key>
+			<string>developer-tools</string>
+		</dict>
+		
+		<dict>
+			<key>name</key>
 			<string>6.3</string>
 			<key>version</key>
 			<string>63</string>

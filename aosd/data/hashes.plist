@@ -1043,7 +1043,7 @@
 			<key>133</key>
 			<dict>
 				<key>sha256</key>
-				<string></string>
+				<string>82c3e447d1fa4d44a9083f42d239a624610ac647113cd5c567869740aefeb58d</string>
 			</dict>
 			<key>25</key>
 			<dict>
@@ -1457,7 +1457,7 @@
 			<key>13</key>
 			<dict>
 				<key>sha256</key>
-				<string></string>
+				<string>721ac21c7057caf59deb912e6a099421d0c3373fc2cfe40293378a00639b440d</string>
 			</dict>
 			<key>2</key>
 			<dict>
@@ -1525,7 +1525,7 @@
 			<key>8.9.26</key>
 			<dict>
 				<key>sha256</key>
-				<string></string>
+				<string>11b8a0cd67b6089cb770c1911081d1e5afb86637b3428c21828b505ec6dc1b97</string>
 			</dict>
 			<key>8.9.5</key>
 			<dict>
@@ -1622,6 +1622,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>bec1a5e20b599d108be0017736833c1f6212ea26c67f20d8437abc5d23433c36</string>
+			</dict>
+			<key>242.2</key>
+			<dict>
+				<key>sha256</key>
+				<string>fe9bf780fe15cb71f41f25595dcc6cc715093a3066914a65098222421a76213b</string>
 			</dict>
 			<key>26.0.81</key>
 			<dict>
