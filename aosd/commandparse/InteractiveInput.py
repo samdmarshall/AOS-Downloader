@@ -1,6 +1,11 @@
-import cmd
+import sys
+if sys.platform == 'darwin':
+     from .readline_unsorted.cmd import *
+else:
+    from cmd import Cmd
 
 from ..logging_helper import logging_helper
+from ..subprocess_helper import subprocess_helper
 
 from .CmdQuit import CmdQuit
 from .CmdType import CmdType
@@ -16,7 +21,7 @@ from .CmdHash import CmdHash
 
 from ..downloader.releases import releases
 
-class InteractiveInput(cmd.Cmd):
+class InteractiveInput(Cmd):
     prompt = ':> '
     display_info = {}
 
@@ -66,7 +71,7 @@ class InteractiveInput(cmd.Cmd):
         if len(info_string) > 0:
             print('\n'+info_string)
         return stop
-
+        
     # Quit
     def help_quit(self):
         self.DisplayUsage(CmdQuit.usage())
@@ -148,7 +153,7 @@ class InteractiveInput(cmd.Cmd):
                 if 'build' in self.display_info.keys():
                     del self.display_info['build']
                 if 'package' in self.display_info.keys():
-                    package_result = CmdPackage.query(release_type, result[1], self.display_info['package'])
+                    package_result = CmdPackage.query(release_type, result[1], [self.display_info['package']])
                     if package_result[0] == True:
                         self.display_info['build'] = package_result[1][1]
                 CmdVersion.action(self.display_info)
@@ -291,4 +296,6 @@ class InteractiveInput(cmd.Cmd):
             else:
                 logging_helper.getLogger().error('Fatal error, cannot process hashes!')
         else:
-            logging_helper.getLogger().info('Please select a release type and package before using the "hash" command.')
+            logging_helper.getLogger().info('Please select a release type and version before using the "hash" command.')
+
+            

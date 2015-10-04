@@ -43,5 +43,9 @@ class Packages(object):
         version_manifest_path = cacher.get(release_type, version)
         if version_manifest_path != None:
             version_manifest = plistlib.readPlist(version_manifest_path)
-            build_number = version_manifest['projects'][package_name]['version']
+            project_manifest = version_manifest.get('projects', None)
+            if project_manifest != None:
+                package_manifest = project_manifest.get(package_name, None)
+                if package_manifest != None:
+                    build_number = package_manifest.get('version', '')
         return build_number

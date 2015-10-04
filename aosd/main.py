@@ -1,7 +1,5 @@
 import sys
 import argparse
-import readline
-import rlcompleter
 
 from .commandparse import InteractiveInput
 from .downloader.config import config
@@ -94,10 +92,6 @@ def main():
     if CheckPassedArgCount(args_dict) == 0:
         if config.getFirstRun() == True:
             logging_helper.getLogger().info('This appears to be the first time this has been run, it is highly recommended that you run the "cache setup" command or pass "--buildcache" on the command line. This software can be used without this command being run but some of the autocomplete will not work.')
-        if 'libedit' in readline.__doc__:
-            readline.parse_and_bind("bind ^I rl_complete")
-        else:
-            readline.parse_and_bind("tab: complete")
         aosd_shell = InteractiveInput()
         aosd_shell.cmdloop()
     else:

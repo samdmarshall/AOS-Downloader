@@ -1,12 +1,12 @@
 from __future__ import absolute_import
 
 from ..logging_helper import logging_helper
-from ..subprocess_helper import subprocess_helper
 
 from .utilities import utilities
 
 import os
 import plistlib
+import hashlib
 
 class Hashes(object):
     
@@ -43,8 +43,13 @@ class Hashes(object):
     
     @classmethod
     def calculate(cls, output_file, remove_after=True):
-        output = subprocess_helper.make_call(('shasum', '-a', '256', output_file))
-        file_hash = output.split()[0]
+        file_hash = ''
+        if os.path.exists(output_file) == True:
+            output_file_fd = open(output_file, 'r')
+            file_contents = output_file_fd.read()
+            output_file_fd.close()
+            hasher = hashlib.sha256(file_contents)
+            file_hash = hasher.hexdigest()
         if remove_after == True:
             os.remove(output_file)
         return file_hash
