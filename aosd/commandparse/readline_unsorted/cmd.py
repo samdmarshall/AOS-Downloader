@@ -44,14 +44,27 @@ functions respectively.
 These interpreters use raw_input; thus, if the readline module is loaded,
 they automatically support Emacs-like command history and editing features.
 """
-import os
-import sys
-sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+
 import readline
 if 'libedit' in readline.__doc__:
     readline.parse_and_bind("bind ^I rl_complete")
 else:
+    from distutils.version import LooseVersion
     readline.parse_and_bind("tab: complete")
+    def ListVersionCompare(obj1, obj2):
+        versions = [ obj1, obj2 ];
+        versions.sort(key=LooseVersion);
+        if versions[0] == obj1:
+            return -1;
+        elif versions[0] == obj2:
+            return 1;
+        else:
+            return 0;
+    def match_display_hook(substitution, matches, longest_match_length):
+        matches = sorted(matches, cmp=ListVersionCompare)
+        print(matches)
+        print(readline.get_line_buffer(), readline.redisplay())
+    readline.set_completion_display_matches_hook(match_display_hook)
 
 import string
 
