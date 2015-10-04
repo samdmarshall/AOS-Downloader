@@ -1,3 +1,8 @@
+import sys
+if not sys.version_info.major >= 2 and not sys.version_info.minor >= 7:
+    print('This software requires that you be running at least python 2.7.')
+    sys.exit(1)
+
 from setuptools import setup
 
 setup(

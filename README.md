@@ -7,7 +7,7 @@ This utility makes it easy to find and download various versions of the open sou
 ## Requirements
 
 ####Python 2.7
-* Libraries used:
+* Modules used:
 	* argparse
 	* sys
 	* os
@@ -15,29 +15,30 @@ This utility makes it easy to find and download various versions of the open sou
 	* urllib2
 	* httplib
 	* urlparse
-	* readline
-	* rlcompleter
-	* cmd
+	* readline (this uses a custom readline implementation on OS X)
 	* gzip
 	* tarfile
 	* logging
-
+	* hashlib
+	* subprocess
+	* string
 
 
 ####Python 3.4
-* Libraries used:
+* Modules used:
 	* argparse
 	* sys
 	* os
 	* plistlib
 	* urllib
 	* http
-	* readline
-	* rlcompleter
-	* cmd
+	* readline (this uses a custom readline implementation on OS X)
 	* gzip
 	* tarfile
 	* logging
+	* hashlib
+	* subprocess
+	* string
 
 ---
 

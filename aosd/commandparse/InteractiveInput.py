@@ -1,5 +1,6 @@
 import sys
-if sys.platform == 'darwin':
+import platform
+if sys.platform == 'darwin' and not 'ppc' in platform.machine():
      from .readline_unsorted.cmd import *
 else:
     from cmd import Cmd
