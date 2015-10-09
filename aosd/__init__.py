@@ -4,6 +4,6 @@ Interface Module
 from .commandparse import *
 from .logging_helper import *
 from .main import *
-import version
-__version__ = version.__version__
+from .version import __version__ as AOSD_VERSION
+__version__ = AOSD_VERSION
 
