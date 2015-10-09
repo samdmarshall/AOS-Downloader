@@ -22,6 +22,7 @@ from .CmdHash import CmdHash
 from .CmdList import CmdList
 
 from ..downloader.releases import releases
+from ..version import __version__ as AOSD_VERSION
 
 class InteractiveInput(Cmd):
     prompt = ':> '
@@ -352,3 +353,7 @@ class InteractiveInput(Cmd):
             ret_val = 'Fatal error, could not list!'
             logging_helper.getLogger().error(ret_val)
         return ret_val if self.quitOnError == True else None
+    
+    # info
+    def do_info(self, line):
+        print('AOSD Version: '+AOSD_VERSION)
