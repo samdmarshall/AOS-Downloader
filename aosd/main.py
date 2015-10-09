@@ -14,6 +14,7 @@ kFLAGNAME_resetcache = 'resetcache'
 kFLAGNAME_type = 'type'
 kFLAGNAME_buildcache = 'buildcache'
 kFLAGNAME_findhash = 'findhash'
+kFLAGNAME_version = 'version'
 
 def CheckPassedArgCount(args):
     kDefaultValues = {
@@ -25,6 +26,7 @@ def CheckPassedArgCount(args):
         kFLAGNAME_type: None,
         kFLAGNAME_buildcache: False,
         kFLAGNAME_findhash: False,
+        kFLAGNAME_version: False,
     }
     # returns the number of arguments that got passed that are not set to default values
     return len(list((item for item in args.keys() if kDefaultValues[item] != args[item])))
@@ -32,40 +34,44 @@ def CheckPassedArgCount(args):
 def ParseFlags(args_dict):
     # command line flag parsing
     console_commands = []
-
-    has_reset_cache = args_dict.get(kFLAGNAME_resetcache, False)
-    if has_reset_cache == True:
-        console_commands.append('cache clear_all')
     
-    has_build_cache = args_dict.get(kFLAGNAME_buildcache, False)
-    if has_build_cache == True:
-        console_commands.append('cache setup')
-    
-    release_type = args_dict.get(kFLAGNAME_type, None)
-    if release_type != None:
-        console_commands.append('type '+release_type)
-    
-    package_name = args_dict.get(kFLAGNAME_package, None)
-    if package_name != None:
-        console_commands.append('package '+package_name)
-    
-    list_action = args_dict.get(kFLAGNAME_list, False)
-    if list_action == True:
-        console_commands.append('list')
+    has_version = args_dict.get(kFLAGNAME_version, False)
+    if has_version == True:
+        console_commands.append('info')
     else:
-        build_number = args_dict.get(kFLAGNAME_build, None)
-        if build_number != None:
-            console_commands.append('build '+build_number)
+        has_reset_cache = args_dict.get(kFLAGNAME_resetcache, False)
+        if has_reset_cache == True:
+            console_commands.append('cache clear_all')
     
-            has_hash = args_dict.get(kFLAGNAME_findhash, False)
-            if has_hash == True:
-                console_commands.append('hash get')
-            else:
-                console_commands.append('download')
+        has_build_cache = args_dict.get(kFLAGNAME_buildcache, False)
+        if has_build_cache == True:
+            console_commands.append('cache setup')
+    
+        release_type = args_dict.get(kFLAGNAME_type, None)
+        if release_type != None:
+            console_commands.append('type '+release_type)
+    
+        package_name = args_dict.get(kFLAGNAME_package, None)
+        if package_name != None:
+            console_commands.append('package '+package_name)
+    
+        list_action = args_dict.get(kFLAGNAME_list, False)
+        if list_action == True:
+            console_commands.append('list')
         else:
-            diff_numbers = args_dict.get(kFLAGNAME_diff, None)
-            if diff_numbers != None:
-                console_commands.append('diff '+diff_numbers[0]+' '+diff_numbers[1])
+            build_number = args_dict.get(kFLAGNAME_build, None)
+            if build_number != None:
+                console_commands.append('build '+build_number)
+    
+                has_hash = args_dict.get(kFLAGNAME_findhash, False)
+                if has_hash == True:
+                    console_commands.append('hash get')
+                else:
+                    console_commands.append('download')
+            else:
+                diff_numbers = args_dict.get(kFLAGNAME_diff, None)
+                if diff_numbers != None:
+                    console_commands.append('diff '+diff_numbers[0]+' '+diff_numbers[1])
     
     return console_commands
 
@@ -135,13 +141,21 @@ def main():
         required=False,
         action='store_true'
     )
+    
+    parser.add_argument(
+        '-v',
+        '--'+kFLAGNAME_version,
+        help='prints the version information',
+        required=False,
+        action='store_true'
+    )
 
     args_dict = vars(parser.parse_args())
     
     flag_commands = ParseFlags(args_dict)
     
-    if config.getFirstRun() == True and 'cache setup' not in flag_commands:
-        logging_helper.getLogger().info('This appears to be the first time this has been run, you should run the "cache setup" command or pass "--'+kFLAGNAME_buildcache+'" on the command line. This command will download several megabytes of plist files from "'+manager.CreateAppleURL()+'" so that packages can be looked up without querying the server.')
+    if config.getFirstRun() == True and 'cache setup' not in flag_commands and 'info' not in flag_commands:
+        logging_helper.getLogger().info('This appears to be the first time this has been run, you should run the "cache setup" command or pass "--'+kFLAGNAME_buildcache+'" on the command line. This command will download several megabytes of plist files from "'+manager.CreateAppleURL()+'" so that packages can be looked up without querying the server.\n')
     
     aosd_shell = InteractiveInput()
     
