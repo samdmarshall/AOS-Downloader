@@ -45,8 +45,8 @@ try:
 
     install_path = os.path.abspath(os.path.dirname(__file__))
     os.chdir(install_path)
-    commit_hash = str(make_call(('git', 'rev-parse', '--short', 'HEAD'))).decode().strip('\n')
-    remote_origin = str(make_call(('git', 'ls-remote', '--get-url'))).decode().strip('\n')
+    commit_hash = make_call(('git', 'rev-parse', '--short', 'HEAD')).decode('utf-8').strip('\n')
+    remote_origin = make_call(('git', 'ls-remote', '--get-url')).decode('utf-8').strip('\n')
     versions_path = os.path.join(install_path, 'aosd/version.py')
     fd = open(versions_path, 'w')
     fd.write('__version__ = "'+module_version+' ('+remote_origin+' @ '+commit_hash+')"')
