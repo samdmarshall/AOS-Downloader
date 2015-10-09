@@ -377,8 +377,8 @@ class Cmd:
         nonstrings = [i for i in range(len(list))
                         if not isinstance(list[i], str)]
         if nonstrings:
-            raise TypeError, ("list[i] not a string for i in %s" %
-                              ", ".join(map(str, nonstrings)))
+            print("list[i] not a string for i in %s" % ", ".join(map(str, nonstrings)))
+            raise TypeError
         size = len(list)
         if size == 1:
             self.stdout.write('%s\n'%str(list[0]))
