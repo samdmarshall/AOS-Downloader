@@ -9,6 +9,7 @@ if [[ -e ./setup.py ]]; then
 		rm -rdf ./aosd.egg-info
 		rm -rdf ./build
 		rm -rdf ./dist
+		find aosd -name "*.pyc" | xargs  rm -rf
 	fi
 	
 	if [[ "$1" == "build" ]] || [[ "$2" == "build" ]]; then
