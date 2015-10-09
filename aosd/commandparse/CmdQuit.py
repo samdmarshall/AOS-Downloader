@@ -16,5 +16,4 @@ class CmdQuit(RootCmd):
 
     @classmethod
     def action(cls, args):
-        print('Quitting!')
         sys.exit()

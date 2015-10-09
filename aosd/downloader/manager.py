@@ -25,20 +25,22 @@ from .Hashes import Hashes
 class manager(object):
 
     @classmethod
-    def CreateTarballURL(cls, release_type, package_name, build_number):
+    def CreateAppleURL(cls):
         default_scheme = 'https'
         if config.getUseHTTPS() == False:
             default_scheme = 'http'
-        default_url = default_scheme+'://opensource.apple.com/tarballs/'+package_name+'/'+package_name+'-'+build_number+'.tar.gz'
+        default_url = default_scheme+'://opensource.apple.com'
+        return default_url
+    
+    @classmethod
+    def CreateTarballURL(cls, release_type, package_name, build_number):
+        default_url = cls.CreateAppleURL()+'/tarballs/'+package_name+'/'+package_name+'-'+build_number+'.tar.gz'
         parsed_url = comp_urlparse.urlparse(default_url)
         return parsed_url.geturl()
 
     @classmethod
     def CreatePlistURL(cls, plist_name):
-        default_scheme = 'https'
-        if config.getUseHTTPS() == False:
-            default_scheme = 'http'
-        default_url = default_scheme+'://opensource.apple.com/plist/'+plist_name
+        default_url = cls.CreateAppleURL()+'/plist/'+plist_name
         parsed_url = comp_urlparse.urlparse(default_url)
         return parsed_url.geturl()
 

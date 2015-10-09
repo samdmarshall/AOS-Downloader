@@ -23,7 +23,7 @@ class Packages(object):
                 packages = cache_result[1]
             else:
                 logging_helper.getLogger().error('Could not find any packages. If you think this is an error, please run the "cache rebuild" command.')
-        return packages
+        return sorted(packages)
 
     @classmethod
     def list(cls, release_type):
@@ -35,7 +35,7 @@ class Packages(object):
             if release_packages != None:
                 for package_name in release_packages:
                     packages.append(str(package_name))
-        return packages
+        return sorted(packages)
 
     @classmethod
     def resolveNumberFromVersion(cls, release_type, version, package_name):

@@ -83,6 +83,10 @@ class cacher(object):
 
     @classmethod
     def flush(cls, release_type, release_version):
+        if release_type == None and release_version == None:
+            settings = config.read()
+            settings['first_run'] = True
+            config.write(settings)
         if release_type != None:
             if release_version != None:
                 release_info_dict = releases.getInfo(release_type, release_version)

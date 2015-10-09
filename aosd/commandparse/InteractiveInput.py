@@ -19,12 +19,14 @@ from .CmdBuild import CmdBuild
 from .CmdConfig import CmdConfig
 from .CmdDiff import CmdDiff
 from .CmdHash import CmdHash
+from .CmdList import CmdList
 
 from ..downloader.releases import releases
 
 class InteractiveInput(Cmd):
     prompt = ':> '
     display_info = {}
+    quitOnError = True
 
     def get_arguments(self, arguments_str):
         arguments_str = str(arguments_str)
@@ -73,29 +75,39 @@ class InteractiveInput(Cmd):
             print('\n'+info_string)
         return stop
         
+    def emptyline(self):
+        # do nothing as repeating the last command can be dangerous
+        return None
+    
     # Quit
     def help_quit(self):
         self.DisplayUsage(CmdQuit.usage())
 
     def do_quit(self, line):
+        ret_val = None
         result = CmdQuit.query(self.get_arguments(line))
         if result[0] == True:
             CmdQuit.action(self.display_info)
         else:
-            logging_helper.getLogger().error('Fatal error, cannot quit!')
+            ret_val = 'Fatal error, cannot quit!'
+            logging_helper.getLogger().error(ret_val)
+        return ret_val if self.quitOnError == True else None
 
     # Release type
     def help_type(self):
         self.DisplayUsage(CmdType.usage())
 
     def do_type(self, line):
+        ret_val = None
         result = CmdType.query(self.get_arguments(line))
         if result[0] == True:
             self.display_info = {}
             self.display_info['type'] = result[1]
             CmdType.action(self.display_info)
         else:
-            logging_helper.getLogger().error('Invalid release type!')
+            ret_val = 'Invalid release type!' 
+            logging_helper.getLogger().error(ret_val)
+        return ret_val
 
     def complete_type(self, text, line, begidx, endidx):
         completions = []
@@ -111,6 +123,7 @@ class InteractiveInput(Cmd):
         self.DisplayUsage(CmdPackage.usage())
 
     def do_package(self, line):
+        ret_val = None
         if 'type' in self.display_info.keys():
             release_type = self.display_info['type']
             release_version = None
@@ -123,9 +136,12 @@ class InteractiveInput(Cmd):
                     self.display_info['build'] = result[1][1]
                 CmdPackage.action(self.display_info)
             else:
-                logging_helper.getLogger().error('Invalid package name!')
+                ret_val = 'Invalid package name!'
+                logging_helper.getLogger().error(ret_val)
         else:
-            logging_helper.getLogger().info('Please select a release type before using the "package" command.')
+            ret_val = 'Please select a release type before using the "package" command.'
+            logging_helper.getLogger().info(ret_val)
+        return ret_val if self.quitOnError == True else None
 
     def complete_package(self, text, line, begidx, endidx):
         completions = []
@@ -146,6 +162,7 @@ class InteractiveInput(Cmd):
         self.DisplayUsage(CmdVersion.usage())
 
     def do_version(self, line):
+        ret_val = None
         if 'type' in self.display_info.keys():
             release_type = self.display_info['type']
             result = CmdVersion.query(release_type, self.get_arguments(line))
@@ -159,9 +176,12 @@ class InteractiveInput(Cmd):
                         self.display_info['build'] = package_result[1][1]
                 CmdVersion.action(self.display_info)
             else:
-                logging_helper.getLogger().error('Invalid version name!')
+                ret_val = 'Invalid version name!'
+                logging_helper.getLogger().error(ret_val)
         else:
-            logging_helper.getLogger().info('Please select a release type before using the "version" command.')
+            ret_val = 'Please select a release type before using the "version" command.'
+            logging_helper.getLogger().info(ret_val)
+        return ret_val if self.quitOnError == True else None
 
     def complete_version(self, text, line, begidx, endidx):
         completions = []
@@ -179,12 +199,15 @@ class InteractiveInput(Cmd):
         self.DisplayUsage(CmdCache.usage())
 
     def do_cache(self, line):
+        ret_val = None
         result = CmdCache.query(self.get_arguments(line))
         if result[0] == True:
             self.display_info['cache'] = result[1]
             CmdCache.action(self.display_info)
         else:
-            logging_helper.getLogger().error('Invalid cache command!')
+            ret_val = 'Invalid cache command!'
+            logging_helper.getLogger().error(ret_val)
+        return ret_val if self.quitOnError == True else None
 
     def complete_cache(self, text, line, begidx, endidx):
         completions = []
@@ -200,22 +223,28 @@ class InteractiveInput(Cmd):
         self.DisplayUsage(CmdUpdate.usage())
 
     def do_update(self, line):
+        ret_val = None
         result = CmdUpdate.query(self.get_arguments(line))
         if result[0] == True:
             CmdUpdate.action(self.display_info)
         else:
-            logging_helper.getLogger().error('Fatal error, cannot update!')
+            ret_val = 'Fatal error, cannot update!'
+            logging_helper.getLogger().error(ret_val)
+        return ret_val if self.quitOnError == True else None
 
     # Download
     def help_download(self):
         self.DisplayUsage(CmdDownload.usage())
 
     def do_download(self, line):
+        ret_val = None
         result = CmdDownload.query(self.get_arguments(line))
         if result[0] == True:
             CmdDownload.action(self.display_info)
         else:
-            logging_helper.getLogger().error('Fatal error, cannot download!')
+            ret_val = 'Fatal error, cannot download!'
+            logging_helper.getLogger().error(ret_val)
+        return ret_val if self.quitOnError == True else None
 
     # Build
     def help_build(self):
@@ -234,6 +263,7 @@ class InteractiveInput(Cmd):
         return completions
 
     def do_build(self, line):
+        ret_val = None
         if 'type' in self.display_info.keys() and 'package' in self.display_info.keys():
             release_type = self.display_info['type']
             package_name = self.display_info['package']
@@ -244,9 +274,12 @@ class InteractiveInput(Cmd):
                 self.display_info['build'] = result[1]
                 CmdBuild.action(self.display_info)
             else:
-                logging_helper.getLogger().error('Invalid build number!')
+                ret_val = 'Invalid build number!'
+                logging_helper.getLogger().error(ret_val)
         else:
-            logging_helper.getLogger().info('Please select a release type and package before using the "build" command.')
+            ret_val = 'Please select a release type and package before using the "build" command.'
+            logging_helper.getLogger().info(ret_val)
+        return ret_val if self.quitOnError == True else None
 
     # Config
     def help_config(self):
@@ -262,17 +295,21 @@ class InteractiveInput(Cmd):
         return completions
 
     def do_config(self, line):
+        ret_val = None
         result = CmdConfig.query(self.get_arguments(line))
         if result[0] == True:
             CmdConfig.action(result[1])
         else:
-            logging_helper.getLogger().error('Invalid config command argument!')
+            ret_val = 'Invalid config command argument!'
+            logging_helper.getLogger().error(ret_val)
+        return ret_val if self.quitOnError == True else None
 
     # diff
     def help_diff(self):
         self.DisplayUsage(CmdDiff.usage())
 
     def do_diff(self, line):
+        ret_val = None
         if 'type' in self.display_info.keys() and 'package' in self.display_info.keys():
             release_type = self.display_info['type']
             package_name = self.display_info['package']
@@ -281,22 +318,37 @@ class InteractiveInput(Cmd):
                 self.display_info['diff'] = result[1]
                 CmdDiff.action(self.display_info)
             else:
-                logging_helper.getLogger().error('Invalid build numbers!')
+                ret_val = 'Invalid build numbers!'
+                logging_helper.getLogger().error(ret_val)
         else:
-            logging_helper.getLogger().info('Please select a release type and package before using the "diff" command.')
+            ret_val = 'Please select a release type and package before using the "diff" command.'
+            logging_helper.getLogger().info(ret_val)
+        return ret_val if self.quitOnError == True else None
         
     # hashes
     def help_hash(self):
         self.DisplayUsage(CmdHash.usage())
     
     def do_hash(self, line):
-        if 'type' in self.display_info.keys() and 'version' in self.display_info.keys():
-            result = CmdHash.query(self.get_arguments(line))
-            if result[0] == True:
-                CmdHash.action(self.display_info)
-            else:
-                logging_helper.getLogger().error('Fatal error, cannot process hashes!')
+        ret_val = None
+        result = CmdHash.query(self.get_arguments(line))
+        if result[0] == True:
+            CmdHash.action((result[1], self.display_info))
         else:
-            logging_helper.getLogger().info('Please select a release type and version before using the "hash" command.')
-
-            
+            ret_val = 'Fatal error, cannot process hashes!'
+            logging_helper.getLogger().error(ret_val)
+        return ret_val if self.quitOnError == True else None
+    
+    # list
+    def help_list(self):
+        self.DisplayUsage(CmdList.usage())
+    
+    def do_list(self, line):
+        ret_val = None
+        result = CmdList.query(self.get_arguments(line))
+        if result[0] == True:
+            CmdList.action(self.display_info)
+        else:
+            ret_val = 'Fatal error, could not list!'
+            logging_helper.getLogger().error(ret_val)
+        return ret_val if self.quitOnError == True else None
