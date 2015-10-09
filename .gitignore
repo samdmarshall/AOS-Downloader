@@ -29,4 +29,6 @@ DerivedData
 *.hop
 
 
-
+### Custom ###
+cache/
+installed_files.txt

@@ -1,7 +1,4 @@
-from .logging_helper import logging_helper
-
 import subprocess
-from subprocess import CalledProcessError
 
 class subprocess_helper(object):
 
@@ -12,7 +9,7 @@ class subprocess_helper(object):
         try:
             output = subprocess.check_output(call_args)
             error = 0
-        except CalledProcessError as e:
+        except subprocess.CalledProcessError as e:
             output = e.output
             error = e.returncode
         return output

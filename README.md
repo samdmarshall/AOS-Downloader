@@ -6,39 +6,7 @@ This utility makes it easy to find and download various versions of the open sou
 
 ## Requirements
 
-####Python 2.7
-* Modules used:
-	* argparse
-	* sys
-	* os
-	* plistlib
-	* urllib2
-	* httplib
-	* urlparse
-	* readline (this uses a custom readline implementation on OS X)
-	* gzip
-	* tarfile
-	* logging
-	* hashlib
-	* subprocess
-	* string
-
-
-####Python 3.4
-* Modules used:
-	* argparse
-	* sys
-	* os
-	* plistlib
-	* urllib
-	* http
-	* readline (this uses a custom readline implementation on OS X)
-	* gzip
-	* tarfile
-	* logging
-	* hashlib
-	* subprocess
-	* string
+Python 2.7 or greater (this does support Python 3), running the `setup.py` will determine if you need to install anything else.
 
 ---
 

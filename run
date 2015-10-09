@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+if [[ -e ./setup.py ]]; then
+	
+	if [[ "$1" == "clean" ]]; then
+		if [[ -e ./installed_files.txt ]]; then
+			cat ./installed_files.txt | xargs rm -rf
+		fi
+		rm -rdf ./aosd.egg-info
+		rm -rdf ./build
+		rm -rdf ./dist
+	fi
+	
+	if [[ "$1" == "build" ]] || [[ "$2" == "build" ]]; then
+		python ./setup.py install --user --record ./installed_files.txt
+	fi
+else
+	echo "Please run this script from the directory it is in!"
+fi
