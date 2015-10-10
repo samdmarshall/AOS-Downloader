@@ -1,5 +1,5 @@
 module_dependencies = []
-module_version = '1.0.1'
+module_version = '1.1'
 try:
     import sys
     if not sys.version_info > (2, 7):
