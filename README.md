@@ -12,17 +12,13 @@ Python 2.7 or greater (this does support Python 3), running the `setup.py` will 
 
 ## Installation
 
-### From Source
-
-Checkout this repo then run `python setup.py install` and optionally pass the `--user` flag if desired.
-
-*Note: you may have to configure your `$PATH` variable to find the executable once installed.*
-
-### Homebrew
+Via [homebrew](http://brew.sh):
 
 	$ brew update
 	$ brew tap samdmarshall/formulae
-	$ brew install samdmarshall/formulae/aosd # you can optionally supply --HEAD here, though be aware that it can be unstable
+	$ brew install samdmarshall/formulae/aosd
+
+For instructions on installing from source or from the development version via homebrew, please see the [Installing]((https://github.com/samdmarshall/AOS-Downloader/wiki/Installing) instructions on the wiki.
 
 ---
 
@@ -32,7 +28,7 @@ Once installed, the executable will be called `aosd`.
 
 ### Command Console
 
-The application's command console will give you full access to all of the features of `aosd`. To enter the console run the binary with no flags passed. To get usage information use the `help` command.
+The application's command console will give you full access to all of the features of `aosd`. To enter the console run the binary with no flags passed. To get usage information use the `help` command. For more information, please check out the [guided tutorial]((https://github.com/samdmarshall/AOS-Downloader/wiki/Tutorial) on the wiki.
 
 ### Flags
 
@@ -45,11 +41,12 @@ The application's command console will give you full access to all of the featur
 	-r, --resetcache                   removes currently cached package plist files
 	-c, --buildcache                   caches the package manifests and builds an index
 	-f, --findhash					   this will display the sha256 for the specified build of a package
+	-v, --version					   this will display the build version of AOSD
 
 
 ---
 
 
-### Wiki
+### 
 
 Please see the [wiki](https://github.com/samdmarshall/AOS-Downloader/wiki) for more information!
