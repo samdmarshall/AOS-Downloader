@@ -18,7 +18,7 @@ Via [homebrew](http://brew.sh):
 	$ brew tap samdmarshall/formulae
 	$ brew install samdmarshall/formulae/aosd
 
-For instructions on installing from source or from the development version via homebrew, please see the [Installing]((https://github.com/samdmarshall/AOS-Downloader/wiki/Installing) instructions on the wiki.
+For instructions on installing from source or from the development version via homebrew, please see the [Installing](https://github.com/samdmarshall/AOS-Downloader/wiki/Installing) instructions on the wiki.
 
 ---
 
