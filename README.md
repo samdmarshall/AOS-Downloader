@@ -47,6 +47,6 @@ The application's command console will give you full access to all of the featur
 ---
 
 
-### 
+### More Information
 
 Please see the [wiki](https://github.com/samdmarshall/AOS-Downloader/wiki) for more information!
