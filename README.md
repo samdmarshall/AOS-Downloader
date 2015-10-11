@@ -28,7 +28,7 @@ Once installed, the executable will be called `aosd`.
 
 ### Command Console
 
-The application's command console will give you full access to all of the features of `aosd`. To enter the console run the binary with no flags passed. To get usage information use the `help` command. For more information, please check out the [guided tutorial]((https://github.com/samdmarshall/AOS-Downloader/wiki/Tutorial) on the wiki.
+The application's command console will give you full access to all of the features of `aosd`. To enter the console run the binary with no flags passed. To get usage information use the `help` command. For more information, please check out the [guided tutorial](https://github.com/samdmarshall/AOS-Downloader/wiki/Tutorial) on the wiki.
 
 ### Flags
 
