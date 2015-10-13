@@ -47,10 +47,11 @@ try:
     os.chdir(install_path)
     commit_hash = make_call(('git', 'rev-parse', '--short', 'HEAD')).decode('utf-8').strip('\n')
     remote_origin = make_call(('git', 'ls-remote', '--get-url')).decode('utf-8').strip('\n')
-    versions_path = os.path.join(install_path, 'aosd/version.py')
-    fd = open(versions_path, 'w')
-    fd.write('__version__ = "'+module_version+' ('+remote_origin+' @ '+commit_hash+')"')
-    fd.close()
+    if len(commit_hash) > 0 and len(remote_origin) > 0:
+        versions_path = os.path.join(install_path, 'aosd/version.py')
+        fd = open(versions_path, 'w')
+        fd.write('__version__ = "'+module_version+' ('+remote_origin+' @ '+commit_hash+')"')
+        fd.close()
 except ImportError as e:
     raise e
  
