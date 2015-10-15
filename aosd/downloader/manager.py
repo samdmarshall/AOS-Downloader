@@ -21,6 +21,7 @@ from .config import config
 from .Builds import Builds
 from .utilities import utilities
 from .Hashes import Hashes
+from ..version import __version__ as AOSD_VERSION
 
 class manager(object):
 
@@ -47,6 +48,7 @@ class manager(object):
     @classmethod
     def DownloadFileFromURLToPath(cls, url_address, file_path):
         request = comp_urlreq.Request(url_address)
+        request.add_header("User-Agent", AOSD_VERSION)
         if config.getVerboseLogging() == True:
             logging_helper.getLogger().info('Starting download from  "'+url_address+'" -> "'+file_path+'"...')
         response = None

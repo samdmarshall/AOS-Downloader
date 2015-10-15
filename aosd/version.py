@@ -1,1 +1,1 @@
-__version__ = "1.1 (git@github.com:samdmarshall/AOS-Downloader.git @ 47c70d2)"
+__version__ = "1.1 (git@github.com:samdmarshall/AOS-Downloader.git @ e5a0888)"
