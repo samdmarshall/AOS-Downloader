@@ -34,7 +34,7 @@ class CmdHash(RootCmd):
         """
         # only use the first value
         if len(args) > 0:
-            return (args[0] in cls.valid_values(), args)
+            return (args[0] in cls.valid_values(), args[0])
         else:
             return (False, None)
     

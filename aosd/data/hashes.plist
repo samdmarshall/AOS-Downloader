@@ -137,6 +137,11 @@
 				<key>sha256</key>
 				<string>8968f40f9c009e7fa308bdf018cdf1b2778fb2b1c41799badc13a9eb68f42121</string>
 			</dict>
+			<key>58</key>
+			<dict>
+				<key>sha256</key>
+				<string>17ba457bc2db76afb259f04c8d1f36ec4e7d2f9eb93a70fec02b36fb49212834</string>
+			</dict>
 		</dict>
 		<key>WebKit</key>
 		<dict>
@@ -470,6 +475,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>b83f4b4696414b814cc1781ec4b68ff9c7bb97920a68f308351a74e75f41d961</string>
+			</dict>
+			<key>877.5</key>
+			<dict>
+				<key>sha256</key>
+				<string>5e7525c86581d9dead8a8508a9e824101765d05a3e14d612de1aa38def9adde9</string>
 			</dict>
 		</dict>
 		<key>clang</key>
@@ -1628,6 +1638,11 @@
 				<key>sha256</key>
 				<string>fe9bf780fe15cb71f41f25595dcc6cc715093a3066914a65098222421a76213b</string>
 			</dict>
+			<key>253.3</key>
+			<dict>
+				<key>sha256</key>
+				<string>76c02f6f297c251b66504e1115946bda6e1618640bc6cf03d0ad99b17bd8a5d6</string>
+			</dict>
 			<key>26.0.81</key>
 			<dict>
 				<key>sha256</key>
@@ -1961,6 +1976,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>42783c6b3378ea100bf6108bc0d4bf8f7eeaa51ddd4684b8b05109d00675dd30</string>
+			</dict>
+			<key>67</key>
+			<dict>
+				<key>sha256</key>
+				<string>f88052c1f294f0fe46248d936cdce561dab142d2124cebb9cf625794408d5e17</string>
 			</dict>
 		</dict>
 		<key>wxWidgets</key>
