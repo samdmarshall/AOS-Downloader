@@ -115,7 +115,10 @@ class cacher(object):
             version = versions.get(rtype)
             total_manifests += len(version)
         available_package_manifests = cls.get(None, None)
-        if len(available_package_manifests) != total_manifests:
+        manifests_on_disk = 0
+        for release_type in available_package_manifests:
+            manifests_on_disk += len(available_package_manifests[release_type])
+        if manifests_on_disk != total_manifests:
             logging_helper.getLogger().warn('You are rebuilding the cache without having all the release manifest files downloaded. To be able to access all information you should run "cache download_all" before running "cache rebuild" again.')
         for release_type in available_package_manifests:
             release_packages = {}
