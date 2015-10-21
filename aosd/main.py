@@ -4,7 +4,7 @@ import argparse
 from .commandparse import InteractiveInput
 from .downloader.config import config
 from .downloader.manager import manager
-from .logging_helper import logging_helper
+from .helpers.logging_helper import logging_helper
 
 kFLAGNAME_build = 'build'
 kFLAGNAME_diff = 'diff'

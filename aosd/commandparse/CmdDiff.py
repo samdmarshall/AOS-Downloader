@@ -2,9 +2,11 @@
 imports
 """
 from .RootCmd import RootCmd
-from ..logging_helper import logging_helper
 from ..downloader.diff import diff
 from ..downloader.Builds import Builds
+
+from ..helpers.logging_helper import logging_helper
+from ..helpers.argument_helper import argument_helper
 
 class CmdDiff(RootCmd):
     """
@@ -64,3 +66,22 @@ class CmdDiff(RootCmd):
             if has_package == False:
                 logging_helper.getLogger().error('Cannot download package without a package set. Use the "package" command.')
         print('====================')
+
+    @classmethod
+    def process_do(cls, line_text, context):
+        ret_val = None
+        if context.has_key('type') and context.has_key('package'):
+            release_type = context.get('type', None)
+            package_name = context.get('package', None)
+            arguments = argument_helper.parse(line_text)
+            result = cls.query(release_type, package_name, arguments)
+            if result[0] == True:
+                context['diff'] = result[1]
+                cls.action(context)
+            else:
+                ret_val = 'Invalid build numbers!'
+                logging_helper.getLogger().error(ret_val)
+        else:
+            ret_val = 'Please select a release type and package before using the "diff" command.'
+            logging_helper.getLogger().info(ret_val)
+        return ret_val

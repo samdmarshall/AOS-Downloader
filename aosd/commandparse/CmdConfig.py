@@ -2,8 +2,10 @@
 imports
 """
 from .RootCmd import RootCmd
-from ..logging_helper import logging_helper
 from ..downloader.config import config
+
+from ..helpers.logging_helper import logging_helper
+from ..helpers.argument_helper import argument_helper
 
 class CmdConfig(RootCmd):
     """
@@ -67,3 +69,15 @@ class CmdConfig(RootCmd):
             config.defaults()
             logging_helper.getLogger().info('Default configuration has been restored.')
         print('====================')
+
+    @classmethod
+    def process_do(cls, line_text, context):
+        ret_val = None
+        arguments = argument_helper.parse(line_text)
+        result = cls.query(arguments)
+        if result[0] == True:
+            cls.action(result[1])
+        else:
+            ret_val = 'Invalid config command argument!'
+            logging_helper.getLogger().error(ret_val)
+        return ret_val

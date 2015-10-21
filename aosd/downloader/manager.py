@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 
-from ..logging_helper import logging_helper
+from ..helpers.logging_helper import logging_helper
 
 try:
     import urllib.request as comp_urlreq # For Python 3.0 and later

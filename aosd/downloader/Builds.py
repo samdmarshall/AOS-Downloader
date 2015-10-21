@@ -2,7 +2,7 @@ from __future__ import absolute_import
 
 from .utilities import utilities
 
-from ..logging_helper import logging_helper
+from ..helpers.logging_helper import logging_helper
 
 import plistlib
 import os

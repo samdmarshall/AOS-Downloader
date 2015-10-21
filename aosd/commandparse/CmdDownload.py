@@ -2,8 +2,10 @@
 imports
 """
 from .RootCmd import RootCmd
-from ..logging_helper import logging_helper
 from ..downloader.manager import manager
+
+from ..helpers.logging_helper import logging_helper
+from ..helpers.argument_helper import argument_helper
 
 class CmdDownload(RootCmd):
     """
@@ -46,3 +48,15 @@ class CmdDownload(RootCmd):
             if has_build == False:
                 logging_helper.getLogger().error('Cannot download package without a version set. Use the "version" command or the "build" command.')
         print('====================')
+
+    @classmethod
+    def process_do(cls, line_text, context):
+        ret_val = None
+        arguments = argument_helper.parse(line_text)
+        result = cls.query(arguments)
+        if result[0] == True:
+            cls.action(context)
+        else:
+            ret_val = 'Fatal error, cannot download!'
+            logging_helper.getLogger().error(ret_val)
+        return ret_val

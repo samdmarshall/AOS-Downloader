@@ -2,8 +2,11 @@
 imports
 """
 from .RootCmd import RootCmd
-from ..logging_helper import logging_helper
 from ..downloader.cacher import cacher
+
+from ..helpers.logging_helper import logging_helper
+from ..helpers.argument_helper import argument_helper
+
 
 class CmdCache(RootCmd):
     """
@@ -64,3 +67,16 @@ class CmdCache(RootCmd):
         if cache_action == 'setup':
             cacher.clean()
         print('====================')
+
+    @classmethod
+    def process_do(cls, line_text, context):
+        ret_val = None
+        arguments = argument_helper.parse(line_text)
+        result = cls.query(arguments)
+        if result[0] == True:
+            context['cache'] = result[1]
+            cls.action(context)
+        else:
+            ret_val = 'Invalid cache command!'
+            logging_helper.getLogger().error(ret_val)
+        return ret_val

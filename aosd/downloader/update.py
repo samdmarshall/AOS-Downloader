@@ -1,4 +1,4 @@
-from ..logging_helper import logging_helper
+from ..helpers.logging_helper import logging_helper
 
 import os
 

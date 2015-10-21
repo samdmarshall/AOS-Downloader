@@ -82,7 +82,9 @@ try:
         },
         packages=[
             'aosd', 
-        
+            
+            'aosd/helpers',
+            
             'aosd/commandparse', 
             'aosd/commandparse/readline_unsorted', 
         

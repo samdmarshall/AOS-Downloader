@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 
-from ..logging_helper import logging_helper
+from ..helpers.logging_helper import logging_helper
 
 from .releases import releases
 from .utilities import utilities

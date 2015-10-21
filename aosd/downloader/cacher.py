@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 
-from ..logging_helper import logging_helper
+from ..helpers.logging_helper import logging_helper
 
 import os
 import plistlib
@@ -110,7 +110,13 @@ class cacher(object):
     def rebuild(cls):
         config.toggleFirstRun()
         package_cache = {}
+        total_manifests = 0
+        for rtype in releases.get():
+            version = versions.get(rtype)
+            total_manifests += len(version)
         available_package_manifests = cls.get(None, None)
+        if len(available_package_manifests) != total_manifests:
+            logging_helper.getLogger().warn('You are rebuilding the cache without having all the release manifest files downloaded. To be able to access all information you should run "cache download_all" before running "cache rebuild" again.')
         for release_type in available_package_manifests:
             release_packages = {}
             for manifest_path in available_package_manifests[release_type]:
