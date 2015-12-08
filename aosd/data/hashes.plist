@@ -3304,6 +3304,11 @@
 				<key>sha256</key>
 				<string>a46086bd0ccdfef0ca399bc78592c8ba565b6d4cf41debbabcaf1816ef9c2b73</string>
 			</dict>
+			<key>21</key>
+			<dict>
+				<key>sha256</key>
+				<string>5435740a324fa494e072100188ae7f5c03228ea5244e1447e4e81f3d0d0ab452</string>
+			</dict>
 			<key>5</key>
 			<dict>
 				<key>sha256</key>
@@ -4640,6 +4645,11 @@
 				<key>sha256</key>
 				<string>274218fefa8f345dd491c1d1aa6a77b7dbe8b94d7e42208d3d5132d7ea314fb0</string>
 			</dict>
+			<key>5</key>
+			<dict>
+				<key>sha256</key>
+				<string>9e41e828270a32e1bd1168f7f49b48a50ed2516115cf84ef63589e1fad18407b</string>
+			</dict>
 		</dict>
 		<key>AppleRS232Serial</key>
 		<dict>
@@ -5074,6 +5084,11 @@
 		</dict>
 		<key>AvailabilityVersions</key>
 		<dict>
+			<key>20</key>
+			<dict>
+				<key>sha256</key>
+				<string>56d3cc5f7402925eda54838be4c0ac5c7b93d1cba08fda20ea81debc3bb0ab94</string>
+			</dict>
 			<key>4.2</key>
 			<dict>
 				<key>sha256</key>
@@ -5144,6 +5159,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>3c3e5184f2466e5e52a5b597b66a1df7b97e2d02eef6dd86d3422afca9f937d2</string>
+			</dict>
+			<key>114</key>
+			<dict>
+				<key>sha256</key>
+				<string>3f3ce800aef2466e1e5db3eced150a2e369936dabb75b4298100f0f052add982</string>
 			</dict>
 			<key>12.1</key>
 			<dict>
@@ -5615,6 +5635,11 @@
 				<key>sha256</key>
 				<string>03907272dee57c7971f33d9a1974863056e027f6d50ea18e95529df219e74988</string>
 			</dict>
+			<key>57</key>
+			<dict>
+				<key>sha256</key>
+				<string>1130b972b2e29e66a8dbab6c3e7adb39bf57bedd5bf3abc47fea9e0b45c5f0c4</string>
+			</dict>
 		</dict>
 		<key>CPANInternal</key>
 		<dict>
@@ -5642,6 +5667,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>5b214a1a2693138c8701df84a653a9e34e025bded6ab9326126ab0dfb27c0b07</string>
+			</dict>
+			<key>162</key>
+			<dict>
+				<key>sha256</key>
+				<string>44fb6e61bb5b44816df4696adbb0ef28d96bc3314500a4cd074073bd9bd38349</string>
 			</dict>
 			<key>32</key>
 			<dict>
@@ -5807,6 +5837,11 @@
 				<key>sha256</key>
 				<string>a36ca9d376b651e262105bc055b6b150f7e210f24463fa6e48341c926234b736</string>
 			</dict>
+			<key>318</key>
+			<dict>
+				<key>sha256</key>
+				<string>5791b2ca2ea6647255efa529cc3f6b10855a6ca755d1d7c319b981d6d65f694e</string>
+			</dict>
 			<key>45</key>
 			<dict>
 				<key>sha256</key>
@@ -5874,6 +5909,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>b955c3c88db355d7e51962a03221dde62a90784b600c2f66f4b08e284ac9a166</string>
+			</dict>
+			<key>60074</key>
+			<dict>
+				<key>sha256</key>
+				<string>c71ab4a2b52f5ea5fdc05a896172573549286f7ca3a6b233877542cb2ac2cec3</string>
 			</dict>
 			<key>7</key>
 			<dict>
@@ -6684,6 +6724,11 @@
 				<key>sha256</key>
 				<string>26904cf3d6cc52e20fa06ea496b28f10bc5ca4a63e66f87856ef9cdee5b82eda</string>
 			</dict>
+			<key>277</key>
+			<dict>
+				<key>sha256</key>
+				<string>947db110dafa6c90a8f9f098dc9689e9fbcd7da2d8ca7dfbf42ec6284a530bc9</string>
+			</dict>
 			<key>48.1</key>
 			<dict>
 				<key>sha256</key>
@@ -6844,6 +6889,11 @@
 				<key>sha256</key>
 				<string>8ec9cc95d17b7a6d9e7d5f66bbcda315eeaf03cd2202ca306e1a35408674c0c3</string>
 			</dict>
+			<key>452.1.1</key>
+			<dict>
+				<key>sha256</key>
+				<string>b2e4e8733c92a8e5a3a89ea980dc3f1367feb657811050b46b4ba32eb8a94c63</string>
+			</dict>
 		</dict>
 		<key>ICU</key>
 		<dict>
@@ -6961,6 +7011,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>7700ff29d417bfe24ddec0fdde4421c1f7b900bbc901ab016de4152bc8a530e2</string>
+			</dict>
+			<key>551.24</key>
+			<dict>
+				<key>sha256</key>
+				<string>fd825ee4db62557638abf82957ead97fe7c61fc965c368f1e07679d6518a6a16</string>
 			</dict>
 			<key>6.2.10</key>
 			<dict>
@@ -7480,6 +7535,11 @@
 				<key>sha256</key>
 				<string>d862554ade2c2884fb1a500dae2512886788f33d466613a4000fe138d43ff83d</string>
 			</dict>
+			<key>203.8</key>
+			<dict>
+				<key>sha256</key>
+				<string>60d56f6e17c7165d8424f86462ee8c5c17d8f8ade9e16d27ac8455cf0a97bb1b</string>
+			</dict>
 		</dict>
 		<key>IOBDStorageFamily</key>
 		<dict>
@@ -7492,6 +7552,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>38b07bbdcc8bb7930537e3f0a2f9e4a9fa4d926a0e9a858b1c05d91006ac7be5</string>
+			</dict>
+			<key>16</key>
+			<dict>
+				<key>sha256</key>
+				<string>79f938d73133835a06e6012f9746a4809868aa28ca0003be6e913df2cc0f65be</string>
 			</dict>
 			<key>6</key>
 			<dict>
@@ -7561,6 +7626,11 @@
 				<key>sha256</key>
 				<string>fefdee3a223039329691cc8ffa3c2a25f41a7f6174bee74db5acf55b79d705a4</string>
 			</dict>
+			<key>55</key>
+			<dict>
+				<key>sha256</key>
+				<string>544cbcf93cc732b4342c3d6451685ada496bd0ac61c0bd394f1a327cdc6d2a1c</string>
+			</dict>
 		</dict>
 		<key>IODVDStorageFamily</key>
 		<dict>
@@ -7598,6 +7668,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>268efe89caecf4d5ef28fbac2c2e86398e4bedc5800542514ab1a6146c1668bb</string>
+			</dict>
+			<key>39</key>
+			<dict>
+				<key>sha256</key>
+				<string>81a9dabce5c43cdfdcd1a5e207de74daa85315b9ae3e8c49065e2de67afacd04</string>
 			</dict>
 			<key>4</key>
 			<dict>
@@ -8257,6 +8332,11 @@
 				<key>sha256</key>
 				<string>1152746a5779954d64967dab4e37b385796f9963b90619d727695e7c40c27126</string>
 			</dict>
+			<key>251.0.2</key>
+			<dict>
+				<key>sha256</key>
+				<string>cf2cdbf4b61bb5f552efcee8f90f1d2524123805c3c590a3fa0cbbcd1e431fa8</string>
+			</dict>
 			<key>30</key>
 			<dict>
 				<key>sha256</key>
@@ -8500,6 +8580,11 @@
 				<key>sha256</key>
 				<string>1734358a75e353b6be37385548472a37f2e4f2cec8f16d7173175db0b31f1dfc</string>
 			</dict>
+			<key>497</key>
+			<dict>
+				<key>sha256</key>
+				<string>1c0fabf7d23e50c4622fa52e8a224b165635f593c359a4f377433c25a755349d</string>
+			</dict>
 		</dict>
 		<key>IOHIDFamily</key>
 		<dict>
@@ -8708,6 +8793,11 @@
 				<key>sha256</key>
 				<string>24a1f2f3ba927f43abad9a62c0715bbee8014e655e4e3de4b8359233f9532b7a</string>
 			</dict>
+			<key>700</key>
+			<dict>
+				<key>sha256</key>
+				<string>7660f4864c99f110ca0572e4d39fe106f845c5c3819f07f68d247954544a1a13</string>
+			</dict>
 			<key>8.3</key>
 			<dict>
 				<key>sha256</key>
@@ -8839,6 +8929,11 @@
 				<key>sha256</key>
 				<string>ed1a2ccf4f37b1fd0072c2d779d604c15f1a0869fde41a98b24fcf94138f3899</string>
 			</dict>
+			<key>97</key>
+			<dict>
+				<key>sha256</key>
+				<string>c7a30210b9040e23dd4074c7f8fd6ff34af7c3453adc362f132bcc5561f106df</string>
+			</dict>
 		</dict>
 		<key>IOKitUser</key>
 		<dict>
@@ -8856,6 +8951,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>8b8e30780e48d350c43b841090bbde8b6b765d59d122456b97709db4e36ff6cb</string>
+			</dict>
+			<key>1178.1.4</key>
+			<dict>
+				<key>sha256</key>
+				<string>f1fd5e961c142e5cf936a4d9cf6ef742ae54c8d7d4d1bceecc0ad05f31819845</string>
 			</dict>
 			<key>120</key>
 			<dict>
@@ -9124,6 +9224,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>3269971f4500aa47ce0b6de6086d0c6ba34f6f6de9d6609c8ccc6e85180c5a11</string>
+			</dict>
+			<key>107</key>
+			<dict>
+				<key>sha256</key>
+				<string>91e036d213dc5809c070e81b0bb331e8f1402ab73b1a757c050543075e790931</string>
 			</dict>
 			<key>12</key>
 			<dict>
@@ -9410,6 +9515,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>404fca10030a73e8e1379e34e4a6b88c9caefa586cb6882c9c7977227ada289c</string>
+			</dict>
+			<key>256.1.3</key>
+			<dict>
+				<key>sha256</key>
+				<string>3bf269a8f37d5c4e00d604a0382810ae5fd43c79113c20f6517c64e479d10cca</string>
 			</dict>
 			<key>3</key>
 			<dict>
@@ -9745,6 +9855,11 @@
 				<key>sha256</key>
 				<string>21f9849e0e048238891db2c1cc3f2235d9d8245f1f73c353c42fb26e9512014a</string>
 			</dict>
+			<key>83</key>
+			<dict>
+				<key>sha256</key>
+				<string>3f5ae730a1d3ff1ccdf47f5a68e1185c789488f6b70f4cb59eda0f295d1b9058</string>
+			</dict>
 		</dict>
 		<key>IOStorageFamily</key>
 		<dict>
@@ -9807,6 +9922,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>08ac4841eeaa4c8291066a816292443cd37eeaecc534f5fef980d5a2c17437ba</string>
+			</dict>
+			<key>191</key>
+			<dict>
+				<key>sha256</key>
+				<string>9d77ca4dcc093ab75937dacd281301e2e9861403400e13ffe54b3cb7372d71c6</string>
 			</dict>
 			<key>24</key>
 			<dict>
@@ -10339,6 +10459,11 @@
 				<key>sha256</key>
 				<string>33d1712543e548077aec9d20a5a47ae9381ac054b1ce42c8cbe17d3030ef131e</string>
 			</dict>
+			<key>400.0.1</key>
+			<dict>
+				<key>sha256</key>
+				<string>ed13bb9e94dfe76c3be0490f9ab6ca4790ccb31b0c9e930a8d723e63b9bb5f23</string>
+			</dict>
 		</dict>
 		<key>IPFirewall</key>
 		<dict>
@@ -10613,6 +10738,11 @@
 				<key>sha256</key>
 				<string>ac1bbfcdcd5a0bbe0a204996836de2b622eded3e08d601cd3843562f80f5584e</string>
 			</dict>
+			<key>7601.1.56</key>
+			<dict>
+				<key>sha256</key>
+				<string>a735e6750a9faef4681f9650143288fa5381485bff51812aaa369094921f9ecc</string>
+			</dict>
 			<key>85</key>
 			<dict>
 				<key>sha256</key>
@@ -10792,6 +10922,11 @@
 				<key>sha256</key>
 				<string>82b9ab616a107b72ef83fd118e8c1226376f9e8d767a3b3c3c6137b88cdb2fdb</string>
 			</dict>
+			<key>152</key>
+			<dict>
+				<key>sha256</key>
+				<string>a2544e76a0883693e65ac7704a622dbe5cc68f54e7a7e2b8e3cc40ebbc3b1801</string>
+			</dict>
 			<key>31</key>
 			<dict>
 				<key>sha256</key>
@@ -10870,6 +11005,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>8364e4fa5febf54cd6763dc05cd31047890be8e92e6e537b651a5ad1e8777c5a</string>
+			</dict>
+			<key>1081.1.3</key>
+			<dict>
+				<key>sha256</key>
+				<string>4abdb2f8da359442b2757f3546f72b1fae545ba8d1fd207717ec37ab7707aa31</string>
 			</dict>
 			<key>166</key>
 			<dict>
@@ -11278,6 +11418,11 @@
 				<key>sha256</key>
 				<string>d0fcc139321f6c20fdf78f553abdf44ef70307ee04d20f13b33867518c16c7a6</string>
 			</dict>
+			<key>476</key>
+			<dict>
+				<key>sha256</key>
+				<string>0f0457313627bcf20afb68b21de06679d34ffaee7a3843fa645840fc0aa4e55f</string>
+			</dict>
 			<key>78</key>
 			<dict>
 				<key>sha256</key>
@@ -11427,6 +11572,11 @@
 				<key>sha256</key>
 				<string>b93700d750601177e7cd35c88e074d88e091dad654fba169104e6e4b90bbf9b4</string>
 			</dict>
+			<key>149</key>
+			<dict>
+				<key>sha256</key>
+				<string>c65e5e0a5cb1dbdc659572e4d7e0be994af5b12a1b84c8a612af86d37314cd51</string>
+			</dict>
 			<key>18</key>
 			<dict>
 				<key>sha256</key>
@@ -11525,6 +11675,11 @@
 				<key>sha256</key>
 				<string>45a266e8be3783e783f60e5574bc98be3dbb8c8d0ac6a59b19f99b0df049f39b</string>
 			</dict>
+			<key>26</key>
+			<dict>
+				<key>sha256</key>
+				<string>533c2643646d7d12da0dcf5893c10577f9b6c1d8640967690bb4e79828e38eff</string>
+			</dict>
 		</dict>
 		<key>Libstreams</key>
 		<dict>
@@ -11580,6 +11735,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>83b0b6fceaf82f1e24579a0fb04c3a2ed79d0c3b5624fea979058cd13103ae63</string>
+			</dict>
+			<key>1225.1.1</key>
+			<dict>
+				<key>sha256</key>
+				<string>7414a63aaad6b1ce7438ccfa7b20330c3bbf08568eb8258ccb45546f82450a26</string>
 			</dict>
 			<key>123</key>
 			<dict>
@@ -11810,6 +11970,11 @@
 				<key>sha256</key>
 				<string>8fd6cecfa49c2752a55ae61207bd0021cf2c070cbd882e618ebf0db6b990b42e</string>
 			</dict>
+			<key>69</key>
+			<dict>
+				<key>sha256</key>
+				<string>2afdd3a4e7b6bac0f91fbb9939b5cf3d7cb890670d6808f742dd9b40d4b1bca0</string>
+			</dict>
 		</dict>
 		<key>MySQL</key>
 		<dict>
@@ -11956,6 +12121,11 @@
 				<key>sha256</key>
 				<string>1befd603bd7db5cd99cdd0baefa4dfb6207aad41fffe25abbcd8ad697b54a51c</string>
 			</dict>
+			<key>87</key>
+			<dict>
+				<key>sha256</key>
+				<string>f28adfbd231515e2144c29146b0c7562c9537b5e90b23bb4fd3a4b7869a43ef0</string>
+			</dict>
 		</dict>
 		<key>NKEMgr</key>
 		<dict>
@@ -12016,6 +12186,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>80efc4a1a72eb08d2c4c34216866486e9ebe8047270d093b376c47b678ebaf67</string>
+			</dict>
+			<key>56</key>
+			<dict>
+				<key>sha256</key>
+				<string>1eeb3a602c5e17a56ab782c869d191b4820bf831c67498c21dc174fda49920d7</string>
 			</dict>
 			<key>8</key>
 			<dict>
@@ -12216,6 +12391,11 @@
 				<key>sha256</key>
 				<string>48ec7431dc09ea236346fe1e38333a7c751a892723e1873b77818e755b7079ce</string>
 			</dict>
+			<key>510.23</key>
+			<dict>
+				<key>sha256</key>
+				<string>6f81130e75c5a5835b7ddf29a9af2a3993c104a46c8d1edc2b56196b3152237b</string>
+			</dict>
 			<key>68</key>
 			<dict>
 				<key>sha256</key>
@@ -12316,6 +12496,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>67ad03874ba50758374254903ee4537fd59886e8a7e8c0e1de008a735ad4306e</string>
+			</dict>
+			<key>195</key>
+			<dict>
+				<key>sha256</key>
+				<string>52a5f01627c904943d3bc1c0dd67c77d2bb3fb042b6dfeb5cfe4669d1ae0ab95</string>
 			</dict>
 			<key>23</key>
 			<dict>
@@ -12549,9 +12734,19 @@
 				<key>sha256</key>
 				<string>db0967070c3ede3d99004487f845936fc854a520279a7322f73d46404c69bfdb</string>
 			</dict>
+			<key>59</key>
+			<dict>
+				<key>sha256</key>
+				<string>66fbce1ddae389ef08f0dc3502906c9d7f521fea50d50b706e79a99ca71bb23b</string>
+			</dict>
 		</dict>
 		<key>PostgreSQL</key>
 		<dict>
+			<key>207.3</key>
+			<dict>
+				<key>sha256</key>
+				<string>b38298629c5968a3770d8619349ddaac034a634ff9566eb13c63b9d3fbe16cfa</string>
+			</dict>
 			<key>23</key>
 			<dict>
 				<key>sha256</key>
@@ -12794,6 +12989,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>e3c044cb742a2934233db28cfeb5824445cde4721cf0f5bdcbfb80afab81dee6</string>
+			</dict>
+			<key>571.1.3</key>
+			<dict>
+				<key>sha256</key>
+				<string>d222916df1126786d8b65ec9d055727105648e28740898e31bf7582a75afeefc</string>
 			</dict>
 			<key>63</key>
 			<dict>
@@ -13288,6 +13488,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>34853d5e6ba3b374c305e73035425d3678b2e4b233b702ac39b6de9a44fecd47</string>
+			</dict>
+			<key>57336.1.9</key>
+			<dict>
+				<key>sha256</key>
+				<string>fc52cf4342fa5f9de5a4e1bd58af663a64ce662e055ad1bbed790401e21ad576</string>
 			</dict>
 		</dict>
 		<key>SecurityNssAsn1</key>
@@ -14019,6 +14224,11 @@
 				<key>sha256</key>
 				<string>3a039f908a7c812ed51cb12ba5c3acb03e24fb05a987f01ef0ebb861ea6e1a64</string>
 			</dict>
+			<key>69</key>
+			<dict>
+				<key>sha256</key>
+				<string>436016160e3d97e22efe5f31f3cdb9a5380d09c52d3f0353c725fc8f070986bc</string>
+			</dict>
 		</dict>
 		<key>Tokend</key>
 		<dict>
@@ -14221,6 +14431,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>bb32623c96c33af42084d0ec22150af11880ea5890ae320a7b53fb325cbaadb8</string>
+			</dict>
+			<key>7601.1.48</key>
+			<dict>
+				<key>sha256</key>
+				<string>97b7cea396d29ad852b21287112494fd8f2c0ec414788dc5f21b6be0f8a2bed8</string>
 			</dict>
 		</dict>
 		<key>WebCore</key>
@@ -14485,6 +14700,11 @@
 				<key>sha256</key>
 				<string>27102a23cbc7509e6c0cbecb1e410017ae285a091e5f0e9076f9b58421e3bfb5</string>
 			</dict>
+			<key>7601.1.55</key>
+			<dict>
+				<key>sha256</key>
+				<string>1147d7c59742b1e2d4e0519a53c3b1b9a576a96476d87321d27fd828b579569a</string>
+			</dict>
 			<key>85.5</key>
 			<dict>
 				<key>sha256</key>
@@ -14517,6 +14737,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>7785bc90dec7d74131d9a31fe0da7f395997bdbe66d6c042c5c2afdb6c435e46</string>
+			</dict>
+			<key>7601.1.48</key>
+			<dict>
+				<key>sha256</key>
+				<string>538fbe250e7e76119bc857b137745e7a6a1475c5ef454be807134678bfecbabc</string>
 			</dict>
 		</dict>
 		<key>WebKit</key>
@@ -14651,6 +14876,11 @@
 				<key>sha256</key>
 				<string>f94aee3f9b3fe0e52186e016fce5bb42a26e31b86a4419db19c0b1f3e20e6959</string>
 			</dict>
+			<key>7601.1.56</key>
+			<dict>
+				<key>sha256</key>
+				<string>ff0c834477c1e95989661d560075ced6c79ae549d22eb6c51b0d01dfa0ceba3f</string>
+			</dict>
 		</dict>
 		<key>WebKit2</key>
 		<dict>
@@ -14733,6 +14963,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>2b09314a861d93926c3592b6ae6f170f7a30066edb8c702e708231e8775500e8</string>
+			</dict>
+			<key>7601.1.56</key>
+			<dict>
+				<key>sha256</key>
+				<string>42747b01784db22a7b08c9ca88b0e5c5bb3fb8ceb5166def92f2f5b137a03005</string>
 			</dict>
 		</dict>
 		<key>WebmailServer</key>
@@ -15071,6 +15306,11 @@
 				<key>sha256</key>
 				<string>0ae93d21898a535baea601d5078a903c2b15a5bd91e80fd2663d8715fecadcd3</string>
 			</dict>
+			<key>163</key>
+			<dict>
+				<key>sha256</key>
+				<string>3871cf36af7f7e8a5e964f2c8607e155e5e1441fcb5c905e92512510cbd8eb89</string>
+			</dict>
 			<key>35</key>
 			<dict>
 				<key>sha256</key>
@@ -15325,6 +15565,11 @@
 				<key>sha256</key>
 				<string>ac85a9d21c9e2b8a49cd104777dcf0ab08f174b388f84e731272662d6a07e1bc</string>
 			</dict>
+			<key>798</key>
+			<dict>
+				<key>sha256</key>
+				<string>58a462e36c05eb966a8518d8adb687a1d4e92b57e6b39f94e18a0e0fb451a4f0</string>
+			</dict>
 		</dict>
 		<key>apache1</key>
 		<dict>
@@ -15468,6 +15713,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>9b9b1896829e5eba0864d1539b4c57a071cff3fc6ccdf8757b89efc2ebf7e4e6</string>
+			</dict>
+			<key>15</key>
+			<dict>
+				<key>sha256</key>
+				<string>095fdb7817b5efcb9b5641cbd76a0045a192e374b7a8f9a0c62288f54c465eb1</string>
 			</dict>
 			<key>2</key>
 			<dict>
@@ -15891,6 +16141,11 @@
 				<key>sha256</key>
 				<string>836007c6a2978ca03f1097bdc6fbb9aadf14ed2adfdf7ad3603c04599edccfd4</string>
 			</dict>
+			<key>36</key>
+			<dict>
+				<key>sha256</key>
+				<string>589f7d4435d3c7caf211a732c75a762d22cb6553e6d8ac53b2c9825bbba312bf</string>
+			</dict>
 		</dict>
 		<key>architecture</key>
 		<dict>
@@ -15958,6 +16213,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>278136c788870c48e27b4d409ff32b113d7304f209cf59738feadb4a5cd08939</string>
+			</dict>
+			<key>268</key>
+			<dict>
+				<key>sha256</key>
+				<string>033bc0418222294804baf621178d4033fa0522432926e19185c9e8781a9377dd</string>
 			</dict>
 		</dict>
 		<key>at_cmds</key>
@@ -16087,6 +16347,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>6c17efb80b2cba51d362354a586ae9f683dc01ddb86bddae8d014a090d030c69</string>
+			</dict>
+			<key>250</key>
+			<dict>
+				<key>sha256</key>
+				<string>549361e84e0a36a2eeed8f97b651ec24872f9b183b10971cd14c4f6f0fa5987e</string>
 			</dict>
 		</dict>
 		<key>automake</key>
@@ -16284,6 +16549,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>772e3c4d894507221b4ed699bb725db7ac9ae0d326775625f78fbcbfd8bd832f</string>
+			</dict>
+			<key>99</key>
+			<dict>
+				<key>sha256</key>
+				<string>d589fad986664a35db3ec0d4e5b64093f97cd51e798bc0ab2c1f18b76c320d0c</string>
 			</dict>
 		</dict>
 		<key>basic_cmds</key>
@@ -16534,6 +16804,11 @@
 				<key>sha256</key>
 				<string>79e43274fc4aeb1032310b87c967c4b65a3ab2ecc82a691ee961c37718c57323</string>
 			</dict>
+			<key>105</key>
+			<dict>
+				<key>sha256</key>
+				<string>ac179d729326c09df7310b67e1b60fbff58b7747821fc42394f48f4e23b85d81</string>
+			</dict>
 			<key>11</key>
 			<dict>
 				<key>sha256</key>
@@ -16725,6 +17000,11 @@
 				<key>sha256</key>
 				<string>5de5f26a1b980d517e47647d13b20d7ea95be5a4b9b58196ecba134a350efd33</string>
 			</dict>
+			<key>7601.1.48</key>
+			<dict>
+				<key>sha256</key>
+				<string>3ea2406ba9125836cf1f6c7ac097b9b4dfd163c34a64dd8264b0456786ef14cf</string>
+			</dict>
 		</dict>
 		<key>boot</key>
 		<dict>
@@ -16885,6 +17165,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>a009c2264ede171d4736b37c5a53c5a98e37ebe564dd01bfed73bf4e078f97c8</string>
+			</dict>
+			<key>314</key>
+			<dict>
+				<key>sha256</key>
+				<string>bb4446ba93d0850e238ef4db983d5d8bf94e968412e2161bfe906349fd71d0e9</string>
 			</dict>
 			<key>54</key>
 			<dict>
@@ -17110,6 +17395,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>93a024cc174384152a86d15cd312a92e800049b4017b18d1b998abd8a35e62af</string>
+			</dict>
+			<key>38</key>
+			<dict>
+				<key>sha256</key>
+				<string>f7cb8b29624365928832fd3d631139b365df5113d770a68af72e3ff465192b8a</string>
 			</dict>
 			<key>9</key>
 			<dict>
@@ -17559,6 +17849,11 @@
 				<key>sha256</key>
 				<string>ad84a981d0e0646ab5a20454527f19786b6cc018937eb36d715b503f541bc0b3</string>
 			</dict>
+			<key>801.1.1</key>
+			<dict>
+				<key>sha256</key>
+				<string>6c4c3f8f11288e8abfe38e42595bcc4ca095310ad35c160c80c59a38f9fd2ab1</string>
+			</dict>
 			<key>84</key>
 			<dict>
 				<key>sha256</key>
@@ -17629,6 +17924,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>f2fcfd2ed067f99a692f3a53158b1e7320a57a1ebe06665bd5d1442dd3e620e9</string>
+			</dict>
+			<key>127</key>
+			<dict>
+				<key>sha256</key>
+				<string>fa9d423cd101808fe92eafe31fbe58122438c3490fb89a1ff3e5cbda551c6ee6</string>
 			</dict>
 			<key>41</key>
 			<dict>
@@ -17962,6 +18262,11 @@
 				<key>sha256</key>
 				<string>d5e888d1d9700fc587187ed19c10d2b1a474345001b76db7e524d2b1eac6c810</string>
 			</dict>
+			<key>435</key>
+			<dict>
+				<key>sha256</key>
+				<string>595090752d22ba9702df370dfd93642aa933d599c3ebb6eb88285a768150f717</string>
+			</dict>
 			<key>58</key>
 			<dict>
 				<key>sha256</key>
@@ -18119,6 +18424,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>fc89e96737ddce3ce1b7adc54815f8e37b7375a4d03c9649768eba1e1c692381</string>
+			</dict>
+			<key>90</key>
+			<dict>
+				<key>sha256</key>
+				<string>59de7b5d869dccc522d6b6a77e9df3125dc8fa7400cf229e0d5b1353ad72ee9f</string>
 			</dict>
 		</dict>
 		<key>cvs</key>
@@ -18531,6 +18841,11 @@
 				<key>sha256</key>
 				<string>9ebc75bf425826e5639e3d841bcf2b1ccd9b018c6ed81c250f9a182e6e9541d0</string>
 			</dict>
+			<key>582</key>
+			<dict>
+				<key>sha256</key>
+				<string>c322a30663f47477114d6504557cb8a1fc9fcaff8b005b3d6826db962d77d9d8</string>
+			</dict>
 		</dict>
 		<key>disklabel</key>
 		<dict>
@@ -18640,6 +18955,11 @@
 				<key>sha256</key>
 				<string>df129ecc16d66c30513457a09ebbac9317a42461a026bf14ba31b7d3d388fdcc</string>
 			</dict>
+			<key>51</key>
+			<dict>
+				<key>sha256</key>
+				<string>86cc86d2cf8130387d1be9f0654d9e30b6f5c35ce62e5fda38d5508bc62c65ea</string>
+			</dict>
 		</dict>
 		<key>dovecot</key>
 		<dict>
@@ -18703,6 +19023,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>d7e197ec7c1098f0b566ef0c260644cf42aea5e2b904eae794662543d30d979d</string>
+			</dict>
+			<key>168</key>
+			<dict>
+				<key>sha256</key>
+				<string>2c40103d02e3b240743a07d7b2c3ffce6cededc72dc534732a1cf887bc04b112</string>
 			</dict>
 			<key>48</key>
 			<dict>
@@ -18771,6 +19096,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>d364f5418c64b84a926a2534270e77c36fea530a904f63798dae5e642939ee98</string>
+			</dict>
+			<key>360.14</key>
+			<dict>
+				<key>sha256</key>
+				<string>c4e011241d75e3fac4dbdfc0049ccf26fb939fea6c0256b6f16036b2e4690c6e</string>
 			</dict>
 			<key>43</key>
 			<dict>
@@ -18885,6 +19215,11 @@
 				<key>sha256</key>
 				<string>821ecba6714da4ae554d3fabbba4afe45c3533be54ec6c4958a1e5c7d66d67b8</string>
 			</dict>
+			<key>221</key>
+			<dict>
+				<key>sha256</key>
+				<string>1c82329a74c7986568d497da52426adcb177074db967f6816471558d99513f4a</string>
+			</dict>
 			<key>33</key>
 			<dict>
 				<key>sha256</key>
@@ -18993,6 +19328,11 @@
 				<key>sha256</key>
 				<string>123b96cef0065baa4879c3748385b187b1b3b312af96c50fbfe2f79857379a45</string>
 			</dict>
+			<key>42</key>
+			<dict>
+				<key>sha256</key>
+				<string>280964221ab785ceb3723fd416106e200b43273f551833f0306e6bc5a290fc92</string>
+			</dict>
 		</dict>
 		<key>emacs</key>
 		<dict>
@@ -19065,6 +19405,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>64c8d0475318e12970aa42d165a5a13fc0fb1a261225db82e24965605609bf0c</string>
+			</dict>
+			<key>94</key>
+			<dict>
+				<key>sha256</key>
+				<string>88580195ede0af9c1b70fca9e888276696159063d55c919ed2c544c21086c84b</string>
 			</dict>
 		</dict>
 		<key>enscript</key>
@@ -19234,6 +19579,11 @@
 				<key>sha256</key>
 				<string>95d0f0c2fe18a4878d56033446ac96414a880215ad7f1d0e38ed873aafc9f94c</string>
 			</dict>
+			<key>47</key>
+			<dict>
+				<key>sha256</key>
+				<string>48ff04d14cf822d8abd133c29062c944499705f1a72f2c91ba592677d11e667c</string>
+			</dict>
 			<key>6</key>
 			<dict>
 				<key>sha256</key>
@@ -19326,6 +19676,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>3fa9198e772cdba6d1b62e5b47e9a62441ba22d09acd2cae9031fb9eaca1e953</string>
+			</dict>
+			<key>251</key>
+			<dict>
+				<key>sha256</key>
+				<string>01daad670723bf65911a27e78b7ad7a49039713adf445f9e258bc3ca87124a50</string>
 			</dict>
 			<key>45</key>
 			<dict>
@@ -19489,6 +19844,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>97ab7c0c6b9aed05e62153a6b8347a7684c753ba06e1d4c4224a672d100adc61</string>
+			</dict>
+			<key>679.1.4</key>
+			<dict>
+				<key>sha256</key>
+				<string>c0a1d3dce1348fe06815be8e404c34c2d81026780db8f9ae33eeffab1c945056</string>
 			</dict>
 		</dict>
 		<key>flex</key>
@@ -19992,6 +20352,11 @@
 				<key>sha256</key>
 				<string>4bd4436d767ec7075f8f2c7ae2449895dd2041e5bcbd7815a05dfb835a536025</string>
 			</dict>
+			<key>21</key>
+			<dict>
+				<key>sha256</key>
+				<string>409589dd1846d44e76ac961f27d24a07dc73e1d1aa1f80e8a52b6349e8104842</string>
+			</dict>
 		</dict>
 		<key>gnumake</key>
 		<dict>
@@ -20347,6 +20712,11 @@
 				<key>sha256</key>
 				<string>e6d504ae6a2a54ff2108c8eb0df7e6eb3ae0972cdb9ee7fd71bf43ab88fe4a67</string>
 			</dict>
+			<key>39</key>
+			<dict>
+				<key>sha256</key>
+				<string>aa86c79c7f477bbc1d60a1ce3c9db999a78d5d6a363000fb17021dc6254a9ff7</string>
+			</dict>
 		</dict>
 		<key>gssd</key>
 		<dict>
@@ -20379,6 +20749,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>4baab99379e71748d8bb9664e022ac67d5d7246bc884ab38f57963301f363c02</string>
+			</dict>
+			<key>67</key>
+			<dict>
+				<key>sha256</key>
+				<string>7bf1d506053e7973ecc971ede1ae7c63d4f0af0b8dde568343aa50768d5e62b8</string>
 			</dict>
 		</dict>
 		<key>gutenprint</key>
@@ -20544,9 +20919,19 @@
 				<key>sha256</key>
 				<string>f9252a5a9088123565040cc1a9a39105bf8e0e7755d85aad28fd6e8e572dcf6e</string>
 			</dict>
+			<key>304</key>
+			<dict>
+				<key>sha256</key>
+				<string>410bc0f354a338b5a646872466cac206598c35ef6535052e45bd07fec3470d1b</string>
+			</dict>
 		</dict>
 		<key>hunspell</key>
 		<dict>
+			<key>10</key>
+			<dict>
+				<key>sha256</key>
+				<string>c76f156c90c7202a6e3db6479220ec29bb5c44cdf034f8df4fc4070749d1b5c6</string>
+			</dict>
 			<key>4</key>
 			<dict>
 				<key>sha256</key>
@@ -20662,6 +21047,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>ded7e71f57dac6d374655f7d5cebcf41ff2efcf36f962083f80e8402b7d8a5cb</string>
+			</dict>
+			<key>292</key>
+			<dict>
+				<key>sha256</key>
+				<string>be981e517ee6608d8f2c6cdb05984bc0b41eac7cea7c9c838c21794643f369da</string>
 			</dict>
 			<key>34</key>
 			<dict>
@@ -20954,6 +21344,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>cb0094fe102cca292d7acd5a81fff779ce897f884f9774558fffd6ee7f04e0b8</string>
+			</dict>
+			<key>425.1.3</key>
+			<dict>
+				<key>sha256</key>
+				<string>0f248d0dcd675feb90cbe8cf11b2cdb0b5c25d6887c6caf685a705c087bfa31b</string>
 			</dict>
 			<key>59</key>
 			<dict>
@@ -21283,6 +21678,11 @@
 				<key>sha256</key>
 				<string>ef64996dd7c7d0d557fdef581a9b5a4fe624304fd84394c4be4e8dd6e96dd4a5</string>
 			</dict>
+			<key>29</key>
+			<dict>
+				<key>sha256</key>
+				<string>64d147137aff001252a9b1869700cde6e13a0cd555caec60acf9a1531b689878</string>
+			</dict>
 			<key>3</key>
 			<dict>
 				<key>sha256</key>
@@ -21330,6 +21730,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>585de7fe33956beb0252a75b32cac0c451c4b4a29146c01ce657f64510243582</string>
+			</dict>
+			<key>32</key>
+			<dict>
+				<key>sha256</key>
+				<string>a00448d9d468a2c8c5b937727d2ad012cbc289a7c77f1cf474c9d0407bbec666</string>
 			</dict>
 		</dict>
 		<key>libauto</key>
@@ -21488,6 +21893,11 @@
 				<key>sha256</key>
 				<string>92b5392eabc1dbd41b079c0d5c2e49481eb93f6910f845ad4e93d383ee5f4e4b</string>
 			</dict>
+			<key>500.1.5</key>
+			<dict>
+				<key>sha256</key>
+				<string>45ab758080bc1f5fcb63ef90b35645e695ba19a5fe39116a1c62d01a5d67d07a</string>
+			</dict>
 			<key>84.5</key>
 			<dict>
 				<key>sha256</key>
@@ -21550,6 +21960,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>fc27f535e7141e5ebe91d5932e30fc91dde1143affede7ffea4208e4941de62b</string>
+			</dict>
+			<key>43</key>
+			<dict>
+				<key>sha256</key>
+				<string>c617c04822350a95467ecc476a4c63d54bd76b7b16b1c50f2ce6330db7ed70c6</string>
 			</dict>
 			<key>5.1</key>
 			<dict>
@@ -21696,6 +22111,11 @@
 				<key>sha256</key>
 				<string>dfed923a233c0a7b23ffea87e0b631fe82a83324b71a653f558397f1558d8a27</string>
 			</dict>
+			<key>44</key>
+			<dict>
+				<key>sha256</key>
+				<string>012540176d1a2ae22920dd635d0d45ff7ccf34c2c2e8d8222731372f95a30686</string>
+			</dict>
 			<key>9</key>
 			<dict>
 				<key>sha256</key>
@@ -21713,6 +22133,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>60fd53d8ac1ee2cdbd79553450185456f9782f59c4c53bb28d929029412a588e</string>
+			</dict>
+			<key>67</key>
+			<dict>
+				<key>sha256</key>
+				<string>b7ae6fb14ad218ae8604ef29f6ee4f82d187c68831256b6d3de8777db55163a8</string>
 			</dict>
 		</dict>
 		<key>libmd</key>
@@ -21800,6 +22225,11 @@
 				<key>sha256</key>
 				<string>38da221e2fedb2ec94c8e170e7e70453b11202d6fecbaeb40b8352c15000bfa2</string>
 			</dict>
+			<key>54</key>
+			<dict>
+				<key>sha256</key>
+				<string>0d5cc39708624d3b27133a9c319ffa9b06c58d3fe485eddd5277f0e95afa0e17</string>
+			</dict>
 			<key>9</key>
 			<dict>
 				<key>sha256</key>
@@ -21822,6 +22252,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>c33a3b46061cb9cc9defac1090532d6b98d0f273883493779cca63a777375edc</string>
+			</dict>
+			<key>137.1.1</key>
+			<dict>
+				<key>sha256</key>
+				<string>684783a56090c4d7e48912411b726e8eca065275a168d03a2eba9067ba18dc11</string>
 			</dict>
 		</dict>
 		<key>libresolv</key>
@@ -21880,6 +22315,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>cab8e20cf4c2a26291b18719974c4a699e728cf1ed7bc57b0bfa618589d37a5b</string>
+			</dict>
+			<key>60</key>
+			<dict>
+				<key>sha256</key>
+				<string>ee89d5458f41dc18b75122fca336b196b0cb548b5d8b719507f8d3366273d425</string>
 			</dict>
 		</dict>
 		<key>libsecurity_agent</key>
@@ -23471,6 +23911,11 @@
 				<key>sha256</key>
 				<string>aebca1ae62b5172fbe0e4f1072ca11ee8f5f17326a713c036ac50a3264ddfa89</string>
 			</dict>
+			<key>43</key>
+			<dict>
+				<key>sha256</key>
+				<string>75a90291ba80f1848a5b38162f7f3dd84ada7a6d35b603234186f9863dabafbe</string>
+			</dict>
 		</dict>
 		<key>libxml2</key>
 		<dict>
@@ -23539,6 +23984,11 @@
 				<key>sha256</key>
 				<string>0c64437d5f3ce33133dd9f97a17313615914da2486f635ae0f5d780ad3db0990</string>
 			</dict>
+			<key>29</key>
+			<dict>
+				<key>sha256</key>
+				<string>10c60f6e51102ba67fe348d9381794b03111e45ed7166553aacb0c61ba55fe1b</string>
+			</dict>
 			<key>4</key>
 			<dict>
 				<key>sha256</key>
@@ -23586,6 +24036,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>78ce3952efe529056405c5477500b83a4dbaf3a4ac170a8858edbf298c3b9310</string>
+			</dict>
+			<key>14</key>
+			<dict>
+				<key>sha256</key>
+				<string>148af539075a1bc39fe7d40128c23132b51ed835c58e54a7879b40c37be94eb1</string>
 			</dict>
 			<key>7</key>
 			<dict>
@@ -23649,6 +24104,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>ae4b1ae19c7208e9d30564fe9a32cf34d8c2e60fcbf9e7411fc61157410d47cb</string>
+			</dict>
+			<key>3425.0.36</key>
+			<dict>
+				<key>sha256</key>
+				<string>9a00f787268eb5c543ace36c3d3e3c9b5bdf099792c91fda1461e7c80586f576</string>
 			</dict>
 		</dict>
 		<key>llvmgcc42</key>
@@ -23749,6 +24209,11 @@
 				<key>sha256</key>
 				<string>b106cc4ce95f7d8b4afb61f833ece216b4004fec44595e93bd445878c0509774</string>
 			</dict>
+			<key>15</key>
+			<dict>
+				<key>sha256</key>
+				<string>78e1166c2e44243dd996007287bbe09c538963561fa3e81531820f7dc6dfb64d</string>
+			</dict>
 			<key>3</key>
 			<dict>
 				<key>sha256</key>
@@ -23811,6 +24276,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>204703244f603fa2a37e756a6b81147639427540da8737bdb8ef3f96dfe152c4</string>
+			</dict>
+			<key>51</key>
+			<dict>
+				<key>sha256</key>
+				<string>969b8a35fabcc82759da2433973b9606b7b62f73527e76ac8f18d0a19f473c2a</string>
 			</dict>
 			<key>8</key>
 			<dict>
@@ -24120,6 +24590,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>cbdfc04ee4bfcc01c483424422b8489d620de7ef182718a51360d21e767248b1</string>
+			</dict>
+			<key>33</key>
+			<dict>
+				<key>sha256</key>
+				<string>9340d8dff9e7c2568283cd2b44b16173cf5a78c649721003c9affd1674cebcaf</string>
 			</dict>
 		</dict>
 		<key>mailman</key>
@@ -24437,6 +24912,11 @@
 				<key>sha256</key>
 				<string>587b4f93650d4eb557cbd9f83786069444a9a1c157b4b14097bbe0934080cfde</string>
 			</dict>
+			<key>219</key>
+			<dict>
+				<key>sha256</key>
+				<string>a7805d179f705b04f81346ed1c15067878bb0bfb0f838ff9af9e00d5485a284e</string>
+			</dict>
 			<key>30</key>
 			<dict>
 				<key>sha256</key>
@@ -24604,6 +25084,11 @@
 				<key>sha256</key>
 				<string>565200adc26423d9c1d751a8db2cf258c1e84f068d73ac6700761d07fb23742b</string>
 			</dict>
+			<key>46</key>
+			<dict>
+				<key>sha256</key>
+				<string>b8032fbde5dc50105068da8f276e1d9c67c0dbb714e3be167b87017ee6987269</string>
+			</dict>
 			<key>7</key>
 			<dict>
 				<key>sha256</key>
@@ -24685,6 +25170,11 @@
 				<key>sha256</key>
 				<string>ac6de38adba88aa97bb364cc45cb4f780a8eeb517efb9e845aae816408502faf</string>
 			</dict>
+			<key>146</key>
+			<dict>
+				<key>sha256</key>
+				<string>f88946e755016e02eb4f4806a92f00653821dec51738df05f6e4fce314314a60</string>
+			</dict>
 			<key>147.1</key>
 			<dict>
 				<key>sha256</key>
@@ -24732,6 +25222,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>95f58bd3ede3e52424de699f911221e4b1b8f1171e5e3175dddd2dff4cf78822</string>
+			</dict>
+			<key>29</key>
+			<dict>
+				<key>sha256</key>
+				<string>d69927169b61f24c566f74454ffc802e5ca721c7219d88444eca8fc802a04cde</string>
 			</dict>
 			<key>4</key>
 			<dict>
@@ -25044,6 +25539,11 @@
 				<key>sha256</key>
 				<string>caa748973f57b32bbff61e21264abdc13fbae7115861d99e116ded8807a930a2</string>
 			</dict>
+			<key>480</key>
+			<dict>
+				<key>sha256</key>
+				<string>cd074e5d982bd4fa1f1cc65fc43c109fcf7ecad1ea3c5958490295e59f6560d8</string>
+			</dict>
 			<key>76</key>
 			<dict>
 				<key>sha256</key>
@@ -25205,9 +25705,19 @@
 				<key>sha256</key>
 				<string>c10932f06e88fef03569c75f6904f7a0da98aba3111319bfba548f5ee4c198e1</string>
 			</dict>
+			<key>88.0.0.0.1</key>
+			<dict>
+				<key>sha256</key>
+				<string>6aa5e43910b65548cabed08149b37d89296fc4f4fe870300cdef23ca9d3f2dae</string>
+			</dict>
 		</dict>
 		<key>ntp</key>
 		<dict>
+			<key>102</key>
+			<dict>
+				<key>sha256</key>
+				<string>2e2c784b5f39e9d95ce91c153b5e284ede35be2d148613b5ce83cd160d565b4b</string>
+			</dict>
 			<key>12</key>
 			<dict>
 				<key>sha256</key>
@@ -25405,6 +25915,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>c386ee3df3378f9d5c944c5d99eaa4b3c403a5ff8d84485c4c61bf3ad9490764</string>
+			</dict>
+			<key>680</key>
+			<dict>
+				<key>sha256</key>
+				<string>32efb994447db5f2494ff2a7267ff39cc228a5252b99e871ce0e45dbdfda6701</string>
 			</dict>
 		</dict>
 		<key>old_ncurses</key>
@@ -25605,6 +26120,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>e6abaff24773e2cbf69cc84f4569e098c9152dea9a1ac1ca09964ea48455264b</string>
+			</dict>
+			<key>209</key>
+			<dict>
+				<key>sha256</key>
+				<string>7dbe1465d2e2708bf3e39e73e8063c93cab10b8d98d1652e16f7d2a595abced9</string>
 			</dict>
 			<key>58.2</key>
 			<dict>
@@ -25829,6 +26349,11 @@
 				<key>sha256</key>
 				<string>c7ea153bdcbd24e73643343bb2af21625311fb1ce8c71910fd09fea5b857ada9</string>
 			</dict>
+			<key>104</key>
+			<dict>
+				<key>sha256</key>
+				<string>3a3ac2db5143c4ca21130c79ee2911cb5ab28d7930b968dd57ae878d3bcd5098</string>
+			</dict>
 			<key>17</key>
 			<dict>
 				<key>sha256</key>
@@ -26029,6 +26554,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>eeabe5d018709d52e3897a617d9c09da77785c32830625808279e076e1c34d2a</string>
+			</dict>
+			<key>259</key>
+			<dict>
+				<key>sha256</key>
+				<string>6637c5ca6ac3cf694722cd23ac0210dfe9d16ebe65d4c46c86180620c3dd819b</string>
 			</dict>
 		</dict>
 		<key>ppp</key>
@@ -26238,6 +26768,11 @@
 				<key>sha256</key>
 				<string>2bf317b3a703e6d22739cfe9c7435fd03147bd7374eb8b367d0505dd3a886707</string>
 			</dict>
+			<key>809</key>
+			<dict>
+				<key>sha256</key>
+				<string>80e945c87dceb979accb53d0e51a7d00e0490e905f8b85e4f169968d35b52433</string>
+			</dict>
 			<key>92</key>
 			<dict>
 				<key>sha256</key>
@@ -26398,6 +26933,11 @@
 				<key>sha256</key>
 				<string>5559a3de37b0830b30342745de8570decb4fbb209e62b2b6ad42454fb07de1d4</string>
 			</dict>
+			<key>47</key>
+			<dict>
+				<key>sha256</key>
+				<string>d52917bb454a5a73e30d39f7f9716a715d07a4f59888ab8526eb9aaa845e3b9d</string>
+			</dict>
 		</dict>
 		<key>python</key>
 		<dict>
@@ -26495,6 +27035,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>9bb42e5d921807a329e5a500d7539b90ebfa2ba9b1f1f4fd03101f772fb13d7b</string>
+			</dict>
+			<key>94</key>
+			<dict>
+				<key>sha256</key>
+				<string>b0162119db6864439fbbc0d9610f7cf0ad9dd0cde9e9c266976b76dfd8f664ee</string>
 			</dict>
 		</dict>
 		<key>python23</key>
@@ -26661,6 +27206,11 @@
 				<key>sha256</key>
 				<string>2f63a253b235c5dd00f06b6ebe182118d2675970710d7439968a3d630cb58ed7</string>
 			</dict>
+			<key>48</key>
+			<dict>
+				<key>sha256</key>
+				<string>5a54b359b0ff531363fad209cc06ff5a394ec78d82a5c69ad96dcba3464975bb</string>
+			</dict>
 		</dict>
 		<key>removefile</key>
 		<dict>
@@ -26708,6 +27258,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>6354ad08c719740fe044103872762a065db7a3e0e1a95bb614df199c63e152b8</string>
+			</dict>
+			<key>41</key>
+			<dict>
+				<key>sha256</key>
+				<string>7944a0c1e3c63c5a7dfea9ff092abb2528e8c6709429baaf9f01cce13339d9ac</string>
 			</dict>
 		</dict>
 		<key>rsync</key>
@@ -26777,6 +27332,11 @@
 				<key>sha256</key>
 				<string>d4cdb40df6d7fc5e702bcd72c84f47191f3021ea332d4c471783803cf37c8e47</string>
 			</dict>
+			<key>47</key>
+			<dict>
+				<key>sha256</key>
+				<string>bb979f7bd9c03ba73035a98d1bb718125e58917888eb3d697fd2009e56e9d17b</string>
+			</dict>
 			<key>5.1</key>
 			<dict>
 				<key>sha256</key>
@@ -26809,6 +27369,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>3937a753c90fa12c42bc46a1351d77f1aa5dee73f2fdc121c905862f5577acad</string>
+			</dict>
+			<key>113</key>
+			<dict>
+				<key>sha256</key>
+				<string>0a343a390a48c69918a46402ca3cde2236234366ba72360b51ff63136b1d27a0</string>
 			</dict>
 			<key>12</key>
 			<dict>
@@ -27353,6 +27918,11 @@
 				<key>sha256</key>
 				<string>18a3b2c320bd909032405af3240fdf6ab27d5ec5a33627d35aaf0efc5bf247db</string>
 			</dict>
+			<key>55051</key>
+			<dict>
+				<key>sha256</key>
+				<string>6cd2fa0de40c15d13ccaa369e7823fe51b13687c46bf57e952a4796fdacefb2e</string>
+			</dict>
 		</dict>
 		<key>security_certtool</key>
 		<dict>
@@ -27395,6 +27965,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>1adcca651fd813918041a3ebf35a2aa22bc6a8965980fa22ad124d0f8ffe7cd5</string>
+			</dict>
+			<key>55110</key>
+			<dict>
+				<key>sha256</key>
+				<string>049e9e002c19303355f003f3fb2bc6d53530ae2b2c26e83f4c92db87a05b592a</string>
 			</dict>
 		</dict>
 		<key>security_crlrefresh</key>
@@ -27565,6 +28140,11 @@
 				<key>sha256</key>
 				<string>7052d4073b2c5a09e925c010f052ffcbea513ce714589cdf1680d726666bc9b1</string>
 			</dict>
+			<key>55126</key>
+			<dict>
+				<key>sha256</key>
+				<string>7114c4d65e00f10f18c79e1444956b48e3537ea7ab0b082feb53aed270ea1be3</string>
+			</dict>
 			<key>7</key>
 			<dict>
 				<key>sha256</key>
@@ -27670,6 +28250,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>2065696df524e2932dac158d57a9a45bfbe8298d0bc46b4ba051e9fedad47177</string>
+			</dict>
+			<key>55205</key>
+			<dict>
+				<key>sha256</key>
+				<string>5d4fe7a3a3787305d5d95d405fc9c4e623f17ee624a52838fc97374e67c69076</string>
 			</dict>
 		</dict>
 		<key>securityd</key>
@@ -27934,6 +28519,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>ae6a6bd85cbbefc41d04f4376f7dd687139489dba583a87005052f8117ad2169</string>
+			</dict>
+			<key>187</key>
+			<dict>
+				<key>sha256</key>
+				<string>d6a06a1503a32d8934060661353adc95f0b3b7acf9e073b124d0981d8e980401</string>
 			</dict>
 			<key>34</key>
 			<dict>
@@ -28434,6 +29024,11 @@
 				<key>sha256</key>
 				<string>1a4117977d40a22c571d7c43d5cbd9bd2d2000aead51f72dd18fa09841f93481</string>
 			</dict>
+			<key>322</key>
+			<dict>
+				<key>sha256</key>
+				<string>7345e2cdaeb8d0d055534f1118e748f6cc877efd34ae96d2188fa63f890a7e2a</string>
+			</dict>
 			<key>64</key>
 			<dict>
 				<key>sha256</key>
@@ -28637,6 +29232,11 @@
 				<key>sha256</key>
 				<string>2dd772e65dd8b534bc8e2cb579e58dff93c5ab14b3237e0c32e4b0226bd6a5ab</string>
 			</dict>
+			<key>670.1.2</key>
+			<dict>
+				<key>sha256</key>
+				<string>581b1bcfc2250b3779973745fe5d74b80c941d7fa485995af17dc47c1dff057a</string>
+			</dict>
 		</dict>
 		<key>system_config</key>
 		<dict>
@@ -28682,6 +29282,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>f86fa5f53c00836da95a5e7e58c239b55321d06d02df1a965c2c970bbd5df5a0</string>
+			</dict>
+			<key>107</key>
+			<dict>
+				<key>sha256</key>
+				<string>4bd7a36c1e0a4afb63e219c154a163362e1c274528e440ca405fe7cc2eb2d5ad</string>
 			</dict>
 			<key>14</key>
 			<dict>
@@ -28844,6 +29449,11 @@
 				<key>sha256</key>
 				<string>fd6f8b20f9f92b94781b5fdfe6e318884c970df371efcb6547eafd464ceb958f</string>
 			</dict>
+			<key>66</key>
+			<dict>
+				<key>sha256</key>
+				<string>1f80c509da89c07b295dfceea98ded514cda1b040b12da4d00a850b1f01b82bb</string>
+			</dict>
 			<key>7</key>
 			<dict>
 				<key>sha256</key>
@@ -28911,6 +29521,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>563f4e2d570f1a76aba847d554642c5b9d10c9a3e0cbdabb6482f8bacc826e17</string>
+			</dict>
+			<key>66</key>
+			<dict>
+				<key>sha256</key>
+				<string>a8e5bb0d3ee7a53526d1d10aea1b5fb1a69a71f2ac12c3e444f5145f9f87b466</string>
 			</dict>
 		</dict>
 		<key>texi2html</key>
@@ -29054,6 +29669,11 @@
 				<key>sha256</key>
 				<string>4b0fbf1bb77d16ab4ab83c624747d7a9a6f0e3f92ede56851ce6a7e60bcc2307</string>
 			</dict>
+			<key>15.17</key>
+			<dict>
+				<key>sha256</key>
+				<string>b297f30fe7be053adc6c6e87e2548706c69304a33767374dce4b87a2d1c2bf88</string>
+			</dict>
 			<key>15.2</key>
 			<dict>
 				<key>sha256</key>
@@ -29086,6 +29706,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>569571a60802e06ddbe2c304d56530202ae686731f526750933c8c05901fcff9</string>
+			</dict>
+			<key>107</key>
+			<dict>
+				<key>sha256</key>
+				<string>700ab67d05b504e6b79f7f191c1c566604ccb3a4a182e7021404935e38619d36</string>
 			</dict>
 			<key>15</key>
 			<dict>
@@ -29135,6 +29760,11 @@
 		</dict>
 		<key>usertemplate</key>
 		<dict>
+			<key>100</key>
+			<dict>
+				<key>sha256</key>
+				<string>4cff2e6fd54a5f516eecc3cf813f90f29e3003dfc47d7f9a084077e98d02198a</string>
+			</dict>
 			<key>2.1</key>
 			<dict>
 				<key>sha256</key>
@@ -29483,6 +30113,11 @@
 				<key>sha256</key>
 				<string>ace2d08cf7c9ea4539c9868fb6fdcb1e127d7796207c13767b095219cac47983</string>
 			</dict>
+			<key>368</key>
+			<dict>
+				<key>sha256</key>
+				<string>1560d0d734d4e8a1ab47f259eadf4556cdf1141294752fd3344ef9ad689a4549</string>
+			</dict>
 		</dict>
 		<key>wget</key>
 		<dict>
@@ -29546,6 +30181,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>ea296ffd5d058ad75d6c6908296910f15ff1bcf08de0bb8cf541e510e4c0be85</string>
+			</dict>
+			<key>302</key>
+			<dict>
+				<key>sha256</key>
+				<string>b435f664c304e55ab8dc974905cd61570b20d68710d79e1eaab8b5b1f4077669</string>
 			</dict>
 			<key>36</key>
 			<dict>
@@ -29871,6 +30511,11 @@
 				<key>sha256</key>
 				<string>f0ce818e986900d803d87025856fbd3668df305e510c82f1329cf71038d89380</string>
 			</dict>
+			<key>3247.1.106</key>
+			<dict>
+				<key>sha256</key>
+				<string>788554b830a1678028a06dd19a34127c9e63969f83061c95aede1d01729660e0</string>
+			</dict>
 			<key>344</key>
 			<dict>
 				<key>sha256</key>
@@ -30087,6 +30732,11 @@
 				<key>sha256</key>
 				<string>f46c517e002904a356a5a2923b7876e3dc3e1eac53b2aa58c987c7448c5090a5</string>
 			</dict>
+			<key>15</key>
+			<dict>
+				<key>sha256</key>
+				<string>dc427cabf8f7040c974bc25c687111bcd2434fc3dba546b66f16d2b2870a0f2d</string>
+			</dict>
 			<key>6</key>
 			<dict>
 				<key>sha256</key>
@@ -30180,6 +30830,11 @@
 				<key>sha256</key>
 				<string>f76ccc6a7f02f65d8084c2ce8f4116683366fcc1c4d00652b918422b9e6acf98</string>
 			</dict>
+			<key>60</key>
+			<dict>
+				<key>sha256</key>
+				<string>e76cdcca22cdb647069e9a4ef057e2c43204bb123ba04e3a98fb1df4aab594cf</string>
+			</dict>
 		</dict>
 		<key>zsh</key>
 		<dict>
@@ -30237,6 +30892,11 @@
 			<dict>
 				<key>sha256</key>
 				<string>4a3e76f5c6a5d58666918220afc8eaf5d9647a7000bbfa448b9dabfaca065f40</string>
+			</dict>
+			<key>65</key>
+			<dict>
+				<key>sha256</key>
+				<string>2e9618d218cf530b8c91860e10ff7d3b071e611de26b2fe724aaaf77af4f443a</string>
 			</dict>
 		</dict>
 	</dict>
