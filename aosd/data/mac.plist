@@ -4,6 +4,14 @@
 <array>
 	<dict>
 		<key>name</key>
+		<string>10.11</string>
+		<key>prefix</key>
+		<string>os-x</string>
+		<key>version</key>
+		<string>1011</string>
+	</dict>
+	<dict>
+		<key>name</key>
 		<string>10.10.5</string>
 		<key>prefix</key>
 		<string>os-x</string>
