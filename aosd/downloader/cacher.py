@@ -18,15 +18,17 @@ class cacher(object):
         found_manifest = False
         packages = []
         if release_type != None and release_info_dict != None:
-            cls.fetch(release_type, release_info_dict['name'])
-            release_plist_name = utilities.createcachefilename(release_info_dict['prefix'], release_info_dict['version'])
+            cls.fetch(release_type, release_info_dict.get('name', None))
+            release_plist_name = utilities.createcachefilename(release_info_dict.get('prefix', None), release_info_dict.get('version', None))
             cached_file_path = utilities.getcachefile(release_plist_name)
 
             if os.path.exists(cached_file_path) == True:
                 found_manifest = True
                 version_manifest_dict = plistlib.readPlist(cached_file_path)
-                for key in version_manifest_dict['projects']:
-                    packages.append(key)
+                projects_list = version_manifest_dict.get('projects', None)
+                if projects_list != None:
+                    for key in projects_list:
+                        packages.append(key)
         else:
             logging_helper.getLogger().error('Must supply a release type, set this using the "type" command.')
         return (found_manifest, packages)
